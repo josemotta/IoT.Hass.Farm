@@ -1,0 +1,86 @@
+title: Supervisor Panel
+views:
+  - title: Home
+    cards:
+#      - type: entities
+#        title: Sinalização
+#        show_header_toggle: true
+#        entities:
+#          - light.anavi_light_phat
+
+      - type: entities
+        title: Supervisor
+        show_header_toggle: false
+        entities:
+          - sensor.super_htu21d_temperature
+          - sensor.super_htu21d_humidity
+          - sensor.super_bh1750
+
+      - type: entities
+        title: Castle
+        show_header_toggle: false
+        entities:
+          - sensor.castle_vl53l1x
+          - sensor.castle_delta_temperature
+          - sensor.castle_htu21d_temperature
+          - sensor.castle_htu21d_humidity
+          - sensor.castle_bh1750
+
+      - type: sensor
+        entity: sensor.castle_water_level
+        name: Castle Water Tank
+        #line_color: "#3498db"
+        accuracy: 50
+        height: 150
+        detail: 2
+        graph: line
+        unit: "%"
+
+      - type: sensor
+        entity: sensor.castle_delta_temperature
+        name: Castle Delta Temperature
+        #line_color: "#3498db"
+        accuracy: 50
+        height: 150
+        detail: 2
+        graph: line
+        unit: "°C"
+
+      - type: entities
+        title: Raspberry Pi
+        show_header_toggle: false
+        entities:
+          - sensor.memory_free
+          - sensor.network_in_eth0
+          - sensor.network_out_eth0
+          - sensor.disk_use_percent
+
+      - type: entities
+        title: Climate
+        show_header_toggle: false
+        entities:
+          - sun.sun
+          - sensor.yr_symbol
+
+      - type: gauge
+        title: CPU
+        name: CPU
+        show_header_toggle: true
+        entity: sensor.processor_use
+        severity:
+          green: 0
+          yellow: 50
+          red: 90
+
+      #- type: entities
+      #  title: Zones
+      #  show_header_toggle: false
+      #  entities:
+      #    - zone.bloco_0
+      #    - zone.bloco_1
+      #    - zone.bloco_2
+      #    - zone.bloco_3
+      #    - zone.bloco_4
+      #    - zone.bloco_5
+      #    - zone.castelo
+      #    - zone.piscina

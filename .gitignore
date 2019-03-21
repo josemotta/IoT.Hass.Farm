@@ -1,0 +1,20 @@
+# Ignore folders.
+.storage
+.cloud
+.google.token
+deps
+
+# Ignore dbs
+*.db
+*.log
+*.db-wal
+*.db-shm
+
+# Ignored to keep secret data/credentials.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+
+# Ignore too.
+gitpull*
+core

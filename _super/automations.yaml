@@ -1,0 +1,15 @@
+- id: '1552680266680'
+  alias: mqtt_config_entity_creator_sensor
+  trigger:
+  - platform: mqtt
+    topic: homeassistant/sensor/#
+  condition:
+  - condition: template
+    value_template: "{{ trigger.topic.split('/')[3] == 'unit_of_measurement' }}"
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: "homeassistant/sensor/{{ trigger.topic.split('/')[2] }}/config"
+#       payload: ""
+      payload: "{\"name\": \"{{ trigger.topic.split('/')[2]| replace('_', ' ') | title }}\", \"unit_of_measurement\": \"{{ trigger.payload_json }}\", \"state_topic\": \"homeassistant/sensor/{{ trigger.topic.split('/')[2] }}/state\"}"
+      retain: true

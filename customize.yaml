@@ -1,0 +1,26 @@
+sensor.super_htu21d_temperature:
+  icon: mdi:thermometer
+  friendly_name: "Super Htu21d Temperature"
+sensor.super_htu21d_humidity:
+  icon: mdi:weather-rainy
+  friendly_name: "Super Htu21d Humidity"
+sensor.super_bh1750:
+  icon: mdi:brightness-6
+  friendly_name: "Super Bh1750 Luminance"
+sensor.castle_htu21d_temperature:
+  icon: mdi:thermometer
+sensor.castle_htu21d_humidity:
+  icon: mdi:weather-rainy
+sensor.castle_bh1750:
+  icon: mdi:brightness-6
+  friendly_name: "Castle Bh1750 Luminance"
+sensor.castle_water_level:
+  icon: mdi:waves
+sensor.castle_water_level_mm:
+  icon: mdi:arrow-collapse-up
+sensor.castle_vl53l1x:
+  icon: mdi:arrow-collapse-down
+sensor.network_in_wlan0:
+  icon: mdi:signal-variant
+sensor.network_out_wlan0:
+  icon: mdi:signal-variant

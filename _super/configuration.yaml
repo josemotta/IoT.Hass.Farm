@@ -1,0 +1,160 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets (Bloco 1)
+  latitude: -22.994178982919866
+  longitude: -43.27303517849277
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 80
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Sao_Paulo
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+lovelace:
+  mode: yaml
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  api_password: !secret http_password
+
+#iPhone
+#ios:
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+#updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+#  reporting: False
+
+# Discover some devices automatically
+#discovery:
+
+# Enable diagnostic tools
+system_health:
+
+# Add hassio menu on the left
+hassio:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+  use_include_order: true
+  include:
+    domains:
+      - sensor
+    entities:
+      - sensor.super_htu21d_temperature
+      - sensor.super_htu21d_humidity
+      - sensor.super_bh1750
+      - sensor.processor_use
+      - sensor.memory_free
+      - sensor.network_in_eth0
+      - sensor.network_out_eth0
+      - sensor.disk_use_percent
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - persistent_notification
+    entities:
+      - sensor.vl53l1x
+#      - sun.sun
+      - sensor.yr_symbol
+#      - persistent_notification.notification
+#      - persistent_notification.http_login
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  - platform: yr
+  - platform: htu21d
+    name: super_htu21d
+  - platform: bh1750
+    name: super_bh1750
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_free
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: disk_use_percent
+        arg: /
+  - platform: template
+    sensors:
+    # Difference between castle_htu21d_temperature and super_htu21d_temperature
+      castle_delta_temperature:
+        friendly_name: "Castle Delta Temperature"
+        unit_of_measurement: "°C"
+        value_template: "{{ ((states('sensor.castle_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
+#        value_template: "{{ (states('sensor.castle_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
+
+# ANAVI Light pHat
+light:
+  - platform: mqtt
+    schema: json
+    name: "ANAVI-Light-pHAT"
+    command_topic: "bec3b4e72ddb6f015791d8acc2618053/action/rgbled"
+
+# MQTT Broker (aka Mosquitto)
+mqtt:
+  discovery: true
+  broker: 192.168.20.102
+  client_id: master
+  port: 1883
+  keepalive: 60
+  username: "canoas"
+  password: "ele"
+
+#mqtt_eventstream:
+#  publish_topic: master/topic
+#  subscribe_topic: slaves/#
+#  ignore_event:
+#    - call_service
+#    - state_changed
+
+# Panel
+#panel_iframe:
+#  mqtt:
+#    title: MQTT
+#    icon: mdi:code-brackets
+#    url: http://192.168.20.102:5713
+
+#mqtt:
+#  broker: a0d7b954-mqtt
+#  username: "xpto"
+#  password: "xpto"
+#  client_id: master
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
