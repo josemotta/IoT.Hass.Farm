@@ -1,7 +1,7 @@
 homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets (Castelo)
+  # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude_home
   longitude: !secret longitude_home
   # Impacts weather/sunrise data (altitude above sea level in meters)
