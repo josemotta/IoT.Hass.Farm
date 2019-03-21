@@ -2,14 +2,14 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets (Bloco 1)
-  latitude: -22.994178982919866
-  longitude: -43.27303517849277
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 80
+  elevation: !secret elevation_home
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: America/Sao_Paulo
+  time_zone: secret timezone_home
   # Customization file
   customize: !include customize.yaml
 
@@ -47,7 +47,7 @@ http:
 #discovery:
 
 # Enable diagnostic tools
-system_health:
+#system_health:
 
 # Add hassio menu on the left
 hassio:
@@ -117,7 +117,7 @@ sensor:
         value_template: "{{ ((states('sensor.castle_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
 #        value_template: "{{ (states('sensor.castle_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
 
-# ANAVI Light pHat
+# ANAVI Light pHat (waiting for new json_light setup from Anavi)
 light:
   - platform: mqtt
     schema: json
@@ -127,32 +127,12 @@ light:
 # MQTT Broker (aka Mosquitto)
 mqtt:
   discovery: true
-  broker: 192.168.20.102
+  broker: !secret mqtt_broker
   client_id: master
-  port: 1883
+  port: !secret mqtt_port
   keepalive: 60
-  username: "canoas"
-  password: "ele"
-
-#mqtt_eventstream:
-#  publish_topic: master/topic
-#  subscribe_topic: slaves/#
-#  ignore_event:
-#    - call_service
-#    - state_changed
-
-# Panel
-#panel_iframe:
-#  mqtt:
-#    title: MQTT
-#    icon: mdi:code-brackets
-#    url: http://192.168.20.102:5713
-
-#mqtt:
-#  broker: a0d7b954-mqtt
-#  username: "xpto"
-#  password: "xpto"
-#  client_id: master
+  username: !secret mqtt_username
+  password: !secret mqtt_password
 
 group: !include groups.yaml
 automation: !include automations.yaml

@@ -1,45 +1,45 @@
 - name: Home
-  latitude: -22.99361111
-  longitude: -43.27277778
-  radius: 110
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  radius: !secret radius_home
   icon: mdi:shield-home-outline
 - name: Bloco-0
-  latitude: -22.994375576861216
-  longitude: -43.27282276642885
-  radius: 15
+  latitude: !secret latitude_bloco_0
+  longitude: !secret longitude_bloco_0
+  radius: !secret radius_bloco_0
   icon: mdi:numeric-0-box-outline
 - name: Bloco-1
-  latitude: -22.994178982919866
-  longitude: -43.27303517849277
-  radius: 15
+  latitude: !secret latitude_bloco_1
+  longitude: !secret longitude_bloco_1
+  radius: !secret radius_bloco_1
   icon: mdi:numeric-1-box-outline
 - name: Bloco-2
-  latitude: -22.99388889
-  longitude: -43.27305556
-  radius: 15
+  latitude: !secret latitude_bloco_2
+  longitude: !secret longitude_bloco_2
+  radius: !secret radius_bloco_2
   icon: mdi:numeric-2-box-outline
-- name: Piscina
-  latitude: -22.99407448095864
-  longitude: -43.272034983191794
-  radius: 20
-  icon: mdi:pool
-- name: Castelo
-  latitude: -22.993461190285846
-  longitude: -43.2733427577088
-  radius: 10
-  icon: mdi:tower-fire
 - name: Bloco-3
-  latitude: -22.99329712610848
-  longitude: -43.272943561247736
-  radius: 15
+  latitude: !secret latitude_bloco_3
+  longitude: !secret longitude_bloco_3
+  radius: !secret radius_bloco_3
   icon: mdi:numeric-3-box-outline
 - name: Bloco-4
-  latitude: -22.992799360779465
-  longitude: -43.272665924789806
-  radius: 15
+  latitude: !secret latitude_bloco_4
+  longitude: !secret longitude_bloco_4
+  radius: !secret radius_bloco_4
   icon: mdi:numeric-4-box-outline
 - name: Bloco-5
-  latitude: -22.993269023429185
-  longitude: -43.27229423262009
-  radius: 20
+  latitude: !secret latitude_bloco_5
+  longitude: !secret longitude_bloco_5
+  radius: !secret radius_bloco_5
   icon: mdi:numeric-5-box-outline
+- name: Piscina
+  latitude: !secret latitude_piscina
+  longitude: !secret longitude_piscina
+  radius: !secret radius_piscina
+  icon: mdi:pool
+- name: Castelo
+  latitude: !secret latitude_castelo
+  longitude: !secret longitude_castelo
+  radius: !secret radius_castelo
+  icon: mdi:tower-fire
