@@ -1,4 +1,10 @@
-# Ignore folders.
+# Ignore files that will be set locally
+/automations.yaml
+/configuration.yaml
+/themes.yaml
+/ui-lovelace.yaml
+
+# Ignore auxiliary folders.
 .storage
 .cloud
 .google.token
@@ -10,7 +16,7 @@ deps
 *.db-wal
 *.db-shm
 
-# Ignored to keep secret data/credentials.
+# Ignore to keep secret data/credentials.
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
