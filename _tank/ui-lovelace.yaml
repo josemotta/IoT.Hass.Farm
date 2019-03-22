@@ -1,0 +1,44 @@
+title: Tank Panel
+views:
+  - title: Home
+    cards:
+      - type: sensor
+        entity: sensor.tank_water_level
+        name: Water Tank
+        #line_color: "#3498db"
+        accuracy: 50
+        height: 150
+        detail: 2
+        graph: line
+        unit: "%"
+
+      - type: entities
+        title: Sensors
+        show_header_toggle: false
+        entities:
+          #- sensor.water_level
+          - sensor.tank_vl53l1x
+          - sensor.tank_water_level_mm
+          - sensor.tank_htu21d_temperature
+          - sensor.tank_htu21d_humidity
+          - sensor.tank_bh1750
+          #- sun.sun
+
+      - type: gauge
+        title: CPU
+        name: CPU
+        show_header_toggle: true
+        entity: sensor.processor_use
+        severity:
+          green: 0
+          yellow: 70
+          red: 90
+
+      - type: entities
+        title: Raspberry Pi
+        show_header_toggle: false
+        entities:
+          - sensor.memory_free
+          - sensor.network_in_wlan0
+          - sensor.network_out_wlan0
+          - sensor.disk_use_percent

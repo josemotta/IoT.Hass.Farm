@@ -1,0 +1,157 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation_home
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret timezone_home
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables diagnostic tools
+system_health:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+lovelace:
+  mode: yaml
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  api_password: !secret http_password
+
+#iPhone
+#ios:
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+#updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+#  reporting: False
+
+# Discover some devices automatically
+#discovery:
+
+# Enable diagnostic tools
+#system_health:
+
+# Add hassio menu on the left
+hassio:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Recorder setup for main sensors only
+recorder:
+  purge_keep_days: 7
+  include:
+    entities:
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_htu21d_temperature
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_bh1750
+      - sensor.processor_use
+      - sensor.memory_free
+      - sensor.network_in_wlan0
+      - sensor.network_out_wlan0
+      - sensor.disk_use_percent_home
+
+# Enables support for tracking state changes over time
+history:
+  use_include_order: true
+  include:
+    entities:
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_htu21d_temperature
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_bh1750
+      - sensor.processor_use
+      - sensor.memory_free
+      - sensor.network_in_wlan0
+      - sensor.network_out_wlan0
+      - sensor.disk_use_percent_home
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+#map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+#  - platform: yr
+  - platform: htu21d
+    name: tank_htu21d
+  - platform: bh1750
+    name: tank_bh1750
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_free
+      - type: network_in
+        arg: wlan0
+      - type: network_out
+        arg: wlan0
+      - type: disk_use_percent
+        arg: /
+  - platform: tof
+    name: tank_vl53l1x
+  - platform: template
+    sensors:
+    # Change calculations accordingly, if sensor is not installed 5 meters high!
+      tank_water_level_mm:
+        friendly_name: "Water Level"
+        unit_of_measurement: "mm"
+        value_template: "{{ (5000 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
+      tank_water_level:
+        friendly_name: "Water Level"
+        unit_of_measurement: "%"
+        value_template: "{{ ((5000 - states('sensor.tank_vl53l1x')|float) / 50) | round(1)}}"
+
+# MQTT Broker (aka Mosquitto)
+mqtt:
+  broker: !secret mqtt_broker
+  client_id: slave
+  port: !secret mqtt_port
+  keepalive: 60
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+mqtt_statestream:
+  base_topic: homeassistant
+  publish_attributes: true
+  publish_timestamps: true
+  include:
+    entities:
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_bh1750
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_htu21d_temperature
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
