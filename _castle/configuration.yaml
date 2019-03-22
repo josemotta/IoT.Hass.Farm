@@ -63,11 +63,11 @@ recorder:
   purge_keep_days: 7
   include:
     entities:
-      - sensor.castle_water_level
-      - sensor.castle_vl53l1x
-      - sensor.castle_htu21d_temperature
-      - sensor.castle_htu21d_humidity
-      - sensor.castle_bh1750
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_htu21d_temperature
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_bh1750
       - sensor.processor_use
       - sensor.memory_free
       - sensor.network_in_wlan0
@@ -79,11 +79,11 @@ history:
   use_include_order: true
   include:
     entities:
-      - sensor.castle_water_level
-      - sensor.castle_vl53l1x
-      - sensor.castle_htu21d_temperature
-      - sensor.castle_htu21d_humidity
-      - sensor.castle_bh1750
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_htu21d_temperature
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_bh1750
       - sensor.processor_use
       - sensor.memory_free
       - sensor.network_in_wlan0
@@ -103,9 +103,9 @@ sun:
 sensor:
 #  - platform: yr
   - platform: htu21d
-    name: castle_htu21d
+    name: tank_htu21d
   - platform: bh1750
-    name: castle_bh1750
+    name: tank_bh1750
   - platform: systemmonitor
     resources:
       - type: processor_use
@@ -117,18 +117,18 @@ sensor:
       - type: disk_use_percent
         arg: /
   - platform: tof
-    name: castle_vl53l1x
+    name: tank_vl53l1x
   - platform: template
     sensors:
     # Change calculations accordingly, if sensor is not installed 5 meters high!
-      castle_water_level_mm:
+      tank_water_level_mm:
         friendly_name: "Water Level"
         unit_of_measurement: "mm"
-        value_template: "{{ (5000 - states('sensor.castle_vl53l1x')|float) | round(0)}}"
-      castle_water_level:
+        value_template: "{{ (5000 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
+      tank_water_level:
         friendly_name: "Water Level"
         unit_of_measurement: "%"
-        value_template: "{{ ((5000 - states('sensor.castle_vl53l1x')|float) / 50) | round(1)}}"
+        value_template: "{{ ((5000 - states('sensor.tank_vl53l1x')|float) / 50) | round(1)}}"
 
 # MQTT Broker (aka Mosquitto)
 mqtt:
@@ -145,11 +145,11 @@ mqtt_statestream:
   publish_timestamps: true
   include:
     entities:
-      - sensor.castle_water_level
-      - sensor.castle_vl53l1x
-      - sensor.castle_bh1750
-      - sensor.castle_htu21d_humidity
-      - sensor.castle_htu21d_temperature
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_bh1750
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_htu21d_temperature
 
 group: !include groups.yaml
 automation: !include automations.yaml

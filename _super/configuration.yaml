@@ -110,12 +110,12 @@ sensor:
         arg: /
   - platform: template
     sensors:
-    # Difference between castle_htu21d_temperature and super_htu21d_temperature
-      castle_delta_temperature:
-        friendly_name: "Castle Delta Temperature"
+    # Difference between tank_htu21d_temperature and super_htu21d_temperature
+      tank_delta_temperature:
+        friendly_name: "Tank Delta Temperature"
         unit_of_measurement: "°C"
-        value_template: "{{ ((states('sensor.castle_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
-#        value_template: "{{ (states('sensor.castle_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
+        value_template: "{{ ((states('sensor.tank_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
+#        value_template: "{{ (states('sensor.tank_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
 
 # ANAVI Light pHat (waiting for new json_light setup from Anavi)
 light:

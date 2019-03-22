@@ -7,18 +7,18 @@ sensor.super_htu21d_humidity:
 sensor.super_bh1750:
   icon: mdi:brightness-6
   friendly_name: "Super Bh1750 Luminance"
-sensor.castle_htu21d_temperature:
+sensor.tank_htu21d_temperature:
   icon: mdi:thermometer
-sensor.castle_htu21d_humidity:
+sensor.tank_htu21d_humidity:
   icon: mdi:weather-rainy
-sensor.castle_bh1750:
+sensor.tank_bh1750:
   icon: mdi:brightness-6
-  friendly_name: "Castle Bh1750 Luminance"
-sensor.castle_water_level:
+  friendly_name: "Tank Bh1750 Luminance"
+sensor.tank_water_level:
   icon: mdi:waves
-sensor.castle_water_level_mm:
+sensor.tank_water_level_mm:
   icon: mdi:arrow-collapse-up
-sensor.castle_vl53l1x:
+sensor.tank_vl53l1x:
   icon: mdi:arrow-collapse-down
 sensor.network_in_wlan0:
   icon: mdi:signal-variant

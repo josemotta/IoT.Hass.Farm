@@ -1,9 +1,9 @@
-title: Castle Panel
+title: Tank Panel
 views:
   - title: Home
     cards:
       - type: sensor
-        entity: sensor.castle_water_level
+        entity: sensor.tank_water_level
         name: Water Tank
         #line_color: "#3498db"
         accuracy: 50
@@ -17,11 +17,11 @@ views:
         show_header_toggle: false
         entities:
           #- sensor.water_level
-          - sensor.castle_vl53l1x
-          - sensor.castle_water_level_mm
-          - sensor.castle_htu21d_temperature
-          - sensor.castle_htu21d_humidity
-          - sensor.castle_bh1750
+          - sensor.tank_vl53l1x
+          - sensor.tank_water_level_mm
+          - sensor.tank_htu21d_temperature
+          - sensor.tank_htu21d_humidity
+          - sensor.tank_bh1750
           #- sun.sun
 
       - type: gauge
@@ -42,4 +42,3 @@ views:
           - sensor.network_in_wlan0
           - sensor.network_out_wlan0
           - sensor.disk_use_percent
-

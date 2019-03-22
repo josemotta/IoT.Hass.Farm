@@ -17,18 +17,18 @@ views:
           - sensor.super_bh1750
 
       - type: entities
-        title: Castle
+        title: Tank
         show_header_toggle: false
         entities:
-          - sensor.castle_vl53l1x
-          - sensor.castle_delta_temperature
-          - sensor.castle_htu21d_temperature
-          - sensor.castle_htu21d_humidity
-          - sensor.castle_bh1750
+          - sensor.tank_vl53l1x
+          - sensor.tank_delta_temperature
+          - sensor.tank_htu21d_temperature
+          - sensor.tank_htu21d_humidity
+          - sensor.tank_bh1750
 
       - type: sensor
-        entity: sensor.castle_water_level
-        name: Castle Water Tank
+        entity: sensor.tank_water_level
+        name: Water Tank
         #line_color: "#3498db"
         accuracy: 50
         height: 150
@@ -37,8 +37,8 @@ views:
         unit: "%"
 
       - type: sensor
-        entity: sensor.castle_delta_temperature
-        name: Castle Delta Temperature
+        entity: sensor.tank_delta_temperature
+        name: Delta Temperature
         #line_color: "#3498db"
         accuracy: 50
         height: 150

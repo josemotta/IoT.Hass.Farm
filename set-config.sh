@@ -2,19 +2,19 @@
 # set.sh
 
 # Copy respective hass files to config folder
-# Options are castle or super
+# Options are tank or super
 
 E_NOARGS=75
 
 if [ -z "$1" ]
 then
-  echo "Usage: `basename $0` [castle | super]"
+  echo "Usage: `basename $0` [tank | super]"
   exit $E_NOARGS
 fi
 
 case $1 in
-  castle)
-    cp -t . _castle/*
+  tank)
+    cp -t . _tank/*
     ;;
   super)
     cp -t . _super/*
