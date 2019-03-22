@@ -4,7 +4,7 @@ python:
 install:
   - pip3 install homeassistant
 script:
-  - ./set-config.sh castle
+  - ./set-config.sh tank
   - hass -c . --script check_config
   - ./set-config.sh super
   - hass -c . --script check_config
