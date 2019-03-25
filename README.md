@@ -8,11 +8,11 @@
 
 This article intends to combine cheap CPUs and open source microservices to develop an architecture for distributed supervisory and control systems.
 
-## SCADA (Supervisory Control and Data Acquisition)
+### SCADA (Supervisory Control and Data Acquisition)
 
-The SCADA architecture has functional levels layered as a pyramid that has been used to power solutions for home/office/industrial automation. Since the '70s, the SCADA concept has pioneered the ability to perform supervisory operations over a variety of other proprietary devices. 
+The [SCADA architecture](https://en.wikipedia.org/wiki/SCADA) has functional levels layered as a pyramid that has been used to power solutions for home/office/industrial automation. Since the '70s, the SCADA concept has pioneered the ability to perform supervisory operations over a variety of other proprietary devices. 
 
-#scada picture
+![](https://i.imgur.com/dO70VcW.jpg)
 
 As shown in the diagram, the lowest level interfaces with the process, maybe a home/office/factory for example.  The higher levels communicate to gather information from lower levels, analyze the data and evaluate the decisions to be made, eventually sending down commands to adjust the process behavior.
 
