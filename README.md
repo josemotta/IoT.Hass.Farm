@@ -24,15 +24,15 @@ The following project shows an IoT architecture based on Raspberry Pi hardware a
 
 The picture describes a typical process that pumps water from well and fills the big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that should also be monitored.
 
-![](https://i.imgur.com/6GLHhFo.jpg)
+![](https://i.imgur.com/4fRKJ5g.jpg)
 
 Since the tanks may be distributed in a wide area, the distributed architecture dedicates a node to get data from each tank, including water level, temperature, humidity, and luminance. 
 
-![](https://i.imgur.com/mwjPkN6.jpg)
+![](https://i.imgur.com/v9vMVrP.jpg)
 
 The picture shows the sensor located at the top of the tank, pointing down to the water. The distance to the water allows calculating the tank water level and consequently the water volume stored in the tank. The sonar technology has been frequently used for this task, the HC-SR04 is a popular example. In this project, a different option will replace sound with light. The STMicroelectronics VL53L1X "time of flight sensor" is equipped with an invisible laser to measure distances with millimeter resolution,  get the full specs on the product page.
 
-![](https://i.imgur.com/rfNz9e6.jpg)
+![](https://i.imgur.com/E2FPbNT.jpg)
 
 The tanks nodes themselves are not enough to calculate the total water in the system since they only handle local information about each tank. As shown in the picture, a second level is created for a supervisor node that collects information from all tanks. MQTT streaming generated at each tank publishes the tank variables that should be monitored. The preliminary user interface, also located at the tank supervisor, shows information from all tanks.
 
