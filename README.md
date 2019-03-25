@@ -26,21 +26,28 @@ The picture describes a typical process that pumps water from well and fills the
 
 ![](https://i.imgur.com/4fRKJ5g.jpg)
 
+### Tank node
+
 Since the tanks may be distributed in a wide area, the distributed architecture dedicates a node to get data from each tank, including water level, temperature, humidity, and luminance. 
 
 ![](https://i.imgur.com/v9vMVrP.jpg)
 
 The picture shows the sensor located at the top of the tank, pointing down to the water. The distance to the water allows calculating the tank water level and consequently the water volume stored in the tank. The sonar technology has been frequently used for this task, the HC-SR04 is a popular example. In this project, a different option will replace sound with light.
 
-The component chosen here is the STMicroelectronics VL53L1X "time of flight sensor", equipped with an invisible laser to measure distances with millimeter resolution. Please check [full specs on the product page](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html).
+The component chosen here is the STMicroelectronics VL53L1X "time of flight sensor", equipped with an invisible laser to measure distances with millimeter resolution. Please check the [full specs on the product page](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html).
+
+
+### Supervisor node
+
+The tanks nodes themselves are not enough to calculate the total water in the system since they only handle local information about each tank. As shown in the picture, a second level is created for a supervisor node that collects information from all tanks.
 
 ![](https://i.imgur.com/E2FPbNT.jpg)
 
-The tanks nodes themselves are not enough to calculate the total water in the system since they only handle local information about each tank. As shown in the picture, a second level is created for a supervisor node that collects information from all tanks. MQTT streaming generated at each tank publishes the tank variables that should be monitored. The preliminary user interface, also located at the tank supervisor, shows information from all tanks.
+MQTT streaming generated at each tank node publish variables that should be monitored. The preliminary user interface, also located at the tank supervisor, shows information from all tanks.
 
 The system shows a couple of layers that are scalable to monitor all tank data and are smart enough to handle eventual local decisions.
 
-The Raspberry Pi ZeroW was used to measure the water level and other environmental data from water tanks. Code from a  Python 2 library was upgraded to Python 3 in order to be applied to the new "Time of Flight" platform for Home Assistant.
+The Raspberry Pi Zero-W was used to measure the water level and other environmental data from water tanks. Code from a  Python 2 library was upgraded to Python 3 in order to be applied to the new "Time of Flight" platform for Home Assistant.
 
 
 ## Conclusions
