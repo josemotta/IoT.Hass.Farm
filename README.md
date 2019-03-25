@@ -43,14 +43,17 @@ The tanks nodes themselves are not enough to calculate the total water in the sy
 
 ![](https://i.imgur.com/E2FPbNT.jpg)
 
-MQTT streaming generated at each tank node publish variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle eventual local decisions.
+MQTT streaming generated at each tank node publish the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
-The Raspberry Pi Zero-W is a cheap and powerful choice to measure the water level and other environmental data from water tanks. Code from a  Python 2 library was upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant. The Raspberry Pi 3B was used for the supervisor node, since further processing is expected in the near future.
+The Raspberry Pi Zero-W is a cheap and powerful choice to measure the water level and other environmental data from water tanks. Library code from an old Python 2 library should be upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant. The Raspberry Pi 3B was used for the supervisor node, since further processing is expected in the near future.
 
 
 ## Conclusions
 
-Nonini ni no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Noni nino Nonini no nin noi no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Noni nino Nonini no nin no o nin nonoi nino, Nonini no nin nonoi nino. Nonini no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino noi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Nonini no nin nonoi nino Noninnoi nino.
+The details about this project are published separately for each node. Please check:
+
+- Tank node
+- Supervisor node
 
 Have fun with your IoT initiative!
 
