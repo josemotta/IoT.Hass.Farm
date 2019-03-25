@@ -20,7 +20,7 @@ Today, IoT solutions face similar challenges concerning the development of home 
 
 The following project shows an IoT architecture based on Raspberry Pi hardware and Home Assistant software installed on a Linux environment that uses Docker containers to launch several microservices on each node.
 
-## Water Tanks Project
+## Water Tanks Process
 
 The picture describes a typical process that pumps water from well and fills the big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that should also be monitored.
 
