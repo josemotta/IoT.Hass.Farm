@@ -53,7 +53,7 @@ The Raspberry Pi 3B was used at the supervisor node since further processing is 
 
 ## Conclusions
 
-The supervisor panel shown below contains water level and environmental data collected from a single tank. The delta temperature is calculated for each tank, based on the difference between data collected from it and the "normal" temperature registered by supervisor sensors. This way, an alarm for unexpected temperature in the tank may be raised, demonstrating the typical behavior expected from higher levels in the SCADA architecture.  
+The supervisor panel shown below contains water level and environmental data collected from a single tank. The delta temperature is calculated for each tank, based on the difference between data collected from it and the "normal" temperature registered by supervisor sensors. This way, an alarm for unexpected temperature in the tank may be raised, demonstrating the typical behavior from higher levels nodes in the SCADA architecture.  
 
 ![](https://i.imgur.com/no17Gds.jpg)
 
