@@ -40,18 +40,24 @@ The component chosen here is the STMicroelectronics VL53L1X "time of flight sens
 
 ### Supervisor node
 
-The tanks nodes themselves are not enough to calculate the total water in the system since they only handle local information about each tank. As shown in the picture, a second level is created for a supervisor node that collects information from all tanks.
+The tanks nodes themselves are not enough to calculate the total water in the system since they only handle local information about each tank. As shown in the diagram below, a second level is created for a supervisor node that collects information from all tanks.
 
 ![](https://i.imgur.com/E2FPbNT.jpg)
 
 MQTT streaming generated at each tank node publishes the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
-The Raspberry Pi Zero-W is a cheap and powerful choice to measure the water level and other environmental data from water tanks. The source code from an available Python 2 library should be upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant. The Raspberry Pi 3B was used at the supervisor node since further processing is expected in the near future.
+The Raspberry Pi Zero-W is a cheap and powerful choice to measure the water level and other environmental data from water tanks. The source code from an available Python 2 library should be upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant.
+
+The Raspberry Pi 3B was used at the supervisor node since further processing is expected in the near future. For this project, in order to make comparisons with tank data, the supervisor also has sensors to collect the room temperature, humidity, and luminance.
 
 
 ## Conclusions
 
-The details about this project are published separately for each node. Please check:
+The supervisor panel shows level and environmental data collected from a single tank. The delta temperature is calculated, based on the difference between collected data from tank and room temperature registered by supervisor sensors. Then an alarm for high temperature in each tank may be raised, showing a typical behavior expected from the higher level nodes in the SCADA architecture.  
+
+![](https://i.imgur.com/no17Gds.jpg)
+
+Further details about this project are published separately for each node. Please check:
 
 - Tank node
 - Supervisor node
