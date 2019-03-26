@@ -57,7 +57,7 @@ The supervisor panel shown below contains water level and environmental data col
 
 ![](https://i.imgur.com/no17Gds.jpg)
 
-Further details about this project are published separately for each node. Please check:
+Further details about this project are published separately for each node. Please check (available soon):
 
 - Tank node
 - Supervisor node
