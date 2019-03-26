@@ -32,7 +32,7 @@ Since several tanks may exist in a wide area, the proposed distributed architect
 
 ![](https://i.imgur.com/V5eEZaI.jpg)
 
-The picture shows the level sensor located at the top of the tank, pointing down towards water. The distance to the water allows calculating the tank water level and consequently the water volume stored in the tank. The sonar technology has been frequently used for this task, the HC-SR04 is a popular example. In this project, a different option will replace sound with light.
+The picture shows the level sensor located at the top of the tank, pointing down towards water. The distance to the water allows calculating the tank water level and consequently the water volume stored in the tank. The sonar technology has been frequently used for this task, the HC-SR04 is a popular example. In this project, a different option replaces sound with light.
 
 The component chosen here is the STMicroelectronics VL53L1X "time of flight sensor", equipped with an invisible laser to measure distances with millimeter resolution. Please check the [full specs on the product page](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html) and the [breakout option](https://www.sparkfun.com/products/14722) shown below.
 
