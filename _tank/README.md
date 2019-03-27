@@ -46,11 +46,9 @@ Suppose a tank node equipped with a single set of these sensors. They may be ins
 - **Inside tank, outside node:** these sensors would measure the internal tank conditions.
 - **Inside tank, inside node:** these sensors would evaluate the internal conditions of the node itself.
 
-The tank node prototype, shown upside down in the photo, has a VL53L1X sensor pointing down towards water direction. The Pi Zero W is tied to an [Anavi Infrared pHat](https://www.crowdsupply.com/anavi-technology/infrared-phat) with I2C connections for the three sensors.
+The tank node prototype, shown upside down in the photo, has a VL53L1X sensor pointing down towards water direction. The Pi Zero W is tied to an [Anavi Infrared pHat](https://www.crowdsupply.com/anavi-technology/infrared-phat) with I2C connections for the three sensors. The temperature, humidity and luminance sensors are installed inside the node, in order to evaluate internal prototype conditions. It is expected that internal temperature and humidity changes with CPU utilization, for example.
 
 ![](https://i.imgur.com/MINoMZq.jpg)
-
-The temperature, humidity and luminance sensors are installed inside the node, in order to evaluate internal prototype conditions. It is expected that internal temperature and humidity changes with CPU utilization, for example.
 
 The luminance sensor actually measures light conditions inside the tank, since node prototype has a transparent case. Since VL53L1X performance may vary with light interference, an "open hatch" alarm may be created, in case light is detected inside the water tank. Also, open water tanks are a *very bad idea*, due to mosquito proliferation!
 
