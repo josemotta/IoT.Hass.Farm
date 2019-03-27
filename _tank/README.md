@@ -4,7 +4,7 @@ Several `tanks` are supposed to be sparsely distributed in the `process area`. T
 
 The `tank node` should be powered locally and communicate through a wireless link, then both electrical power and wireless signal should be available at tank area. It is also expected that the existing wireless LAN should be connected to the Internet.
 
-The main specifications and features for the current `tank node` are listed below.
+The main specifications and features for the `tank node` are listed below.
 
 ### Raspberry Pi Zero W
 
@@ -29,7 +29,7 @@ For this project, the following sensors were selected:
 - **Humidity:** [HTU21D](https://www.mouser.com/pdfdocs/HTU21DF.PDF) - Digital Relative Humidity sensor with Temperature output.
 - **Luminance:** [BH1750](https://www.mouser.com/ds/2/348/bh1750fvi-e-186247.pdf)  - Digital 16bit Serial Output Type Ambient Light Sensor.
 
-##### Water level
+#### Water level
 The water level sensor VL53L1X is installed inside the tank, as seen below, at the top. Then, the sensor measurement reflects the distance from the top of the tank to the water surface. This measurement allows calculating the water level and consequently the volume stored in the tank.
 
 ![](https://i.imgur.com/V5eEZaI.jpg)
@@ -38,7 +38,7 @@ The STMicroelectronics VL53L1X "time of flight sensor" is equipped with an invis
 
 ![](https://i.imgur.com/csxnBtA.jpg)
 
-##### Temperature, humidity and luminance
+#### Temperature, humidity and luminance
 
 Suppose a tank node equipped with a single set of these sensors. They may be installed in three positions:
 
