@@ -2,13 +2,13 @@
 
 Several `tanks` are supposed to be sparsely distributed in the `process area`. The proposed distributed architecture dedicates an exclusive node to monitor the water level, temperature, humidity, and luminance from each tank.
 
-The `tank node` should be powered locally and communicate through a wireless link. This means that prerequisites are both electrical power and wireless signal available at tank area. Since this is an IoT project, it is also expected that the existing wireless LAN in the process area should be connected to the Internet.
+The `tank node` should be powered locally and communicate through a wireless link, then both electrical power and wireless signal should be available at tank area. It is also expected that the existing wireless LAN should be connected to the Internet.
 
-The specifications and features for the current `tank node` prototype are listed below:
+The main specifications and features for the current `tank node` are listed below.
 
 ### Raspberry Pi Zero W
 
-Due to its low cost ARM11 core processor and built in wireless LAN, the `Pi Zero W` was selected to power the `tank node`. The main features are listed below:
+Due to its low cost ARM11 core processor and built in wireless LAN, the `Pi Zero W` was selected to power the `tank node`. Its main features are:
 
 - 1Ghz, Broadcom BCM 2835 single-core processor
 - 512 MB of RAM
@@ -34,7 +34,7 @@ The water level sensor VL53L1X is installed inside the tank, as seen below, at t
 
 ![](https://i.imgur.com/V5eEZaI.jpg)
 
-STMicroelectronics VL53L1X "time of flight sensor" is equipped with an invisible laser to measure distances with millimeter resolution. Please check the [full specs on the product page](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html) and the available [breakout](https://www.sparkfun.com/products/14722) shown below.
+The STMicroelectronics VL53L1X "time of flight sensor" is equipped with an invisible laser to measure distances with millimeter resolution. Please check the [full specs on the product page](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html) and the available [breakout](https://www.sparkfun.com/products/14722) shown below.
 
 ![](https://i.imgur.com/csxnBtA.jpg)
 
