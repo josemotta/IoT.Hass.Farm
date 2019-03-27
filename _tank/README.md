@@ -52,7 +52,16 @@ The tank node prototype, shown upside down in the photo, has a VL53L1X sensor po
 
 The luminance sensor actually measures light conditions inside the tank, since node prototype has a transparent case. Since VL53L1X performance may vary with light interference, an "open hatch" alarm may be created, in case light is detected inside the water tank. Also, open water tanks are a *very bad idea*, due to mosquito proliferation!
 
+## Install Hass.io
 
+The `Pi Zero W` is supposed to be installed with following software: 
+
+- **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
+- Then, it is wise to **update/upgrade** everything. Follow this [tutorial](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/) published by Tlindener in 2015. Skip the beginning, starting at step 3. If you need the configuration program raspi-config, it is already available at Stretch Lite version. 
+
+The script below will install all other requirements, and then install Hass.io.
+
+    curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
 
 
 
