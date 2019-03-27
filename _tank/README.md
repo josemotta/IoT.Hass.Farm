@@ -59,11 +59,15 @@ The `Pi Zero W` is supposed to be installed with following software:
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
 - Then, it is wise to **update/upgrade** everything. Follow this [tutorial](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/) published by Tlindener in 2015. Skip the beginning, starting at step 3. If you need the configuration program raspi-config, it is already available at Stretch Lite version. 
 
-The script below will install all other requirements, and then install Hass.io.
+Based in the [Dale Higgs hassio-installer](https://github.com/josemotta/hassio-installer), the script below will install all requirements, and then install Hass.io on the `Pi Zero W`. 
 
     curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
 
+This script contains a customized version with proper Docker version for `Pi Zero W`, useful at the time I wrote this.
 
+    install_docker() {
+      echo "Installing Docker..."
+      export VERSION=18.06 && curl -sSL get.docker.com | sh 
 
 MQTT streaming generated at each tank node publishes the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
