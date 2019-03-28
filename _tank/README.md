@@ -57,9 +57,9 @@ The luminance sensor actually measures light conditions inside the tank, since n
 The `Pi Zero W` is supposed to be installed with following software: 
 
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
-- Then, it is wise to **update/upgrade** everything. Follow this [tutorial](http://thinghub.net/blog/2015/08/31/setup-raspberrypi-with-minified-raspbian-minibian/) published by Tlindener in 2015. Skip the beginning, starting at step 3. If you need the configuration program raspi-config, it is already available at Stretch Lite version. 
+- Then, it is wise to **update/upgrade** everything. If you need the configuration program raspi-config, it is already available at Stretch Lite version. 
 
-Next step is installing Hass.io, based in the Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). The script below installs all requirements, and then install Hass.io:
+Next step is installing Hass.io, easy task with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below in the `Pi Zero W` to install all requirements, and then install Hass.io:
 
     curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
 
