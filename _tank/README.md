@@ -117,8 +117,9 @@ After the boot you can check packages being dynamically loaded at `config/deps` 
 
 ![](https://i.imgur.com/Bg4gx0R.jpg)
 
-In the first use an user id and password will be required to create the admin account.
+Open the browser and enter the IP address of prototype followed by port 8123 to start the user interface. In the first use an user id and password will be required to create the admin account.
 
-MQTT streaming generated at each tank node publishes the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
+![](https://i.imgur.com/3pLBjM2.jpg)
 
-The source code from an available Python 2 library should be upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant.
+The MQTT streaming generated at each tank node publishes all sensor data that should be monitored.  This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
+
