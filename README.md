@@ -57,10 +57,10 @@ The supervisor panel shown below contains water level and environmental data col
 
 ![](https://i.imgur.com/no17Gds.jpg)
 
-Further details about this project are published separately for each node. Please check (available soon):
+Further details about this project are published separately for each node. Please check:
 
 - [Tank node](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_tank)
-- Supervisor node
+- Supervisor node (available soon)
 
 Have fun with your IoT initiative!
 
