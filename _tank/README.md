@@ -108,7 +108,11 @@ $ sudo mv secrets-dummy.yaml secrets.yaml
 $ sudo reboot
 ```
 
-In order to
+After the boot you can check that packages are being dynamically loaded at `config/deps` folder, as shown below. You may have to reboot a second time to start using VL53L1X, but it runs smoothly after that.
+
+![](https://i.imgur.com/Bg4gx0R.jpg)
+
+In the first use an user id and password will be required to create the admin account.
 
 MQTT streaming generated at each tank node publishes the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
