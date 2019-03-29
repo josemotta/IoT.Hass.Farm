@@ -95,7 +95,9 @@ remote: Compressing objects: 100% (137/137), done.
 remote: Total 201 (delta 123), reused 134 (delta 60), pack-reused 0
 Receiving objects: 100% (201/201), 43.18 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (123/123), done.
+
 $ sudo ./set-config.sh tank
+
 $ ls -l
 total 88
 -rw-r--r-- 1 root root     2 Mar 29 20:38 automations.yaml
@@ -112,6 +114,7 @@ drwxr-xr-x 2 root root  4096 Mar 29 20:36 _tank
 -rw-r--r-- 1 root root  4253 Mar 29 20:38 themes.yaml
 -rw-r--r-- 1 root root  1051 Mar 29 20:38 ui-lovelace.yaml
 -rw-r--r-- 1 root root  1389 Mar 29 20:36 zones.yaml
+
 $ sudo mv secrets-dummy.yaml secrets.yaml
 $ sudo reboot
 ```
