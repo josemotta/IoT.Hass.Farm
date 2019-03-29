@@ -76,36 +76,9 @@ You should have now the latest version of Homeassistant running at the prototype
 - Restart Homeassistant, use Hass.io developer tools again, this time select `homeassistant.restart`.
 
 
-	$ cd /usr/share/hassio/homeassistant
-	$ sudo rm -rf ./*
-	$ sudo rm -rf ./.*
-	$ sudo git clone git@github.com:josemotta/IoT.Hass.Farm.git .
-	Cloning into '.'...
-	remote: Enumerating objects: 201, done.
-	remote: Counting objects: 100% (201/201), done.
-	remote: Compressing objects: 100% (137/137), done.
-	remote: Total 201 (delta 123), reused 134 (delta 60), pack-reused 0
-	Receiving objects: 100% (201/201), 43.18 KiB | 0 bytes/s, done.
-	Resolving deltas: 100% (123/123), done.
-	$ sudo ./set-config.sh tank
-	$ ls -l
-	total 88
-	-rw-r--r-- 1 root root     2 Mar 29 20:38 automations.yaml
-	-rw-r--r-- 1 root root  4050 Mar 29 20:38 configuration.yaml
-	-rw-r--r-- 1 root root   742 Mar 29 20:36 customize.yaml
-	-rw-r--r-- 1 root root     0 Mar 29 20:36 groups.yaml
-	-rw-r--r-- 1 root root 35149 Mar 29 20:36 LICENSE
-	-rw-r--r-- 1 root root  5283 Mar 29 20:38 README.md
-	-rw-r--r-- 1 root root     0 Mar 29 20:36 scripts.yaml
-	-rw-r--r-- 1 root root   818 Mar 29 20:36 secrets-dummy.yaml
-	-rwxr-xr-x 1 root root   284 Mar 29 20:36 set-config.sh
-	drwxr-xr-x 2 root root  4096 Mar 29 20:36 _super
-	drwxr-xr-x 2 root root  4096 Mar 29 20:36 _tank
-	-rw-r--r-- 1 root root  4253 Mar 29 20:38 themes.yaml
-	-rw-r--r-- 1 root root  1051 Mar 29 20:38 ui-lovelace.yaml
-	-rw-r--r-- 1 root root  1389 Mar 29 20:36 zones.yaml
-	$ sudo mv secrets-dummy.yaml secrets.yaml
-	$ sudo reboot
+
+
+In order to 
 
 MQTT streaming generated at each tank node publishes the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
