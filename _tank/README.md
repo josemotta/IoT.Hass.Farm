@@ -58,18 +58,19 @@ The `Pi Zero W` is supposed to be installed with following software:
 
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
 - If you need the configuration program raspi-config, it is already available at Stretch Lite version.
+- You should also install Git, in order to clone the IoT.Hass.farm repository on the prototype.
+
+    $ sudo apt-get install git
 
 Next step is installing Hass.io, easier task with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including the latest Docker version that works fine with `Pi Zero W`. Then, Hass.io is also installed.
 
     curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
 
-You should have now the latest version of Homeassistant running at the prototype.
-
-## Install Git
+You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and entering the IP address of prototype followed by port 8123.
 
 ## Clone the repo
 
-The next steps will replace the Homeassistant config directory with IoT.Hass.Farm (or your customized fork).
+The next step will replace the Homeassistant config directory with IoT.Hass.Farm (or your customized fork).
 
 - Stop Homeassistant, using Hass.io developer tools, click `Services` and select `homeassistant.stop`;
 - Clear the Homeassistant configuration located at `/usr/share/hassio/homeassistant`;
@@ -78,7 +79,7 @@ The next steps will replace the Homeassistant config directory with IoT.Hass.Far
 - Set your secrets file;
 - And finally reboot.
 
-This is done with the following commands, shown below:
+After you stop Homeassistant, replacement is done with the following commands, as shown below:
 
 ```
 $ cd /usr/share/hassio/homeassistant
