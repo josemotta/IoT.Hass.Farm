@@ -58,11 +58,13 @@ The `Pi Zero W` is supposed to be installed with following software:
 
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
 - If you need the configuration program raspi-config, it is already available at Stretch Lite version.
-- You should also install Git, in order to clone the IoT.Hass.farm repository on the prototype.
+- You should also install Git, used to clone the IoT.Hass.farm repository.
 
-    $ sudo apt-get install git
+```
+$ sudo apt-get install git
+```
 
-Next step is installing Hass.io, easier task with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including the latest Docker version that works fine with `Pi Zero W`. Then, Hass.io is also installed.
+Next step is installing Hass.io, easy with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including the latest Docker version that works fine with `Pi Zero W`. Then, Hass.io is finally installed.
 
     curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
 
