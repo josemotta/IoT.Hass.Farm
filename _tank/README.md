@@ -22,7 +22,7 @@ Due to low cost option with powerful ARM11 core processor and built in wireless 
 
 ### Sensors
 
-For this project, the following sensors were selected: 
+For this project, the following sensors were selected:
 
 - **Water level:** [VL53L1X](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html) - ToF (time of flight) sensor.
 - **Temperature:** [HTU21D](https://www.mouser.com/pdfdocs/HTU21DF.PDF) - Digital Relative Humidity sensor with Temperature output.
@@ -54,10 +54,10 @@ The luminance sensor actually measures light conditions inside the tank, since n
 
 ## Install Hass.io
 
-The `Pi Zero W` is supposed to be installed with following software: 
+The `Pi Zero W` is supposed to be installed with following software:
 
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
-- If you need the configuration program raspi-config, it is already available at Stretch Lite version. 
+- If you need the configuration program raspi-config, it is already available at Stretch Lite version.
 
 Next step is installing Hass.io, easier task with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including the latest Docker version that works fine with `Pi Zero W`. Then, Hass.io is also installed.
 
@@ -75,15 +75,41 @@ You should have now the latest version of Homeassistant running at the prototype
 - Run `./set-config.sh tank` script to initialize configuration folder;
 - Restart Homeassistant, use Hass.io developer tools again, this time select `homeassistant.restart`.
 
+```
+$ cd /usr/share/hassio/homeassistant
+$ sudo rm -rf ./*
+$ sudo rm -rf ./.*
+$ sudo git clone git@github.com:josemotta/IoT.Hass.Farm.git .
+Cloning into '.'...
+remote: Enumerating objects: 201, done.
+remote: Counting objects: 100% (201/201), done.
+remote: Compressing objects: 100% (137/137), done.
+remote: Total 201 (delta 123), reused 134 (delta 60), pack-reused 0
+Receiving objects: 100% (201/201), 43.18 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (123/123), done.
+$ sudo ./set-config.sh tank
+$ ls -l
+total 88
+-rw-r--r-- 1 root root     2 Mar 29 20:38 automations.yaml
+-rw-r--r-- 1 root root  4050 Mar 29 20:38 configuration.yaml
+-rw-r--r-- 1 root root   742 Mar 29 20:36 customize.yaml
+-rw-r--r-- 1 root root     0 Mar 29 20:36 groups.yaml
+-rw-r--r-- 1 root root 35149 Mar 29 20:36 LICENSE
+-rw-r--r-- 1 root root  5283 Mar 29 20:38 README.md
+-rw-r--r-- 1 root root     0 Mar 29 20:36 scripts.yaml
+-rw-r--r-- 1 root root   818 Mar 29 20:36 secrets-dummy.yaml
+-rwxr-xr-x 1 root root   284 Mar 29 20:36 set-config.sh
+drwxr-xr-x 2 root root  4096 Mar 29 20:36 _super
+drwxr-xr-x 2 root root  4096 Mar 29 20:36 _tank
+-rw-r--r-- 1 root root  4253 Mar 29 20:38 themes.yaml
+-rw-r--r-- 1 root root  1051 Mar 29 20:38 ui-lovelace.yaml
+-rw-r--r-- 1 root root  1389 Mar 29 20:36 zones.yaml
+$ sudo mv secrets-dummy.yaml secrets.yaml
+$ sudo reboot
+```
 
-
-
-In order to 
+In order to
 
 MQTT streaming generated at each tank node publishes the variables that should be monitored. A preliminary user interface is located at the tank supervisor, showing information from all tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
 The source code from an available Python 2 library should be upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant.
-
-
-
-
