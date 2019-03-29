@@ -69,11 +69,16 @@ You should have now the latest version of Homeassistant running at the prototype
 
 ## Clone the repo
 
+The next steps will replace the Homeassistant config directory with IoT.Hass.Farm (or your customized fork).
+
 - Stop Homeassistant, using Hass.io developer tools, click `Services` and select `homeassistant.stop`;
 - Clear the Homeassistant configuration located at `/usr/share/hassio/homeassistant`;
-- Clone the IoT.Hass.Farm repository inside the folder;
+- Clone the IoT.Hass.Farm repository inside this folder;
 - Run `./set-config.sh tank` script to initialize configuration folder;
-- Restart Homeassistant, use Hass.io developer tools again, this time select `homeassistant.restart`.
+- Set your secrets file;
+- And finally reboot.
+
+This is done with the following commands, shown below:
 
 ```
 $ cd /usr/share/hassio/homeassistant
@@ -108,7 +113,7 @@ $ sudo mv secrets-dummy.yaml secrets.yaml
 $ sudo reboot
 ```
 
-After the boot you can check that packages are being dynamically loaded at `config/deps` folder, as shown below. You may have to reboot a second time to start using VL53L1X, but it runs smoothly after that.
+After the boot you can check packages being dynamically loaded at `config/deps` folder, as shown below. You may have to reboot again to start using VL53L1X, after package is loaded.
 
 ![](https://i.imgur.com/Bg4gx0R.jpg)
 
