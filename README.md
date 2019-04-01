@@ -48,7 +48,7 @@ MQTT streaming generated at each tank node publishes the variables that should b
 
 The Raspberry Pi Zero-W is a cheap and powerful choice to measure the water level and other environmental data from water tanks. The source code from an available Python 2 library should be upgraded to Python 3 in order to create a new "Time of Flight" platform for Home Assistant.
 
-The Raspberry Pi 3B was used at the supervisor node since further processing is expected in the near future. For this project, in order to make comparisons with tank data, the supervisor also has sensors to collect the room temperature, humidity, and luminance.
+The Raspberry Pi 3B was used at the supervisor node since further processing is expected in the near future. For this project, in order to make comparisons with tank data, the supervisor also has sensors to collect the ambient temperature, humidity, and luminance.
 
 
 ## Conclusions

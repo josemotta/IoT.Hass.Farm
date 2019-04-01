@@ -8,7 +8,7 @@ The main specifications and features for the `tank node` are listed below.
 
 ### Raspberry Pi Zero W
 
-Due to low cost option with powerful ARM11 core processor and built in wireless LAN, the `Pi Zero W` was selected to power the `tank node`. Its main features are:
+Due to low cost with powerful ARM11 core processor and built in wireless LAN, the `Pi Zero W` was selected to power the `tank node`. Its main features are:
 
 - 1Ghz, Broadcom BCM 2835 single-core processor
 - 512 MB of RAM
@@ -68,7 +68,7 @@ Next step is installing Hass.io, easy with Dale Higgs [hassio-installer](https:/
 
     curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
 
-You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and entering the IP address of prototype followed by port 8123.
+You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and enter the IP address of prototype followed by port 8123.
 
 ## Clone the repo
 
