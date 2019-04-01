@@ -50,6 +50,42 @@ The Raspberry Pi Zero-W is a cheap and powerful choice to measure the water leve
 
 The Raspberry Pi 3B was used at the supervisor node since further processing is expected in the near future. For this project, in order to make comparisons with tank data, the supervisor also has sensors to collect the ambient temperature, humidity, and luminance.
 
+### Microservices
+
+The running containers at tank and supervisor nodes are shown below, using the `docker ps` with an option for pretty-printing the command output.
+
+#### Tank node microservices
+
+```
+$ ssh pi@cast
+pi@cast's password:
+Linux cast 4.14.71+ #1145 Fri Sep 21 15:06:38 BST 2018 armv6l
+...
+Last login: Fri Mar 29 22:21:27 2019 from 192.168.20.113
+
+pi@cast:~ $ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"
+CONTAINER ID        IMAGE                                     STATUS
+d2ff42ec7739        homeassistant/armhf-hassio-supervisor     Up 2 hours
+22ef93868dbf        homeassistant/raspberrypi-homeassistant   Up 3 days
+7f761d6a8dbd        homeassistant/armhf-addon-samba           Up 3 days
+```
+
+#### Supervisor node microservices
+
+```
+$ ssh pi@lava
+pi@lava's password:
+Linux lava 4.14.71-v7+ #1145 SMP Fri Sep 21 15:38:35 BST 2018 armv7l
+...
+Last login: Tue Mar 26 22:08:38 2019 from 192.168.20.113
+
+pi@lava:~ $ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"
+CONTAINER ID        IMAGE                                      STATUS
+4f058070fb47        homeassistant/raspberrypi3-homeassistant   Up 3 days
+bff95bb5169c        homeassistant/armhf-addon-samba            Up 4 days
+ce8ab55c04ef        homeassistant/armv7-addon-mosquitto        Up 4 days
+d3ae6c4ceeff        homeassistant/armhf-hassio-supervisor      Up 4 days
+```
 
 ## Conclusions
 
