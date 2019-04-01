@@ -56,6 +56,8 @@ The running containers at tank and supervisor nodes are shown below, using the `
 
 #### Tank node microservices
 
+The `tank node` has three microservices running: the Hass.io supervisor, the Homeassistant software and the Samba add-on that allows network access to configuration files.
+
 ```
 $ ssh pi@cast
 pi@cast's password:
@@ -71,6 +73,8 @@ d2ff42ec7739        homeassistant/armhf-hassio-supervisor     Up 2 hours
 ```
 
 #### Supervisor node microservices
+
+The `supervisor node` has four microservices running: the Hass.io supervisor, the Homeassistant software, the MQTT server, and the Samba add-on that allows network access to configuration files. 
 
 ```
 $ ssh pi@lava
