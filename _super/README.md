@@ -1,6 +1,6 @@
 ## Supervisor node
 
-The `tanks nodes` themselves are not enough to calculate the total water in the system, since they only handle local information about each tank. As shown in the diagram below, a second level is created for a `supervisor node` that collects information from a group of tanks.
+The `tank nodes` themselves are not enough to calculate the total water in the system, since they only handle local information about each tank. As shown in the diagram below, a second level is created for a `supervisor node` that collects information from a group of tanks.
 
 ![](https://i.imgur.com/E2FPbNT.jpg)
 
@@ -45,7 +45,7 @@ Please see details below, extracted from the `configuration.yaml` file from the 
 
 ### MQTT data flow
 
-A Homeassistant automation guarantee that entities are properly recreated at supervisor node, as soon as MQTT server receives messages from tanks. The  automation, edited for clarity below, recreates the corresponding entity at the supervisor node.
+A Homeassistant automation guarantee that entities are properly recreated at supervisor node, as soon as the MQTT server receives messages from tanks. The  automation, edited for clarity below, recreates the corresponding entity at the supervisor node.
 
 	- id: '1552680266680'
 	  alias: mqtt_config_entity_creator_sensor
@@ -70,7 +70,7 @@ The MQTT.fx Client shows below the live data published at supervisor node.
 
 ### User Interface
 
-An user interface may be created at the tank supervisor, showing information from their respective tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions. The following panel example shows data collected from a single tank. 
+An user interface was created at the tank supervisor, showing information from its tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions. The following panel example shows data collected from a single tank with the ToF sensor located in front of a fixed and static wall, in order to evaluate the sensor repeatability. 
 
 ![](https://i.imgur.com/hJGcEWW.jpg)
 
