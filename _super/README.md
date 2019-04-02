@@ -39,7 +39,7 @@ As you can notice, there are many common configuration files to tank and supervi
 
 ### Publish tank data
 
-The following parameters are required at Homeassistant configuration to publish and send tank data to its supervisor:
+The following information is required at Homeassistant tank configuration to publish and send data to its supervisor:
 
 - The supervisor network address, defined by the MQTT `mqtt broker`.
 - The data entities to be monitored, configured at `mqtt_statestream`.
