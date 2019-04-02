@@ -71,6 +71,9 @@ d2ff42ec7739        homeassistant/armhf-hassio-supervisor     Up 2 hours
 22ef93868dbf        homeassistant/raspberrypi-homeassistant   Up 3 days
 7f761d6a8dbd        homeassistant/armhf-addon-samba           Up 3 days
 ```
+The Hass.io setup for tank node is shown below:
+
+![](https://i.imgur.com/KssPfcg.jpg)
 
 #### Supervisor node microservices
 
@@ -90,6 +93,10 @@ bff95bb5169c        homeassistant/armhf-addon-samba            Up 4 days
 ce8ab55c04ef        homeassistant/armv7-addon-mosquitto        Up 4 days
 d3ae6c4ceeff        homeassistant/armhf-hassio-supervisor      Up 4 days
 ```
+
+The Hass.io setup for supervisor node is shown below:
+
+![](https://i.imgur.com/tjMK9EV.jpg)
 
 ## Conclusions
 
