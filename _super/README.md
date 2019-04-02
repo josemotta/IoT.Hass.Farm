@@ -98,7 +98,7 @@ The MQTT.fx Client shows below the live data published at supervisor node.
 
 ### User Interface
 
-An user interface was created at the tank supervisor, showing information from its tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions. The following panel example shows data collected from a single tank with the ToF sensor located in front of a fixed and static wall, in order to evaluate the sensor repeatability. 
+An user interface is expected at the tank supervisor, showing information from its tanks. This system may be easily scaled for many tanks and is smart enough to handle simple decisions. The following panel example shows data collected from a single tank with the ToF sensor located in front of a fixed and static wall, in order to evaluate the sensor repeatability. 
 
 ![](https://i.imgur.com/hJGcEWW.jpg)
 
