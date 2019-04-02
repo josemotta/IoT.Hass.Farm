@@ -54,7 +54,7 @@ The Raspberry Pi 3B was used at the supervisor node since further processing is 
 
 The running containers at tank and supervisor nodes are shown below, using the `docker ps` with an option for pretty-printing the command output.
 
-#### Tank node microservices
+#### Tank node
 
 The `tank node` has three microservices running: the Hass.io supervisor, the Homeassistant software and the Samba add-on that allows network access to configuration files.
 
@@ -75,7 +75,7 @@ The Hass.io setup for tank node is shown below:
 
 ![](https://i.imgur.com/KssPfcg.jpg)
 
-#### Supervisor node microservices
+#### Supervisor node
 
 The `supervisor node` has four microservices running: the Hass.io supervisor, the Homeassistant software, the MQTT server, and the Samba add-on that allows network access to configuration files. 
 
