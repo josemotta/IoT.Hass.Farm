@@ -8,69 +8,79 @@ views:
 #        entities:
 #          - light.anavi_light_phat
 
-      - type: entities
-        title: Supervisor
-        show_header_toggle: false
-        entities:
-          - sensor.super_htu21d_temperature
-          - sensor.super_htu21d_humidity
-          - sensor.super_bh1750
-
-      - type: entities
-        title: Tank
-        show_header_toggle: false
-        entities:
-          - sensor.tank_vl53l1x
-          - sensor.tank_delta_temperature
-          - sensor.tank_htu21d_temperature
-          - sensor.tank_htu21d_humidity
-          - sensor.tank_bh1750
-
-      - type: sensor
-        entity: sensor.tank_water_level
-        name: Water Tank
-        #line_color: "#3498db"
-        accuracy: 50
-        height: 150
-        detail: 2
-        graph: line
-        unit: "%"
-
-      - type: sensor
-        entity: sensor.tank_delta_temperature
-        name: Delta Temperature
-        #line_color: "#3498db"
-        accuracy: 50
-        height: 150
-        detail: 2
-        graph: line
-        unit: "°C"
-
-      - type: entities
-        title: Raspberry Pi
-        show_header_toggle: false
-        entities:
-          - sensor.memory_free
-          - sensor.network_in_eth0
-          - sensor.network_out_eth0
-          - sensor.disk_use_percent
-
-      - type: entities
-        title: Climate
-        show_header_toggle: false
-        entities:
-          - sun.sun
-          - sensor.yr_symbol
-
-      - type: gauge
-        title: CPU
-        name: CPU
-        show_header_toggle: true
-        entity: sensor.processor_use
-        severity:
-          green: 0
-          yellow: 50
-          red: 90
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            entity: sensor.tank_water_level
+            name: Water Tank
+            #line_color: "#3498db"
+            accuracy: 50
+            height: 150
+            detail: 2
+            graph: line
+            unit: "%"
+          - type: sensor
+            entity: sensor.tank_delta_temperature
+            name: Delta Temperature
+            #line_color: "#3498db"
+            accuracy: 50
+            height: 150
+            detail: 2
+            graph: line
+            unit: "°C"
+          - type: sensor
+            entity: sensor.tank_delta_humidity
+            name: Delta Humidity
+            #line_color: "#3498db"
+            accuracy: 50
+            height: 150
+            detail: 2
+            graph: line
+            unit: "%"
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Supervisor
+            show_header_toggle: false
+            entities:
+              - sensor.super_htu21d_temperature
+              - sensor.super_htu21d_humidity
+              - sensor.super_bh1750
+          - type: entities
+            title: Tank
+            show_header_toggle: false
+            entities:
+              - sensor.tank_vl53l1x
+              - sensor.tank_delta_temperature
+              - sensor.tank_htu21d_temperature
+              - sensor.tank_delta_humidity
+              - sensor.tank_htu21d_humidity
+              - sensor.tank_bh1750
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Climate
+            show_header_toggle: false
+            entities:
+              - sun.sun
+              - sensor.yr_symbol
+          - type: gauge
+            title: CPU
+            name: CPU
+            show_header_toggle: true
+            entity: sensor.processor_use
+            severity:
+              green: 0
+              yellow: 50
+              red: 90
+          - type: entities
+            title: Raspberry Pi
+            show_header_toggle: false
+            entities:
+              - sensor.memory_free
+              - sensor.network_in_eth0
+              - sensor.network_out_eth0
+              - sensor.disk_use_percent
 
       #- type: entities
       #  title: Zones
