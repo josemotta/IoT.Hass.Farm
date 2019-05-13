@@ -88,7 +88,7 @@ $ cd /usr/share/hassio/homeassistant
 $ sudo rm -rf ./*
 $ sudo rm -rf ./.*
 
-$ sudo git clone git@github.com:josemotta/IoT.Hass.Farm.git .
+$ sudo git clone https://github.com/josemotta/IoT.Hass.Farm.git .
 Cloning into '.'...
 remote: Enumerating objects: 201, done.
 remote: Counting objects: 100% (201/201), done.
