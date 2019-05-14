@@ -24,3 +24,4 @@ known_devices.yaml
 # Ignore too.
 gitpull*
 core
+.HA_VERSION
