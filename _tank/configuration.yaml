@@ -12,9 +12,13 @@ homeassistant:
   time_zone: !secret timezone_home
   # Customization file
   customize: !include customize.yaml
-
-# Show links to resources in log and frontend
-introduction:
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
+      api_password: !secret http_password
+  #  - type: trusted_networks
+  #    trusted_networks:
+  #      - 192.168.20.0/24
 
 # Enables diagnostic tools
 system_health:
