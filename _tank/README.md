@@ -66,7 +66,7 @@ $ sudo apt-get install git
 
 Next step is installing Hass.io, easy with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including the latest Docker version that works fine with `Pi Zero W`. Then, Hass.io is finally installed.
 
-    curl -sL https://github.com/josemotta/hassio-installer/blob/master/hassio_rpi0w | bash -s
+    curl -sL https://raw.githubusercontent.com/josemotta/hassio-installer/master/setup-hassio-rpi0w.sh | bash -s
 
 You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and enter the IP address of prototype followed by port 8123.
 
@@ -88,7 +88,7 @@ $ cd /usr/share/hassio/homeassistant
 $ sudo rm -rf ./*
 $ sudo rm -rf ./.*
 
-$ sudo git clone git@github.com:josemotta/IoT.Hass.Farm.git .
+$ sudo git clone https://github.com/josemotta/IoT.Hass.Farm.git .
 Cloning into '.'...
 remote: Enumerating objects: 201, done.
 remote: Counting objects: 100% (201/201), done.
