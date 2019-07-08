@@ -109,6 +109,29 @@ Further details about this project are published separately for each node. Pleas
 - [Tank node](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_tank)
 - [Supervisor node](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_super)
 
+#### Known issues
+
+##### BH1750 and HTU21D sensors fail at RPI0 linux-armv6l-3.7
+
+After updating HA to 0.95.4, the BH1750 and HTU21D sensors failed to install. Looks like ha container is trying to build wheels on the fly but gcc support is missing. Please note that in this same system works fine a Time of Flight VL53L1X laser distance detector that also uses I2C.
+
+System Health for the Raspberry Pi Zero W:
+
+**arch**: armv6l  
+**dev**: false  
+**docker**: true  
+**hassio**: true  
+**os_name**: Linux  
+**python_version**: 3.7.3  
+**ha versio**n: 0.95.4  
+**virtualenv**: false  
+
+Rolling back to HA version 0.92.2, see the status screen below, everything works fine. Follow these [instructions to change version](https://community.home-assistant.io/t/0-86-1-broke-virtually-everything/94218/17?u=hads514).
+
+![Known issue](https://i.imgur.com/lMnVdoi.png)
+
+Please check more details in this [open issue](https://github.com/home-assistant/home-assistant/issues/24926 "BH1750 and HTU21D sensors fail at RPI0 linux-armv6l-3.7 #24926") at Homeassistant repo.
+
 Have fun with your IoT initiative!
 
 *Did you like it? Please click the :star: on the top!*
