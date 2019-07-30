@@ -50,7 +50,7 @@ http:
 #discovery:
 
 # Enable diagnostic tools
-#system_health:
+system_health:
 
 # Add hassio menu on the left
 hassio:
@@ -65,22 +65,21 @@ history:
     domains:
       - sensor
     entities:
-      - sensor.super_htu21d_temperature
-      - sensor.super_htu21d_humidity
-      - sensor.super_bh1750
-      - sensor.processor_use
-      - sensor.memory_free
-      - sensor.network_in_eth0
-      - sensor.network_out_eth0
-      - sensor.disk_use_percent
+      # - sensor.pump_current_1
+      # - sensor.pump_current_2
+      - sensor.pump_htu21d_temperature
+      - sensor.pump_htu21d_humidity
+      - sensor.pump_bh1750
+      - sensor.pump_processor_use
+      - sensor.pump_memory_free
+      - sensor.pump_network_out_eth0
+      - sensor.pump_disk_use_percent_home
   exclude:
     domains:
       - automation
       - weblink
       - persistent_notification
     entities:
-      - sensor.vl53l1x
-#      - sun.sun
       - sensor.yr_symbol
 #      - persistent_notification.notification
 #      - persistent_notification.http_login
@@ -89,56 +88,63 @@ history:
 logbook:
 
 # Enables a map showing the location of tracked devices
-map:
+#map:
 
 # Track the sun
 sun:
 
 # Sensors
 sensor:
-  - platform: yr
   - platform: htu21d
-    name: super_htu21d
+    name: pump_htu21d
   - platform: bh1750
-    name: super_bh1750
+    name: pump_bh1750
   - platform: systemmonitor
     resources:
       - type: processor_use
+        name: pump_processor_use
       - type: memory_free
+        name: pump_memory_free
       - type: network_out
+        name: pump_network_out
         arg: eth0
       - type: disk_use_percent
+        name: pump_disk_use_percent
         arg: /
-  - platform: template
-    sensors:
-    # Difference between tank_htu21d_temperature and super_htu21d_temperature
-      tank_delta_temperature:
-        friendly_name: "Tank Delta Temperature"
-        unit_of_measurement: "°C"
-        value_template: "{{ ((states('sensor.tank_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
-#        value_template: "{{ (states('sensor.tank_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
-    # Difference between tank_htu21d_humidity and super_htu21d_humidity
-      tank_delta_humidity:
-        friendly_name: "Tank Delta Humidity"
-        unit_of_measurement: "%"
-        value_template: "{{ ((states('sensor.tank_htu21d_humidity') | float ) - (states('sensor.super_htu21d_humidity') | float )) | round(2) }}"
-
-# ANAVI Light pHat (waiting for new json_light setup from Anavi)
-light:
-  - platform: mqtt
-    schema: json
-    name: "ANAVI-Light-pHAT"
-    command_topic: "bec3b4e72ddb6f015791d8acc2618053/action/rgbled"
+  # - platform: ads1X15
+  #   name: pump_current
+  # - platform: template
+  #   sensors:
+  #   # Change calculations accordingly, if sensor is not installed 5 meters high!
+  #     tank_water_level_mm:
+  #       friendly_name: "Water Level"
+  #       unit_of_measurement: "mm"
+  #       value_template: "{{ (5000 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
+  #     tank_water_level:
+  #       friendly_name: "Water Level"
+  #       unit_of_measurement: "%"
+  #       value_template: "{{ ((5000 - states('sensor.tank_vl53l1x')|float) / 50) | round(1)}}"
 
 # MQTT Broker (aka Mosquitto)
 mqtt:
-  discovery: true
   broker: !secret mqtt_broker
-  client_id: master
+  client_id: pump_slave
   port: !secret mqtt_port
   keepalive: 60
   username: !secret mqtt_username
   password: !secret mqtt_password
+
+mqtt_statestream:
+  base_topic: homeassistant
+  publish_attributes: true
+  publish_timestamps: true
+  include:
+    entities:
+      # - sensor.pump_current_1
+      # - sensor.pump_current_2
+      - sensor.pump_bh1750
+      - sensor.pump_htu21d_humidity
+      - sensor.pump_htu21d_temperature
 
 group: !include groups.yaml
 automation: !include automations.yaml

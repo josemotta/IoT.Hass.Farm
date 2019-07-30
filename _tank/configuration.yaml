@@ -136,7 +136,7 @@ sensor:
 # MQTT Broker (aka Mosquitto)
 mqtt:
   broker: !secret mqtt_broker
-  client_id: slave
+  client_id: tank_slave
   port: !secret mqtt_port
   keepalive: 60
   username: !secret mqtt_username
