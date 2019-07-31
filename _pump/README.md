@@ -1,4 +1,4 @@
-## Bomb node
+## Pump node
 
 At this time, the current system is being designed for supervision only. The system should extract water from the well, 80 meters below surface and move it 10 m high to the water storage. In order to optimize energy and comply to equipment specs, the job is done in a couple steps. As listed below, a couple pumps work together to move the water from the well to the big water storage placed on the high tower:
 
@@ -6,7 +6,7 @@ At this time, the current system is being designed for supervision only. The sys
 - Another high-power-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
 - In order to alleviate the job from the thin-vertical-pump, the high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set by some electrical equipment and is not considered at this moment.  
 
-The main specifications and features for the `bomb node` are listed below.
+The main specifications and features for the `pump node` are listed below.
 
 ### Raspberry Pi Zero W
 
