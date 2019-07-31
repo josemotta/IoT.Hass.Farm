@@ -121,6 +121,12 @@ sensor:
   #       unit_of_measurement: "%"
   #       value_template: "{{ ((5000 - states('sensor.tank_vl53l1x')|float) / 50) | round(1)}}"
 
+  - platform: command_line
+    name: pump_gpu_temperature
+    command: "/opt/vc/bin/vcgencmd measure_temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
+
 # MQTT Broker (aka Mosquitto)
 mqtt:
   broker: !secret mqtt_broker
