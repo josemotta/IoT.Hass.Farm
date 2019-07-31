@@ -1,52 +1,148 @@
-title: Pump Panel
-views:
-  - title: Home
-    cards:
-      # - type: sensor
-      #   entity: sensor.pump_current_1
-      #   name: pump 1
-      #   #line_color: "#3498db"
-      #   accuracy: 50
-      #   height: 150
-      #   detail: 2
-      #   graph: line
-      #   unit: "%"
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation_home
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret timezone_home
+  # Customization file
+  customize: !include customize.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
+      api_password: !secret http_password
+  #  - type: trusted_networks
+  #    trusted_networks:
+  #      - 192.168.20.0/24
 
-      # - type: sensor
-      #   entity: sensor.pump_current_2
-      #   name: pump 2
-      #   #line_color: "#3498db"
-      #   accuracy: 50
-      #   height: 150
-      #   detail: 2
-      #   graph: line
-      #   unit: "%"
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
 
-      - type: entities
-        title: Sensors
-        show_header_toggle: false
-        entities:
-          # - sensor.pump_current_1
-          # - sensor.pump_current_2
-          - sensor.pump_htu21d_temperature
-          - sensor.pump_htu21d_humidity
-          - sensor.pump_bh1750
+lovelace:
+  mode: yaml
 
-      - type: gauge
-        title: CPU
-        name: CPU
-        show_header_toggle: true
-        entity: sensor.processor_use
-        severity:
-          green: 0
-          yellow: 50
-          red: 90
+# Enables configuration UI
+config:
 
-      - type: entities
-        title: Raspberry Pi
-        show_header_toggle: false
-        entities:
-          - sensor.pump_memory_free
-          - sensor.pump_network_in_wlan0
-          - sensor.pump_network_out_wlan0
-          - sensor.pump_disk_use_percent
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+
+#iPhone
+#ios:
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+#updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+#  reporting: False
+
+# Discover some devices automatically
+#discovery:
+
+# Enable diagnostic tools
+system_health:
+
+# Add hassio menu on the left
+hassio:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+  use_include_order: true
+  include:
+    domains:
+      - sensor
+    entities:
+      # - sensor.pump_current_1
+      # - sensor.pump_current_2
+      - sensor.pump_htu21d_temperature
+      - sensor.pump_htu21d_humidity
+      - sensor.pump_bh1750
+      - sensor.pump_processor_use
+      - sensor.pump_memory_free
+      - sensor.pump_network_out_eth0
+      - sensor.pump_disk_use_percent_home
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - persistent_notification
+    entities:
+      - sensor.yr_symbol
+#      - persistent_notification.notification
+#      - persistent_notification.http_login
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+#map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  - platform: htu21d
+    name: pump_htu21d
+  - platform: bh1750
+    name: pump_bh1750
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_free
+      - type: network_out
+        arg: eth0
+      - type: disk_use_percent
+        arg: /
+  # - platform: ads1X15
+  #   name: pump_current
+  # - platform: template
+  #   sensors:
+  #   # Change calculations accordingly, if sensor is not installed 5 meters high!
+  #     tank_water_level_mm:
+  #       friendly_name: "Water Level"
+  #       unit_of_measurement: "mm"
+  #       value_template: "{{ (5000 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
+  #     tank_water_level:
+  #       friendly_name: "Water Level"
+  #       unit_of_measurement: "%"
+  #       value_template: "{{ ((5000 - states('sensor.tank_vl53l1x')|float) / 50) | round(1)}}"
+
+# MQTT Broker (aka Mosquitto)
+mqtt:
+  broker: !secret mqtt_broker
+  client_id: pump_slave
+  port: !secret mqtt_port
+  keepalive: 60
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+mqtt_statestream:
+  base_topic: homeassistant
+  publish_attributes: true
+  publish_timestamps: true
+  include:
+    entities:
+      # - sensor.pump_current_1
+      # - sensor.pump_current_2
+      - sensor.pump_bh1750
+      - sensor.pump_htu21d_humidity
+      - sensor.pump_htu21d_temperature
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml

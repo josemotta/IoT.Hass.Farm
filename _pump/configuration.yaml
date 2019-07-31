@@ -102,14 +102,10 @@ sensor:
   - platform: systemmonitor
     resources:
       - type: processor_use
-        name: pump_processor_use
       - type: memory_free
-        name: pump_memory_free
       - type: network_out
-        name: pump_network_out
         arg: eth0
       - type: disk_use_percent
-        name: pump_disk_use_percent
         arg: /
   # - platform: ads1X15
   #   name: pump_current
