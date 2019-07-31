@@ -1,6 +1,6 @@
 ## Pump node
 
-At this time, the current system is being designed for supervision only. The system should extract water from the well, 80 meters below surface and move it 10 m high to the water storage. In order to optimize energy and comply to equipment specs, the job is done in a couple steps. As listed below, a couple pumps work together to move the water from the well to the big water storage placed on the high tower:
+At this time, only the supervision system is being considered. The process extracts water from a well that is 25 meters below surface and should move it to a water storage located 15 meters high, totaling 40 meters. In order to optimize energy and comply to equipment specs, the job is done in a couple steps. As listed below, a couple pumps work together to move the water from the well to the big water storage placed on the high tower:
 
 - The first stage, eighty meters down the surface, is powered by a thin-vertical-pump, located inside the well plumbs. It pushes water to a small intermediary tank at surface level.
 - Another high-power-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
