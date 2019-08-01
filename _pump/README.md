@@ -2,25 +2,30 @@
 
 At this time, only the supervision system is being considered. The process extracts water from a well that is 25 meters below surface and should move it to a water storage located 15 meters high, totaling 40 meters. In order to optimize energy and comply to equipment specs, the job is done in a couple steps. As listed below, a couple pumps work together to move the water from the well to the big water storage placed on the high tower:
 
-- The first stage, eighty meters down the surface, is powered by a thin-vertical-pump, located inside the well plumbs. It pushes water to a small intermediary tank at surface level.
+- The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank at surface level.
 - Another high-power-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
-- In order to alleviate the job from the thin-vertical-pump, the high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set by some electrical equipment and is not considered at this moment.  
+- The high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set and is not being considered. The focus is just supervision and measurement of the water flow.
 
 The main specifications and features for the `pump node` are listed below.
 
 ### Raspberry Pi Zero W
 
-Due to low cost with powerful ARM11 core processor and built in wireless LAN, the `Pi Zero W` was selected to power the `tank node`. Its main features are:
+Due to its powerful ARMv8 processor and the amazing PoE capabilities, the `Pi 3 Model B+` was selected to power the `pump node`. The final revision in the Raspberry Pi 3 range has the following features:
 
-- 1Ghz, Broadcom BCM 2835 single-core processor
-- 512 MB of RAM
-- 1 micro USB port for power supply
-- Compatible with existing HATs
-- Composite video and reset headers
-- CSI Camera Connector
-- 40-pin GPIO connector (same pinout as A+/B+/2B)
-- On-board Wireless LAN – 2.4 GHz 802.11 b/g/n (BCM43438)
-- On-board Bluetooth 4.1 + HS Low-energy (BLE) (BCM43438)
+- 1.4Ghz processor, Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC
+- 1GB LPDDR2 SDRAM
+- 2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE
+- Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps)
+- Extended 40-pin GPIO header
+- Full-size HDMI
+- 4 USB 2.0 ports
+- CSI camera port for connecting a Raspberry Pi camera
+- DSI display port for connecting a Raspberry Pi touchscreen display
+- 4-pole stereo output and composite video port
+- Micro SD port for loading your operating system and storing data
+- 5V/2.5A DC power input
+- Power-over-Ethernet (PoE) support (requires separate PoE HAT)
+- [Raspberry Pi PoE HAT](https://static.raspberrypi.org/files/product-briefs/Raspberry-Pi-PoE_HAT-Product-Brief.pdf) provides 5V DC/2.5A power from RJ-45 network port (PoE IEEE 802.3af)
 
 ### Sensors (TODO)
 
