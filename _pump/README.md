@@ -8,7 +8,7 @@ At this time, only the supervision system is being considered. The process extra
 
 The main specifications and features for the `pump node` are listed below.
 
-### Raspberry Pi Zero W
+### Raspberry Pi 3 Model B+
 
 Due to its powerful ARMv8 processor and the amazing PoE capabilities, the `Pi 3 Model B+` was selected to power the `pump node`. The final revision in the Raspberry Pi 3 range has the following features:
 
