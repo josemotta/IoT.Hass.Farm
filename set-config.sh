@@ -6,6 +6,8 @@
 
 E_NOARGS=75
 
+NM="/etc/NetworkManager/system-connections"
+
 if [ -z "$1" ]
 then
   echo "Usage: `basename $0` [tank | super | pump]"
@@ -15,15 +17,24 @@ fi
 case $1 in
   tank)
     cp -t . _tank/*.yaml
-#    cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
+    if [ -d "$NM" ]; then
+      # Copy network manager configuration
+      cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
+    fi
     ;;
   super)
     cp -t . _super/*.yaml
-#    cp -t /etc/NetworkManager/system-connections _super/bin/wired
+    if [ -d "$NM" ]; then
+      # Copy network manager configuration
+      cp -t /etc/NetworkManager/system-connections _super/bin/wired
+    fi
     ;;
   pump)
     cp -t . _pump/*.yaml
-    cp -t ./custom_components/ _pump/bin/custom_components/
-#    cp -t /etc/NetworkManager/system-connections _pump/bin/wired
+    #cp -t ./custom_components/ _pump/bin/custom_components/
+    if [ -d "$NM" ]; then
+      # Copy network manager configuration
+      cp -t /etc/NetworkManager/system-connections _pump/bin/wired
+    fi
     ;;
 esac
