@@ -4,7 +4,7 @@ At this time, only the supervision system is being considered. The process extra
 
 - The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank at surface level.
 - Another high-power-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
-- The high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set and is not being considered. The focus is just supervision and measurement of the water flow.
+- The high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set and is not being considered. The focus is supervision and measurement of water flow.
 
 The main specifications and features for the `pump node` are listed below.
 
