@@ -113,7 +113,7 @@ Further details about this project are published separately for each node. Pleas
 
 ##### BH1750 and HTU21D sensors fail at RPI0 linux-armv6l-3.7
 
-Note: This issue is already solved, just update to the latest version (HA 0.96.5 or greater).
+Note: This issue is solved for RPI3B+, just update to the latest version (HA 0.96.5 or greater).
 
 After updating HA to 0.95.4, the BH1750 and HTU21D sensors failed to install. Looks like ha container is trying to build wheels on the fly but gcc support is missing. Please note that in this same system works fine a Time of Flight VL53L1X laser distance detector that also uses I2C. Rolling back to HA version 0.92.2 everything works fine. Follow these [instructions to change version](https://community.home-assistant.io/t/0-86-1-broke-virtually-everything/94218/17?u=hads514). Please check more details in this [open issue](https://github.com/home-assistant/home-assistant/issues/24926 "BH1750 and HTU21D sensors fail at RPI0 linux-armv6l-3.7 #24926") at Homeassistant repo.
 
