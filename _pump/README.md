@@ -1,10 +1,12 @@
 ## Pump node
 
-At this time, only the supervision system is being considered. The process extracts water from a well that is 25 meters below surface and should move it to a water storage located 15 meters high, totaling 40 meters. In order to optimize energy and comply to equipment specs, the job is done in a couple steps. As listed below, a couple pumps work together to move the water from the well to the big water storage placed on the high tower:
+At this time, only the supervision system is being considered. The process extracts water from a well, 25 meters below surface and move it to a water storage located 15 meters high, totaling 40 meters. In order to optimize energy the existing equipment does the job in a couple steps. A couple pumps work together to fill the big water storage placed on the high tower:
 
 - The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank at surface level.
-- Another high-power-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
-- The high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set and is not being considered here now. The focus is supervision and measurement of water flow.
+- A second fast-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
+- The fast-pump starts when the intermediary tank is full and stops when it is empty. The command logic for this synchronization is already set and is not being considered here now.
+
+The focus is supervision and measurement of the water flow of current system.
 
 The main specifications and features for the `pump node` are listed below.
 
