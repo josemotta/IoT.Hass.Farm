@@ -137,5 +137,4 @@ After the boot you can check packages being dynamically loaded. Open the browser
 
 ![](https://i.imgur.com/WKt3h9D.png)
 
-The MQTT streaming generated at each tank node publishes all sensor data that should be monitored.  This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
-
+The MQTT streaming generated at pump node publishes all sensor data that should be monitored.  This system may be easily scaled and is smart enough to handle simple decisions.
