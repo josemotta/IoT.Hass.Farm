@@ -135,7 +135,7 @@ $ sudo reboot
 
 After the boot you can check packages being dynamically loaded. Open the browser and enter the IP address of prototype followed by port 8123 to start the user interface. In the first use an user id and password will be required to create the admin account.
 
-![](https://i.imgur.com/3pLBjM2.jpg)
+![](https://i.imgur.com/WKt3h9D.png)
 
 The MQTT streaming generated at each tank node publishes all sensor data that should be monitored.  This system may be easily scaled for many tanks and is smart enough to handle simple decisions.
 
