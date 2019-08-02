@@ -6,9 +6,7 @@ At this time, only the supervision system is being considered. The process extra
 - A second fast-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
 - The fast-pump starts when the intermediary tank is full and stops when it is empty. The command logic for this synchronization is already set and is not being considered here now.
 
-The focus is supervision and measurement of the water flow of current system.
-
-The main specifications and features for the `pump node` are listed below.
+The focus is supervision and measurement of the water flow of current system. The main specifications and features for the `pump node` are listed below.
 
 ### Raspberry Pi 3 Model B+
 
