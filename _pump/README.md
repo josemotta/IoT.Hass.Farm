@@ -63,7 +63,7 @@ The temperature, humidity and luminance sensors are installed inside the node, i
 
 ## Install Hass.io
 
-The `Pi Zero W` is supposed to be installed with following software:
+The `Pi 3 Model B+` is supposed to be installed with following software:
 
 - **Linux Raspbian GNU/Linux 9.1 (stretch)**. [Lite version](https://www.raspberrypi.org/downloads/raspbian/), the minimal image based on Debian Stretch. Generate the Micro SD Card with [Etcher](https://www.raspberrypi.org/magpi/pi-sd-etcher/), for example, and boot the RPI.
 - If you need the configuration program **raspi-config**, it is already available at Stretch Lite version.
