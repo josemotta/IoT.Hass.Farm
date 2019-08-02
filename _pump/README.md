@@ -79,7 +79,7 @@ Next step is installing Hass.io, easy with following script based on Dale Higgs 
 
 You should have now the latest version of Homeassistant running.
 
-## IP address for pump node
+## Set IP address
 
 In order to change the `pump node` from automatic IP to a fixed IP, for example `192.168.0.232`, use the Network Manager Client, or `nmcli`. It is already installed, you just need to type the following commands to change the existing connection:
 
