@@ -35,7 +35,7 @@ For this project, the following sensors were selected:
 - [ADS1015](http://www.ti.com/lit/ds/symlink/ads1015.pdf) - Ultra-Small, Low-Power, I2C-Compatible, 3.3-kSPS, 12-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator.
 - [ADS1115](http://www.ti.com/lit/ds/symlink/ads1115.pdf) - Ultra-Small, Low-Power, I2C-Compatible, 860-SPS, 16-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator.
 
-- **Hall Current Detection Sensor:** Two options are being considered:
+- **Hall Current Detection:** Two options are being considered:
 - [WCS1800](https://www.banggood.com/search/dc-5v-wcs1800-hall-current-detection-sensor-module-35a-precise.html) - Hall Current Detection Sensor Module 35A Precise With Overcurrent Protection.
 - [CJMCU-758](https://www.banggood.com/search/3pcs-cjmcu-758-acs758lcb-050b-pff-t-linear-current-sensor.html)  - Linear Current Sensor Hall Current Module.
 
