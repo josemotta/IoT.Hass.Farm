@@ -77,8 +77,11 @@ Next step is installing Hass.io, easy with following script based on Dale Higgs 
 
     curl -sL https://raw.githubusercontent.com/josemotta/hassio-installer/master/hassio_rpi3bp | bash -s
 
-You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and enter the IP address of prototype followed by port 8123.
+You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and enter the IP address of prototype followed by port 8123. For example:
 
+```
+http://192.168.0.112:8123
+```
 ## Clone the repo
 
 The next step will replace the Homeassistant config directory with IoT.Hass.Farm (or your customized fork).
