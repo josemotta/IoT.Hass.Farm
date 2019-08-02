@@ -107,7 +107,7 @@ In order to change the `pump node` from automatic IP to a fixed IP, for example 
 	Connection 'Wired connection 1' (09cd6302-8894-3c8d-a84b-535ad6f38a73) successfully updated.
 	nmcli> q
 
-The `Wired connection 1` is now configured at `192.168.0.232`, To test, you can use a browser to start the frontend, entering the IP address of prototype followed by port 8123. In this case:
+The `Wired connection 1` is now configured at `192.168.0.232`. To test, use a browser to start the frontend, entering the IP address followed by port 8123. In this case:
 
 ```
 http://192.168.0.232:8123
