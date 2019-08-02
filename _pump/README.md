@@ -73,7 +73,7 @@ The `Pi 3 Model B+` is supposed to be installed with following software:
 $ sudo apt-get install git
 ```
 
-Next step is installing Hass.io, easy with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including latest Docker version. Then, Hass.io is finally installed.
+Next step is installing Hass.io, easy with following script based on Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including latest Docker version. Then, Hass.io is finally installed.
 
     curl -sL https://raw.githubusercontent.com/josemotta/hassio-installer/master/hassio_rpi3bp | bash -s
 
