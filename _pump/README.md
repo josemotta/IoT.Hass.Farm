@@ -115,7 +115,6 @@ $ ls -l
 -rw-r--r-- 1 root root        2 Jul 31 21:48 automations.yaml
 -rwxr--r-- 1 root root     4123 Jul 31 22:22 configuration.yaml
 -rw-r--r-- 1 root root      742 Jul 31 21:48 customize.yaml
-drwxr-xr-x 2 root root     4096 Jul 31 21:58 deps
 -rw-r--r-- 1 root root        0 Jul 31 21:48 groups.yaml
 -rw-r--r-- 1 root root    35149 Jul 31 21:48 LICENSE
 drwxr-xr-x 3 root root     4096 Jul 31 22:09 _pump
