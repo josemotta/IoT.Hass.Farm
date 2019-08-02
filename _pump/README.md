@@ -55,7 +55,7 @@ The pump node is equipped with a single set of these sensors. They may be instal
 - **Inside pump area, outside node:** these sensors would measure the conditions where pumps are installed.
 - **Inside pump area, inside node:** these sensors would evaluate the internal conditions of the node itself.
 
-The pump node prototype, shown below, has a PoE HAT and a [Qwiic pHAT](https://cdn.sparkfun.com/assets/9/c/4/8/6/Qwiic_pHat_for_Raspberry_Pi_v20.pdf) to connect the I2C sensors.
+The pump node prototype, shown below, is powered by the PoE HAT located just above the Raspberry Pi 3B+. On the top a [Qwiic pHAT](https://cdn.sparkfun.com/assets/9/c/4/8/6/Qwiic_pHat_for_Raspberry_Pi_v20.pdf) has four options to connect the I2C sensors.
 
 ![Pump node](https://i.imgur.com/0aoOnIq.png)
 
