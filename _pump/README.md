@@ -4,7 +4,7 @@ At this time, only the supervision system is being considered. The process extra
 
 - The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank at surface level.
 - Another high-power-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
-- The high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set and is not being considered. The focus is supervision and measurement of water flow.
+- The high-power-pump starts when the intermediary tank is full and stops when it is empty. The logic for this synchronization is already set and is not being considered here now. The focus is supervision and measurement of water flow.
 
 The main specifications and features for the `pump node` are listed below.
 
@@ -31,33 +31,35 @@ Due to its powerful ARMv8 processor and the amazing PoE capabilities, the `Pi 3 
 
 For this project, the following sensors were selected:
 
-- **Water level:** [VL53L1X](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html) - ToF (time of flight) sensor.
+- **ADC Analog Digital Converter:** Two options are being considered:
+- [ADS1015 Ultra-Small, Low-Power, I2C-Compatible, 3.3-kSPS, 12-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator](http://www.ti.com/lit/ds/symlink/ads1015.pdf)
+- [ADS1115 Ultra-Small, Low-Power, I2C-Compatible, 860-SPS, 16-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator](http://www.ti.com/lit/ds/symlink/ads1115.pdf)
+
+- **Hall Current Detection Sensor:** Two options are being considered:
+- [DC 5V WCS1800 Hall Current Detection Sensor Module 35A Precise With Overcurrent Protection](https://www.banggood.com/search/dc-5v-wcs1800-hall-current-detection-sensor-module-35a-precise.html)
+- [CJMCU-758 Linear Current Sensor Hall Current Module](https://www.banggood.com/search/3pcs-cjmcu-758-acs758lcb-050b-pff-t-linear-current-sensor.html)
+
 - **Temperature:** [HTU21D](https://www.mouser.com/pdfdocs/HTU21DF.PDF) - Digital Relative Humidity sensor with Temperature output.
 - **Humidity:** [HTU21D](https://www.mouser.com/pdfdocs/HTU21DF.PDF) - Digital Relative Humidity sensor with Temperature output.
 - **Luminance:** [BH1750](https://www.mouser.com/ds/2/348/bh1750fvi-e-186247.pdf)  - Digital 16bit Serial Output Type Ambient Light Sensor.
 
-#### Water level
-The water level sensor VL53L1X is installed inside the tank, as seen below, at the top. Then, the sensor measurement reflects the distance from the top of the tank to the water surface. This measurement allows calculating the water level and consequently the volume stored in the tank.
+#### ADC Analog Digital Converter
 
-![](https://i.imgur.com/V5eEZaI.jpg)
-
-The STMicroelectronics VL53L1X "time of flight sensor" is equipped with an invisible laser to measure distances with millimeter resolution. Please check the [full specs on the product page](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html) and the available [breakout](https://www.sparkfun.com/products/14722) shown below.
-
-![](https://i.imgur.com/csxnBtA.jpg)
+#### Hall Current Detection Sensor
 
 #### Temperature, humidity and luminance
 
-Suppose a tank node equipped with a single set of these sensors. They may be installed in three positions:
+The pump node is equipped with a single set of these sensors. They may be installed in three positions:
 
-- **Outside tank:** sensors outside the tank would measure environmental conditions in the tank area.
-- **Inside tank, outside node:** these sensors would measure the internal tank conditions.
-- **Inside tank, inside node:** these sensors would evaluate the internal conditions of the node itself.
+- **Outside pump:** sensors outside would measure environmental conditions in the pump area.
+- **Inside pump area, outside node:** these sensors would measure the conditions where pumps are installed.
+- **Inside pump area, inside node:** these sensors would evaluate the internal conditions of the node itself.
 
-The tank node prototype, shown upside down in the photo, has a VL53L1X sensor pointing down towards water direction. The Pi Zero W is tied to an [Anavi Infrared pHat](https://www.crowdsupply.com/anavi-technology/infrared-phat) with I2C connections for the three sensors. The temperature, humidity and luminance sensors are installed inside the node, in order to evaluate internal prototype conditions. It is expected that internal temperature and humidity changes with CPU utilization, for example.
+The pump node prototype, shown below, has a PoE HAT and a [Qwiic pHAT](https://cdn.sparkfun.com/assets/9/c/4/8/6/Qwiic_pHat_for_Raspberry_Pi_v20.pdf) to connect the I2C sensors.
 
-![](https://i.imgur.com/MINoMZq.jpg)
+![Pump node](https://i.imgur.com/0aoOnIq.png)
 
-The luminance sensor actually measures light conditions inside the tank, since node prototype has a transparent case. Since VL53L1X performance may vary with light interference, an "open hatch" alarm may be created, in case light is detected inside the water tank. Also, open water tanks are a *very bad idea*, due to mosquito proliferation!
+The temperature, humidity and luminance sensors are installed inside the node, in order to evaluate internal prototype conditions. It is expected that internal temperature and humidity changes with CPU utilization, for example. The luminance sensor actually measures light conditions inside the pump area, since node prototype has a transparent case.
 
 ## Install Hass.io
 
