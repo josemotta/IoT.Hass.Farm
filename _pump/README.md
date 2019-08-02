@@ -36,7 +36,7 @@ For this project, the following sensors were selected:
 - [ADS1115 Ultra-Small, Low-Power, I2C-Compatible, 860-SPS, 16-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator](http://www.ti.com/lit/ds/symlink/ads1115.pdf)
 
 - **Hall Current Detection Sensor:** Two options are being considered:
-- [DC 5V WCS1800 Hall Current Detection Sensor Module 35A Precise With Overcurrent Protection](https://www.banggood.com/search/dc-5v-wcs1800-hall-current-detection-sensor-module-35a-precise.html)
+- [WCS1800 Hall Current Detection Sensor Module 35A Precise With Overcurrent Protection](https://www.banggood.com/search/dc-5v-wcs1800-hall-current-detection-sensor-module-35a-precise.html)
 - [CJMCU-758 Linear Current Sensor Hall Current Module](https://www.banggood.com/search/3pcs-cjmcu-758-acs758lcb-050b-pff-t-linear-current-sensor.html)
 
 - **Temperature:** [HTU21D](https://www.mouser.com/pdfdocs/HTU21DF.PDF) - Digital Relative Humidity sensor with Temperature output.
