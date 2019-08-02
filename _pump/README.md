@@ -27,7 +27,7 @@ Due to its powerful ARMv8 processor and the amazing PoE capabilities, the `Pi 3 
 - Power-over-Ethernet (PoE) support (requires separate PoE HAT)
 - [Raspberry Pi PoE HAT](https://static.raspberrypi.org/files/product-briefs/Raspberry-Pi-PoE_HAT-Product-Brief.pdf) provides 5V DC/2.5A power from RJ-45 network port (PoE IEEE 802.3af)
 
-### Sensors (TODO)
+### Sensors
 
 For this project, the following sensors were selected:
 
@@ -75,7 +75,7 @@ $ sudo apt-get install git
 
 Next step is installing Hass.io, easy with Dale Higgs [hassio-installer](https://github.com/josemotta/hassio-installer). Run the script below to install all requirements, including the latest Docker version that works fine with `Pi Zero W`. Then, Hass.io is finally installed.
 
-    curl -sL https://raw.githubusercontent.com/josemotta/hassio-installer/master/setup-hassio-rpi0w.sh | bash -s
+    curl -sL https://raw.githubusercontent.com/josemotta/hassio-installer/master/hassio_rpi3bp | bash -s
 
 You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and enter the IP address of prototype followed by port 8123.
 
@@ -86,7 +86,7 @@ The next step will replace the Homeassistant config directory with IoT.Hass.Farm
 - Stop Homeassistant, using Hass.io developer tools, click `Services` and select `homeassistant.stop`;
 - Clear the Homeassistant configuration located at `/usr/share/hassio/homeassistant`;
 - Clone the IoT.Hass.Farm repository inside this folder;
-- Run `./set-config.sh tank` script to initialize configuration folder;
+- Run `./set-config.sh pump` script to initialize configuration folder;
 - Set your secrets file;
 - And finally reboot.
 
@@ -106,34 +106,31 @@ remote: Total 201 (delta 123), reused 134 (delta 60), pack-reused 0
 Receiving objects: 100% (201/201), 43.18 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (123/123), done.
 
-$ sudo ./set-config.sh tank
+$ sudo ./set-config.sh pump
 
 $ ls -l
-total 88
--rw-r--r-- 1 root root     2 Mar 29 20:38 automations.yaml
--rw-r--r-- 1 root root  4050 Mar 29 20:38 configuration.yaml
--rw-r--r-- 1 root root   742 Mar 29 20:36 customize.yaml
--rw-r--r-- 1 root root     0 Mar 29 20:36 groups.yaml
--rw-r--r-- 1 root root 35149 Mar 29 20:36 LICENSE
--rw-r--r-- 1 root root  5283 Mar 29 20:38 README.md
--rw-r--r-- 1 root root     0 Mar 29 20:36 scripts.yaml
--rw-r--r-- 1 root root   818 Mar 29 20:36 secrets-dummy.yaml
--rwxr-xr-x 1 root root   284 Mar 29 20:36 set-config.sh
-drwxr-xr-x 2 root root  4096 Mar 29 20:36 _super
-drwxr-xr-x 2 root root  4096 Mar 29 20:36 _tank
--rw-r--r-- 1 root root  4253 Mar 29 20:38 themes.yaml
--rw-r--r-- 1 root root  1051 Mar 29 20:38 ui-lovelace.yaml
--rw-r--r-- 1 root root  1389 Mar 29 20:36 zones.yaml
+-rw-r--r-- 1 root root        2 Jul 31 21:48 automations.yaml
+-rwxr--r-- 1 root root     4123 Jul 31 22:22 configuration.yaml
+-rw-r--r-- 1 root root      742 Jul 31 21:48 customize.yaml
+drwxr-xr-x 2 root root     4096 Jul 31 21:58 deps
+-rw-r--r-- 1 root root        0 Jul 31 21:48 groups.yaml
+-rw-r--r-- 1 root root    35149 Jul 31 21:48 LICENSE
+drwxr-xr-x 3 root root     4096 Jul 31 22:09 _pump
+-rw-r--r-- 1 root root     7946 Jul 31 21:48 README.md
+-rw-r--r-- 1 root root        0 Jul 31 21:48 scripts.yaml
+-rwxr--r-- 1 root root     1171 Jul 31 23:04 secrets-dummy.yaml
+-rwxr-xr-x 1 root root      606 Jul 31 21:48 set-config.sh
+drwxr-xr-x 3 root root     4096 Jul 31 21:48 _super
+drwxr-xr-x 3 root root     4096 Jul 31 21:48 _tank
+-rw-r--r-- 1 root root     4253 Jul 31 21:48 themes.yaml
+-rwxr--r-- 1 root root     1241 Jul 31 22:23 ui-lovelace.yaml
+-rw-r--r-- 1 root root     1389 Jul 31 21:48 zones.yaml
 
 $ sudo mv secrets-dummy.yaml secrets.yaml
 $ sudo reboot
 ```
 
-After the boot you can check packages being dynamically loaded at `config/deps` folder, as shown below. You may have to reboot again to start using VL53L1X, after package is loaded.
-
-![](https://i.imgur.com/Bg4gx0R.jpg)
-
-Open the browser and enter the IP address of prototype followed by port 8123 to start the user interface. In the first use an user id and password will be required to create the admin account.
+After the boot you can check packages being dynamically loaded. Open the browser and enter the IP address of prototype followed by port 8123 to start the user interface. In the first use an user id and password will be required to create the admin account.
 
 ![](https://i.imgur.com/3pLBjM2.jpg)
 
