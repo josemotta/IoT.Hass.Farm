@@ -77,11 +77,42 @@ Next step is installing Hass.io, easy with following script based on Dale Higgs 
 
     curl -sL https://raw.githubusercontent.com/josemotta/hassio-installer/master/hassio_rpi3bp | bash -s
 
-You should have now the latest version of Homeassistant running. You can start the frontend, using a browser, and enter the IP address of prototype followed by port 8123. For example:
+You should have now the latest version of Homeassistant running.
+
+## IP address for pump node
+
+In order to change the `pump node` from automatic IP to a fixed IP, for example `192.168.0.232`, use the Network Manager Client, or `nmcli`. It is already installed, you just need to type the following commands to change the existing connection:
+
+	pi@pump:~ $ nmcli con sh -a
+	NAME                UUID                                  TYPE            DEVICE
+	Wired connection 1  09cd6302-8894-3c8d-a84b-535ad6f38a73  802-3-ethernet  eth0
+	docker0             e9d7ff39-304b-4a90-9498-dfcac41661ea  bridge          docker0
+	hassio              d4ababb5-3cd8-4faa-b0cf-2ff72251e7a3  bridge          hassio
+
+	pi@pump:~ $ sudo nmcli con edit "Wired connection 1"
+	
+	===| nmcli interactive connection editor |===
+	
+	Editing existing '802-3-ethernet' connection: 'Wired connection 1'
+	
+	Type 'help' or '?' for available commands.
+	Type 'describe [<setting>.<prop>]' for detailed property description.
+	
+	You may edit the following settings: connection, 802-3-ethernet (ethernet), 802-1x, dcb, ipv4, ipv6, proxy
+	nmcli> set ipv4.method manual
+	nmcli> set ipv4.addresses 192.168.0.232/24
+	nmcli> set ipv4.gateway 192.168.0.1
+	nmcli> set ipv4.dns 192.168.0.1
+	nmcli> save
+	Connection 'Wired connection 1' (09cd6302-8894-3c8d-a84b-535ad6f38a73) successfully updated.
+	nmcli> q
+
+The `Wired connection 1` is now configured at `192.168.0.232`, To test, you can use a browser to start the frontend, entering the IP address of prototype followed by port 8123. In this case:
 
 ```
-http://192.168.0.112:8123
+http://192.168.0.232:8123
 ```
+
 ## Clone the repo
 
 The next step will replace the Homeassistant config directory with IoT.Hass.Farm (or your customized fork).
