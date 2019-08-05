@@ -12,33 +12,95 @@ views:
         cards:
           - type: sensor
             entity: sensor.tank_water_level
-            name: Water Tank
+            name: Tank Capacity
             #line_color: "#3498db"
             accuracy: 50
             height: 150
             detail: 2
             graph: line
             unit: "%"
-          - type: sensor
-            entity: sensor.tank_delta_temperature
-            name: Delta Temperature
-            #line_color: "#3498db"
-            accuracy: 50
-            height: 150
-            detail: 2
-            graph: line
-            unit: "°C"
-          - type: sensor
-            entity: sensor.tank_delta_humidity
-            name: Delta Humidity
-            #line_color: "#3498db"
-            accuracy: 50
-            height: 150
-            detail: 2
-            graph: line
-            unit: "%"
+          - type: history-graph
+            title: 'Temperature'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.super_htu21d_temperature
+                name: Super
+              - entity: sensor.tank_htu21d_temperature
+                name: Tank
+              - entity: sensor.pump_htu21d_temperature
+                name: Pump
+          - type: history-graph
+            title: 'Humidity'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.super_htu21d_humidity
+                name: Super
+              - entity: sensor.tank_htu21d_humidity
+                name: Tank
+              - entity: sensor.pump_htu21d_humidity
+                name: Pump
+          # - type: history-graph
+          #   title: 'Delta temperature'
+          #   refresh_interval: 60
+          #   entities:
+          #     - entity: sensor.tank_delta_temperature
+          #       name: Tank
+          #     - entity: sensor.pump_delta_temperature
+          #       name: Pump
+          # - type: history-graph
+          #   title: 'Delta humidity'
+          #   refresh_interval: 60
+          #   entities:
+          #     - entity: sensor.tank_delta_humidity
+          #       name: Tank
+          #     - entity: sensor.pump_delta_humidity
+          #       name: Pump
+          # - type: sensor
+          #   entity: sensor.tank_delta_temperature
+          #   name: Tank Delta Temperature
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "°C"
+          # - type: sensor
+          #   entity: sensor.tank_delta_humidity
+          #   name: Tank Delta Humidity
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "%"
+          # - type: sensor
+          #   entity: sensor.pump_delta_temperature
+          #   name: Pump Delta Temperature
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "°C"
+          # - type: sensor
+          #   entity: sensor.pump_delta_humidity
+          #   name: Pump Delta Humidity
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "%"
       - type: vertical-stack
         cards:
+          - type: history-graph
+            title: 'Delta-Temperature'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.tank_delta_temperature
+                name: Tank
+              - entity: sensor.pump_delta_temperature
+                name: Pump
           - type: entities
             title: Supervisor
             show_header_toggle: false
@@ -50,14 +112,33 @@ views:
             title: Tank
             show_header_toggle: false
             entities:
-              - sensor.tank_vl53l1x
-              - sensor.tank_delta_temperature
+              #- sensor.tank_delta_temperature
               - sensor.tank_htu21d_temperature
-              - sensor.tank_delta_humidity
+              #- sensor.tank_delta_humidity
               - sensor.tank_htu21d_humidity
               - sensor.tank_bh1750
+              - sensor.tank_vl53l1x
+              #- sensor.tank_gpu_temperature
+          - type: entities
+            title: Pump
+            show_header_toggle: false
+            entities:
+              #- sensor.pump_delta_temperature
+              - sensor.pump_htu21d_temperature
+              #- sensor.pump_delta_humidity
+              - sensor.pump_htu21d_humidity
+              - sensor.pump_bh1750
+              #- sensor.pump_gpu_temperature
       - type: vertical-stack
         cards:
+          - type: history-graph
+            title: 'Delta-Humidity'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.tank_delta_humidity
+                name: Tank
+              - entity: sensor.pump_delta_humidity
+                name: Pump
           - type: entities
             title: Climate
             show_header_toggle: false
@@ -78,9 +159,11 @@ views:
             show_header_toggle: false
             entities:
               - sensor.memory_free
-              - sensor.network_in_eth0
-              - sensor.network_out_eth0
+              # - sensor.network_in_eth0
+              # - sensor.network_out_eth0
+              - sensor.super_network
               - sensor.disk_use_percent
+              - sensor.super_gpu_temperature
 
       #- type: entities
       #  title: Zones

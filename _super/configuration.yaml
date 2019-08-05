@@ -50,7 +50,7 @@ http:
 #discovery:
 
 # Enable diagnostic tools
-#system_health:
+system_health:
 
 # Add hassio menu on the left
 hassio:
@@ -68,6 +68,7 @@ history:
       - sensor.super_htu21d_temperature
       - sensor.super_htu21d_humidity
       - sensor.super_bh1750
+      - sensor.super_gpu_temperature
       - sensor.processor_use
       - sensor.memory_free
       - sensor.network_in_eth0
@@ -105,6 +106,8 @@ sensor:
     resources:
       - type: processor_use
       - type: memory_free
+      - type: network_in
+        arg: eth0
       - type: network_out
         arg: eth0
       - type: disk_use_percent
@@ -122,6 +125,27 @@ sensor:
         friendly_name: "Tank Delta Humidity"
         unit_of_measurement: "%"
         value_template: "{{ ((states('sensor.tank_htu21d_humidity') | float ) - (states('sensor.super_htu21d_humidity') | float )) | round(2) }}"
+    # Difference between pump_htu21d_temperature and super_htu21d_temperature
+      pump_delta_temperature:
+        friendly_name: "Tank Delta Temperature"
+        unit_of_measurement: "°C"
+        value_template: "{{ ((states('sensor.pump_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
+#        value_template: "{{ (states('sensor.pump_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
+    # Difference between pump_htu21d_humidity and super_htu21d_humidity
+      pump_delta_humidity:
+        friendly_name: "Tank Delta Humidity"
+        unit_of_measurement: "%"
+        value_template: "{{ ((states('sensor.pump_htu21d_humidity') | float ) - (states('sensor.super_htu21d_humidity') | float )) | round(2) }}"
+    # Sum of network_in_eth0 and network_out_eth0
+      super_network:
+        friendly_name: "Network eth0"
+        unit_of_measurement: "MiB"
+        value_template: "{{ ((states('sensor.network_in_eth0') | float ) + (states('sensor.network_out_eth0') | float )) | round(2) }}"
+  - platform: command_line
+    name: super_gpu_temperature
+    command: "/opt/vc/bin/vcgencmd measure_temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
 # ANAVI Light pHat (waiting for new json_light setup from Anavi)
 light:
@@ -133,12 +157,27 @@ light:
 # MQTT Broker (aka Mosquitto)
 mqtt:
   discovery: true
-  broker: !secret mqtt_broker
+  broker: 127.0.0.1
   client_id: master
   port: !secret mqtt_port
   keepalive: 60
   username: !secret mqtt_username
   password: !secret mqtt_password
+
+# elastic:
+#   # URL should point to your Elasticsearch cluster
+#   url: http://192.168.0.114:9200
+#   username: elastic
+#   password: changeme
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: "elefante"
+  max_retries: 3
+  default_measurement: state
 
 group: !include groups.yaml
 automation: !include automations.yaml

@@ -24,3 +24,6 @@ sensor.network_in_wlan0:
   icon: mdi:signal-variant
 sensor.network_out_wlan0:
   icon: mdi:signal-variant
+sensor.pump_network:
+  icon: mdi:server-network
+  friendly_name: "Network eth0"

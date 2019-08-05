@@ -47,6 +47,6 @@ views:
         show_header_toggle: false
         entities:
           - sensor.memory_free
-          - sensor.network_out_eth0
+          - sensor.pump_network
           - sensor.disk_use_percent
           - sensor.pump_gpu_temperature

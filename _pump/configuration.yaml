@@ -70,10 +70,10 @@ history:
       - sensor.pump_htu21d_temperature
       - sensor.pump_htu21d_humidity
       - sensor.pump_bh1750
-      - sensor.pump_processor_use
-      - sensor.pump_memory_free
-      - sensor.pump_network_out_eth0
-      - sensor.pump_disk_use_percent_home
+      - sensor.processor_use
+      - sensor.memory_free
+      - sensor.network_out_eth0
+      - sensor.disk_use_percent_home
   exclude:
     domains:
       - automation
@@ -103,10 +103,20 @@ sensor:
     resources:
       - type: processor_use
       - type: memory_free
+      - type: network_in
+        arg: eth0
       - type: network_out
         arg: eth0
       - type: disk_use_percent
         arg: /
+  - platform: template
+    sensors:
+    # Sum of network_in_eth0 and network_out_eth0
+      pump_network:
+        friendly_name: "Network eth0"
+        unit_of_measurement: "MiB"
+        value_template: "{{ ((states('sensor.network_in_eth0') | float ) + (states('sensor.network_out_eth0') | float )) | round(2) }}"
+
   # - platform: ads1X15
   #   name: pump_current
   # - platform: template
@@ -147,6 +157,7 @@ mqtt_statestream:
       - sensor.pump_bh1750
       - sensor.pump_htu21d_humidity
       - sensor.pump_htu21d_temperature
+      #- sensor.pump_network
 
 group: !include groups.yaml
 automation: !include automations.yaml
