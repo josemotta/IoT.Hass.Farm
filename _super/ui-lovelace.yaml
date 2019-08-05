@@ -2,12 +2,6 @@ title: Supervisor Panel
 views:
   - title: Home
     cards:
-#      - type: entities
-#        title: Sinalização
-#        show_header_toggle: true
-#        entities:
-#          - light.anavi_light_phat
-
       - type: vertical-stack
         cards:
           - type: sensor
@@ -23,84 +17,32 @@ views:
             title: 'Temperature'
             refresh_interval: 60
             entities:
-              - entity: sensor.super_htu21d_temperature
-                name: Super
-              - entity: sensor.tank_htu21d_temperature
-                name: Tank
               - entity: sensor.pump_htu21d_temperature
                 name: Pump
+              - entity: sensor.tank_htu21d_temperature
+                name: Tank
+              - entity: sensor.super_htu21d_temperature
+                name: Super
           - type: history-graph
             title: 'Humidity'
             refresh_interval: 60
             entities:
-              - entity: sensor.super_htu21d_humidity
-                name: Super
-              - entity: sensor.tank_htu21d_humidity
-                name: Tank
               - entity: sensor.pump_htu21d_humidity
                 name: Pump
-          # - type: history-graph
-          #   title: 'Delta temperature'
-          #   refresh_interval: 60
-          #   entities:
-          #     - entity: sensor.tank_delta_temperature
-          #       name: Tank
-          #     - entity: sensor.pump_delta_temperature
-          #       name: Pump
-          # - type: history-graph
-          #   title: 'Delta humidity'
-          #   refresh_interval: 60
-          #   entities:
-          #     - entity: sensor.tank_delta_humidity
-          #       name: Tank
-          #     - entity: sensor.pump_delta_humidity
-          #       name: Pump
-          # - type: sensor
-          #   entity: sensor.tank_delta_temperature
-          #   name: Tank Delta Temperature
-          #   #line_color: "#3498db"
-          #   accuracy: 50
-          #   height: 150
-          #   detail: 2
-          #   graph: line
-          #   unit: "°C"
-          # - type: sensor
-          #   entity: sensor.tank_delta_humidity
-          #   name: Tank Delta Humidity
-          #   #line_color: "#3498db"
-          #   accuracy: 50
-          #   height: 150
-          #   detail: 2
-          #   graph: line
-          #   unit: "%"
-          # - type: sensor
-          #   entity: sensor.pump_delta_temperature
-          #   name: Pump Delta Temperature
-          #   #line_color: "#3498db"
-          #   accuracy: 50
-          #   height: 150
-          #   detail: 2
-          #   graph: line
-          #   unit: "°C"
-          # - type: sensor
-          #   entity: sensor.pump_delta_humidity
-          #   name: Pump Delta Humidity
-          #   #line_color: "#3498db"
-          #   accuracy: 50
-          #   height: 150
-          #   detail: 2
-          #   graph: line
-          #   unit: "%"
+              - entity: sensor.tank_htu21d_humidity
+                name: Tank
+              - entity: sensor.super_htu21d_humidity
+                name: Super
       - type: vertical-stack
         cards:
           - type: history-graph
             title: 'Delta-Temperature'
             refresh_interval: 60
             entities:
-              - entity: sensor.tank_delta_temperature
-                name: Tank
               - entity: sensor.pump_delta_temperature
                 name: Pump
+              - entity: sensor.tank_delta_temperature
+                name: Tank
           - type: entities
             title: Supervisor
             show_header_toggle: false
@@ -135,10 +77,10 @@ views:
             title: 'Delta-Humidity'
             refresh_interval: 60
             entities:
-              - entity: sensor.tank_delta_humidity
-                name: Tank
               - entity: sensor.pump_delta_humidity
                 name: Pump
+              - entity: sensor.tank_delta_humidity
+                name: Tank
           - type: entities
             title: Climate
             show_header_toggle: false
