@@ -1,3 +1,4 @@
+# Supervisor
 sensor.super_htu21d_temperature:
   icon: mdi:thermometer
   friendly_name: "Super Htu21d Temperature"
@@ -7,10 +8,16 @@ sensor.super_htu21d_humidity:
 sensor.super_bh1750:
   icon: mdi:brightness-6
   friendly_name: "Super Bh1750 Luminance"
+sensor.super_network:
+  icon: mdi:server-network
+  friendly_name: "Network eth0"
+# Tank
 sensor.tank_htu21d_temperature:
   icon: mdi:thermometer
+  friendly_name: "Tank Htu21d Temperature"
 sensor.tank_htu21d_humidity:
   icon: mdi:weather-rainy
+  friendly_name: "Tank Htu21d Humidity"
 sensor.tank_bh1750:
   icon: mdi:brightness-6
   friendly_name: "Tank Bh1750 Luminance"
@@ -24,6 +31,16 @@ sensor.network_in_wlan0:
   icon: mdi:signal-variant
 sensor.network_out_wlan0:
   icon: mdi:signal-variant
+# Pump
+sensor.pump_htu21d_temperature:
+  icon: mdi:thermometer
+  friendly_name: "Pump Htu21d Temperature"
+sensor.pump_htu21d_humidity:
+  icon: mdi:weather-rainy
+  friendly_name: "Pump Htu21d Humidity"
+sensor.pump_bh1750:
+  icon: mdi:brightness-6
+  friendly_name: "Pump Bh1750 Luminance"
 sensor.pump_network:
   icon: mdi:server-network
   friendly_name: "Network eth0"
