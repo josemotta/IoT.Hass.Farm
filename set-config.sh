@@ -2,7 +2,9 @@
 # set.sh
 
 # Copy respective hass files to config folder
-# Options are tank or super
+# Options are tank | super | pump
+# Use nmcli interactive connection editor to set each node IP
+# TODO: - Auto config network manager for all nodes
 
 E_NOARGS=75
 
@@ -19,14 +21,14 @@ case $1 in
     cp -t . _tank/*.yaml
     if [ -d "$NM" ]; then
       # Copy network manager configuration
-      cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
+      #cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
     fi
     ;;
   super)
     cp -t . _super/*.yaml
     if [ -d "$NM" ]; then
       # Copy network manager configuration
-      cp -t /etc/NetworkManager/system-connections _super/bin/wired
+      #cp -t /etc/NetworkManager/system-connections _super/bin/wired
     fi
     ;;
   pump)
@@ -34,7 +36,7 @@ case $1 in
     #cp -t ./custom_components/ _pump/bin/custom_components/
     if [ -d "$NM" ]; then
       # Copy network manager configuration
-      cp -t /etc/NetworkManager/system-connections _pump/bin/wired
+      #cp -t /etc/NetworkManager/system-connections _pump/bin/wired
     fi
     ;;
 esac
