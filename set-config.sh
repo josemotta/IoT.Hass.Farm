@@ -19,24 +19,24 @@ fi
 case $1 in
   tank)
     cp -t . _tank/*.yaml
-    if [ -d "$NM" ]; then
-      # Copy network manager configuration
-      #cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
-    fi
+    # if [ -d "$NM" ]; then
+    #   # Copy network manager configuration
+    #   cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
+    # fi
     ;;
   super)
     cp -t . _super/*.yaml
-    if [ -d "$NM" ]; then
-      # Copy network manager configuration
-      #cp -t /etc/NetworkManager/system-connections _super/bin/wired
-    fi
+    # if [ -d "$NM" ]; then
+    #   # Copy network manager configuration
+    #   cp -t /etc/NetworkManager/system-connections _super/bin/wired
+    # fi
     ;;
   pump)
     cp -t . _pump/*.yaml
     #cp -t ./custom_components/ _pump/bin/custom_components/
-    if [ -d "$NM" ]; then
-      # Copy network manager configuration
-      #cp -t /etc/NetworkManager/system-connections _pump/bin/wired
-    fi
+    # if [ -d "$NM" ]; then
+    #   # Copy network manager configuration
+    #   cp -t /etc/NetworkManager/system-connections _pump/bin/wired
+    # fi
     ;;
 esac
