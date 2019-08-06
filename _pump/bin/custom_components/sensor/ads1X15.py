@@ -11,7 +11,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     add_devices([ads_o2()])
 
 
-class ads1X15(Entity):
+class ADS1x15(Entity):
     """Representation of a Sensor."""
 
     def __init__(self):
