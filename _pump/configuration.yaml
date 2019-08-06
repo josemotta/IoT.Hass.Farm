@@ -117,8 +117,9 @@ sensor:
         unit_of_measurement: "MiB"
         value_template: "{{ ((states('sensor.network_in_eth0') | float ) + (states('sensor.network_out_eth0') | float )) | round(2) }}"
 
-  # - platform: ads1X15
-  #   name: pump_current
+  - platform: ads1x15
+    name: pump_ads1x15
+  
   # - platform: template
   #   sensors:
   #   # Change calculations accordingly, if sensor is not installed 5 meters high!
