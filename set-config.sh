@@ -33,7 +33,7 @@ case $1 in
     ;;
   pump)
     cp -t . _pump/*.yaml
-    #cp -t ./custom_components/ _pump/bin/custom_components/
+    cp -r _pump/bin/custom_components .
     # if [ -d "$NM" ]; then
     #   # Copy network manager configuration
     #   cp -t /etc/NetworkManager/system-connections _pump/bin/wired
