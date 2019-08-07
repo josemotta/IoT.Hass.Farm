@@ -1,0 +1,12 @@
+{
+    "domain": "ads1x15",
+    "name": "ADS1x15",
+    "documentation": "https://pypi.org/project/Adafruit-ADS1x15/#files",
+    "requirements": [
+      "Adafruit-ADS1x15==1.0.2"
+    ],
+    "dependencies": [
+      "rpi_gpio"
+    ],
+    "codeowners": []
+  }

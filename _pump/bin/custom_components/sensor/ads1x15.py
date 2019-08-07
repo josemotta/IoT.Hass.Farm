@@ -1,7 +1,6 @@
+"""ADS1x15 analog to digital converters."""
 from homeassistant.helpers.entity import Entity
 import time
-# Import the ADS1x15 module.
-import Adafruit_ADS1x15
 
 GAIN = 1
 ADC_INPUT = 0
