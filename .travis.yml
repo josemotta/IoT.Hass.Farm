@@ -1,11 +1,11 @@
 language: python
 python:
-  - "3.6"
+  - "3.7"
 install:
   - pip3 install homeassistant
 script:
-  # - ./set-config.sh tank
-  # - hass -c . --script check_config
+  - ./set-config.sh tank
+  - hass -c . --script check_config
   - ./set-config.sh super
   - hass -c . --script check_config
   - ./set-config.sh pump
