@@ -127,13 +127,13 @@ sensor:
         value_template: "{{ ((states('sensor.tank_htu21d_humidity') | float ) - (states('sensor.super_htu21d_humidity') | float )) | round(2) }}"
     # Difference between pump_htu21d_temperature and super_htu21d_temperature
       pump_delta_temperature:
-        friendly_name: "Tank Delta Temperature"
+        friendly_name: "Pump Delta Temperature"
         unit_of_measurement: "°C"
         value_template: "{{ ((states('sensor.pump_htu21d_temperature') | float ) - (states('sensor.super_htu21d_temperature') | float )) | round(2) }}"
 #        value_template: "{{ (states('sensor.pump_htu21d_temperature')|float) - (states('sensor.super_htu21d_temperature')|float)| round(1)}}"
     # Difference between pump_htu21d_humidity and super_htu21d_humidity
       pump_delta_humidity:
-        friendly_name: "Tank Delta Humidity"
+        friendly_name: "Pump Delta Humidity"
         unit_of_measurement: "%"
         value_template: "{{ ((states('sensor.pump_htu21d_humidity') | float ) - (states('sensor.super_htu21d_humidity') | float )) | round(2) }}"
     # Sum of network_in_eth0 and network_out_eth0

@@ -123,15 +123,19 @@ sensor:
     name: tank_vl53l1x
   - platform: template
     sensors:
-    # Change calculations accordingly, if sensor is not installed 5 meters high!
+    # Customize tank calculations accordingly, if not:
+    #   - tank is 2910 mm high
+    #   - sensor is installed 150 mm above tank top
+    #   - water_line = 2910 + 150 - distance = 3060 - distance
+    #   - capacity (%) = (water_line / 2910) * 100 = water_line / 29.10
       tank_water_level_mm:
-        friendly_name: "Water Level"
+        friendly_name: "Water Line"
         unit_of_measurement: "mm"
-        value_template: "{{ (5000 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
+        value_template: "{{ (3060 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
       tank_water_level:
-        friendly_name: "Water Level"
+        friendly_name: "Capacity"
         unit_of_measurement: "%"
-        value_template: "{{ ((5000 - states('sensor.tank_vl53l1x')|float) / 50) | round(1)}}"
+        value_template: "{{ ((3060 - states('sensor.tank_vl53l1x')|float) / 29.10) | round(1)}}"
 
 # MQTT Broker (aka Mosquitto)
 mqtt:
