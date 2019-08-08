@@ -61,26 +61,12 @@ hassio:
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
 
-# Recorder setup for main sensors only
-recorder:
-  purge_keep_days: 7
-  include:
-    entities:
-      - sensor.tank_water_level
-      - sensor.tank_vl53l1x
-      - sensor.tank_htu21d_temperature
-      - sensor.tank_htu21d_humidity
-      - sensor.tank_bh1750
-      - sensor.processor_use
-      - sensor.memory_free
-      - sensor.network_in_wlan0
-      - sensor.network_out_wlan0
-      - sensor.disk_use_percent_home
-
 # Enables support for tracking state changes over time
 history:
   use_include_order: true
   include:
+    domains:
+      - sensor
     entities:
       - sensor.tank_water_level
       - sensor.tank_vl53l1x
@@ -93,6 +79,16 @@ history:
       - sensor.network_out_wlan0
       - sensor.disk_use_percent_home
       - sensor.tank_gpu_temperature
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - persistent_notification
+    entities:
+      - sun.sun
+      - sensor.yr_symbol
+#      - persistent_notification.notification
+#      - persistent_notification.http_login
 
 # View all events in a logbook
 logbook:
