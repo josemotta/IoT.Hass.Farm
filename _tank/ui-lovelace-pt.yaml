@@ -1,10 +1,10 @@
-title: Tank Panel
+title: Caixa d'Água do Castelo
 views:
   - title: Home
     cards:
       - type: sensor
         entity: sensor.tank_water_level
-        name: Capacity
+        name: Capacidade
         #line_color: "#3498db"
         accuracy: 50
         height: 150
@@ -14,7 +14,7 @@ views:
 
       - type: sensor
         entity: sensor.tank_water_level_mm
-        name: Water Line
+        name: Linha d'Água
         #line_color: "#3498db"
         accuracy: 50
         height: 150
@@ -23,7 +23,7 @@ views:
         unit: "mm"
 
       - type: entities
-        title: Sensors
+        title: Sensores
         show_header_toggle: false
         entities:
           #- sensor.water_level
@@ -44,7 +44,7 @@ views:
           red: 90
 
       - type: entities
-        title: Computer
+        title: Computador
         show_header_toggle: false
         entities:
           - sensor.memory_free

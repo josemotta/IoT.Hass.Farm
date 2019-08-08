@@ -136,6 +136,16 @@ sensor:
         friendly_name: "Capacity"
         unit_of_measurement: "%"
         value_template: "{{ ((3060 - states('sensor.tank_vl53l1x')|float) / 29.10) | round(1)}}"
+    # Sum of network_in_wlan0 and network_out_wlan0
+      tank_network:
+        friendly_name: "Network wlan0"
+        unit_of_measurement: "MiB"
+        value_template: "{{ ((states('sensor.network_in_wlan0') | float ) + (states('sensor.network_out_wlan0') | float )) | round(2) }}"
+  - platform: command_line
+    name: tank_gpu_temperature
+    command: "/opt/vc/bin/vcgencmd measure_temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
 # MQTT Broker (aka Mosquitto)
 mqtt:
