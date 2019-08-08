@@ -92,6 +92,7 @@ history:
       - sensor.network_in_wlan0
       - sensor.network_out_wlan0
       - sensor.disk_use_percent_home
+      - sensor.tank_gpu_temperature
 
 # View all events in a logbook
 logbook:
