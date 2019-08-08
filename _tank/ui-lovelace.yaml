@@ -35,7 +35,7 @@ views:
           red: 90
 
       - type: entities
-        title: Raspberry Pi
+        title: Computer
         show_header_toggle: false
         entities:
           - sensor.memory_free
