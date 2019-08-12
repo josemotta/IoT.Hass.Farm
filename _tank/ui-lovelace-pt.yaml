@@ -2,7 +2,7 @@ title: Caixa d'Água do Castelo
 views:
   - title: Home
     cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
           - type: history-graph
             title: 'Capacidade'
@@ -36,7 +36,7 @@ views:
           #   graph: line
           #   unit: "mm"
 
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
           - type: entities
             title: Sensores
