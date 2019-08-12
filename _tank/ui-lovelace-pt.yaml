@@ -19,7 +19,7 @@ views:
       #   unit: "%"
 
       - type: history-graph
-        title: 'Linha d'Água'
+        title: 'Linha dÁgua'
         refresh_interval: 60
         entities:
           - entity: sensor.tank_water_level_mm
