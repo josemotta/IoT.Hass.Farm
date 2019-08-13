@@ -144,26 +144,26 @@ sensor:
     unit_of_measurement: "°C"
     value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
-# MQTT Broker (aka Mosquitto)
-mqtt:
-  broker: !secret mqtt_broker
-  client_id: tank_slave
-  port: !secret mqtt_port
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+# # MQTT Broker (aka Mosquitto)
+# mqtt:
+#   broker: !secret mqtt_broker
+#   client_id: tank_slave
+#   port: !secret mqtt_port
+#   keepalive: 60
+#   username: !secret mqtt_username
+#   password: !secret mqtt_password
 
-mqtt_statestream:
-  base_topic: homeassistant
-  publish_attributes: true
-  publish_timestamps: true
-  include:
-    entities:
-      - sensor.tank_water_level
-      - sensor.tank_vl53l1x
-      - sensor.tank_bh1750
-      - sensor.tank_htu21d_humidity
-      - sensor.tank_htu21d_temperature
+# mqtt_statestream:
+#   base_topic: homeassistant
+#   publish_attributes: true
+#   publish_timestamps: true
+#   include:
+#     entities:
+#       - sensor.tank_water_level
+#       - sensor.tank_vl53l1x
+#       - sensor.tank_bh1750
+#       - sensor.tank_htu21d_humidity
+#       - sensor.tank_htu21d_temperature
 
 group: !include groups.yaml
 automation: !include automations.yaml
