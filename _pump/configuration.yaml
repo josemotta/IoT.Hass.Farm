@@ -67,9 +67,11 @@ history:
     entities:
       # - sensor.pump_current_1
       # - sensor.pump_current_2
-      - sensor.pump_htu21d_temperature
-      - sensor.pump_htu21d_humidity
-      - sensor.pump_bh1750
+      # - sensor.pump_htu21d_temperature
+      # - sensor.pump_htu21d_humidity
+      # - sensor.pump_bh1750
+      - sensor.pump_bmp180_temperature
+      - sensor.pump_bmp180_pressure
       - sensor.processor_use
       - sensor.memory_free
       - sensor.network_out_eth0
@@ -142,26 +144,26 @@ sensor:
     value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
 # MQTT Broker (aka Mosquitto)
-mqtt:
-  broker: !secret mqtt_broker
-  client_id: pump_slave
-  port: !secret mqtt_port
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+# mqtt:
+#   broker: !secret mqtt_broker
+#   client_id: pump_slave
+#   port: !secret mqtt_port
+#   keepalive: 60
+#   username: !secret mqtt_username
+#   password: !secret mqtt_password
 
-mqtt_statestream:
-  base_topic: homeassistant
-  publish_attributes: true
-  publish_timestamps: true
-  include:
-    entities:
-      # - sensor.pump_current_1
-      # - sensor.pump_current_2
-      - sensor.pump_bh1750
-      - sensor.pump_htu21d_humidity
-      - sensor.pump_htu21d_temperature
-      #- sensor.pump_network
+# mqtt_statestream:
+#   base_topic: homeassistant
+#   publish_attributes: true
+#   publish_timestamps: true
+#   include:
+#     entities:
+#       # - sensor.pump_current_1
+#       # - sensor.pump_current_2
+#       - sensor.pump_bh1750
+#       - sensor.pump_htu21d_humidity
+#       - sensor.pump_htu21d_temperature
+#       #- sensor.pump_network
 
 group: !include groups.yaml
 automation: !include automations.yaml
