@@ -2,52 +2,56 @@ title: Pump Panel
 views:
   - title: Home
     cards:
-      # - type: sensor
-      #   entity: sensor.pump_current_1
-      #   name: pump 1
-      #   #line_color: "#3498db"
-      #   accuracy: 50
-      #   height: 150
-      #   detail: 2
-      #   graph: line
-      #   unit: "%"
+      - type: vertical-stack
+        cards:
+          # - type: sensor
+          #   entity: sensor.pump_current_1
+          #   name: pump 1
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "%"
 
-      # - type: sensor
-      #   entity: sensor.pump_current_2
-      #   name: pump 2
-      #   #line_color: "#3498db"
-      #   accuracy: 50
-      #   height: 150
-      #   detail: 2
-      #   graph: line
-      #   unit: "%"
+          # - type: sensor
+          #   entity: sensor.pump_current_2
+          #   name: pump 2
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "%"
 
-      - type: entities
-        title: Sensors
-        show_header_toggle: false
-        entities:
-          # - sensor.pump_htu21d_temperature
-          # - sensor.pump_htu21d_humidity
-          # - sensor.pump_bh1750
-          # - sensor.pump_ads1x15
-          - sensor.pump_bmp180
-          - sensor.pump_bmp180_2
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Sensors
+            show_header_toggle: false
+            entities:
+              # - sensor.pump_htu21d_temperature
+              # - sensor.pump_htu21d_humidity
+              # - sensor.pump_bh1750
+              # - sensor.pump_ads1x15
+              - sensor.pump_bmp180
+              - sensor.pump_bmp180_2
 
-      - type: gauge
-        title: CPU
-        name: CPU
-        show_header_toggle: true
-        entity: sensor.processor_use
-        severity:
-          green: 0
-          yellow: 50
-          red: 90
+          - type: gauge
+            title: CPU
+            name: CPU
+            show_header_toggle: true
+            entity: sensor.processor_use
+            severity:
+              green: 0
+              yellow: 50
+              red: 90
 
-      - type: entities
-        title: Computer
-        show_header_toggle: false
-        entities:
-          - sensor.memory_free
-          - sensor.pump_network
-          - sensor.disk_use_percent
-          - sensor.pump_gpu_temperature
+          - type: entities
+            title: Computer
+            show_header_toggle: false
+            entities:
+              - sensor.memory_free
+              - sensor.pump_network
+              - sensor.disk_use_percent
+              - sensor.pump_gpu_temperature
