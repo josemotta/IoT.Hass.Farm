@@ -50,8 +50,8 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     temp_unit = hass.config.units.temperature_unit
 
     sensor = await hass.async_add_executor_job(partial(BMP180, bus_number, i2c_address))
-    await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
-    await asyncio.sleep(0.01)
+    # await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
+    # await asyncio.sleep(0.01)
 
     dev = [
         BMP180Sensor(sensor, name, SENSOR_TEMPERATURE, temp_unit),
