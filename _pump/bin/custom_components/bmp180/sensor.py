@@ -35,9 +35,9 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 )
 
 
-def init_bmp(bus_number, i2c_address, sensor):
-    """XSHUT port LOW resets the device."""
-    sensor(bus_number, i2c_address)
+# def init_bmp(bus_number, i2c_address, sensor):
+#     """XSHUT port LOW resets the device."""
+#     sensor(bus_number, i2c_address)
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """Reset and initialize the VL53L1X ToF Sensor from STMicroelectronics."""
