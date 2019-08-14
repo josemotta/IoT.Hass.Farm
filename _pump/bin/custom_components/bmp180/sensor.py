@@ -41,6 +41,7 @@ def init_bmp(bus_number, i2c_address, sensor):
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """Reset and initialize the VL53L1X ToF Sensor from STMicroelectronics."""
+    import smbus  # pylint: disable=import-error
     from sensor.BMP180 import BMP180  # pylint: disable=import-error
 
     name = config.get(CONF_NAME)
