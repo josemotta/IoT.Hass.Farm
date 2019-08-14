@@ -4,21 +4,21 @@ views:
     cards:
       - type: vertical-stack
         cards:
-          - type: history-graph
-            title: 'Capacidade'
-            refresh_interval: 60
-            entities:
-              - entity: sensor.tank_water_level
-                name: Castelo
-          # - type: sensor
-          #   entity: sensor.tank_water_level
-          #   name: Capacidade
-          #   #line_color: "#3498db"
-          #   accuracy: 50
-          #   height: 150
-          #   detail: 2
-          #   graph: line
-          #   unit: "%"
+          # - type: history-graph
+          #   title: 'Capacidade'
+          #   refresh_interval: 60
+          #   entities:
+          #     - entity: sensor.tank_water_level
+          #       name: Castelo
+          - type: sensor
+            entity: sensor.tank_water_level
+            name: Capacidade
+            #line_color: "#3498db"
+            accuracy: 50
+            height: 150
+            detail: 2
+            graph: line
+            unit: "%"
 
           - type: history-graph
             title: 'Linha dÁgua'
