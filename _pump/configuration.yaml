@@ -95,10 +95,10 @@ sun:
 
 # Sensors
 sensor:
-  - platform: htu21d
-    name: pump_htu21d
-  - platform: bh1750
-    name: pump_bh1750
+  # - platform: htu21d
+  #   name: pump_htu21d
+  # - platform: bh1750
+  #   name: pump_bh1750
   - platform: systemmonitor
     resources:
       - type: processor_use
