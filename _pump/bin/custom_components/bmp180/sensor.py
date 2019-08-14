@@ -23,6 +23,9 @@ DEFAULT_NAME = "BMP180"
 DEFAULT_I2C_ADDRESS = 0x77
 DEFAULT_I2C_BUS = 1
 
+SENSOR_TEMPERATURE = "temperature"
+SENSOR_HUMIDITY = "humidity"
+
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
@@ -85,9 +88,6 @@ class BMP180Sensor(Entity):
 
     def update(self):
         """Get the latest measurement and update state."""
-        # if self.init:
-        #     to do only once
-        #     self.init = False
         if self._variable == SENSOR_TEMPERATURE:
             value = round(self.bmp180_sensor.temperature(), 1)
             if self.unit_of_measurement == TEMP_CELSIUS:
