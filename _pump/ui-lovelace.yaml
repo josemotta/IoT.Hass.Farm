@@ -3,7 +3,7 @@ views:
   - title: Home
     cards:
       - type: vertical-stack
-        cards:
+        # cards:
           # - type: sensor
           #   entity: sensor.pump_current_1
           #   name: pump 1
