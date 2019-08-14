@@ -90,11 +90,11 @@ class BMP180Sensor(Entity):
     def update(self):
         """Get the latest measurement and update state."""
         if self._variable == SENSOR_TEMPERATURE:
-            value = round(self.bmp180_sensor.temperature(), 1)
+            value = self.bmp180_sensor.temperature()
             if self.unit_of_measurement == TEMP_CELSIUS:
                 value = value.value.C
             if self.unit_of_measurement == TEMP_FAHRENHEIT:
                 value = value.value.F
         else:
-            value = round(self.bmp180_sensor.pressure(), 1)
+            value = self.bmp180_sensor.pressure()
         self.state = value
