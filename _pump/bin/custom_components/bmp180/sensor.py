@@ -96,4 +96,4 @@ class BMP180Sensor(Entity):
                 value = self.bmp180_sensor.temperature().F
         else:
             value = self.bmp180_sensor.pressure()
-        self.state = value
+        self._state = value
