@@ -87,6 +87,7 @@ history:
     entities:
       - sun.sun
       - sensor.yr_symbol
+      - sensor.tank_network
 #      - persistent_notification.notification
 #      - persistent_notification.http_login
 
