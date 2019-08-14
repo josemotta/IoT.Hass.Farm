@@ -24,7 +24,7 @@ views:
     #         graph: line
     #         unit: "%"
 
-      - type: vertical-stack
+    #  - type: vertical-stack
         cards:
           - type: entities
             title: Sensors
