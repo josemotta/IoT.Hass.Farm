@@ -68,7 +68,7 @@ class BMP180Sensor(Entity):
         """Initialize the sensor."""
         self.bmp180_sensor = bmp180_sensor
         self._name = name
-        self.variable = variable
+        self._variable = variable
         self._unit_of_measurement = unit
         self._state = None
 
