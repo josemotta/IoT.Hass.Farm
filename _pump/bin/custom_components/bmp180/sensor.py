@@ -67,7 +67,7 @@ class BMP180Sensor(Entity):
     def __init__(self, bmp180_sensor, name, variable, unit):
         """Initialize the sensor."""
         self.bmp180_sensor = bmp180_sensor
-        self._name = name
+        self._name = "{}_{}".format(name, variable)
         self._variable = variable
         self._unit_of_measurement = unit
         self._state = None
