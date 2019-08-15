@@ -71,9 +71,13 @@ class ADS1X15Sensor(Entity):
         """Initialize the sensor."""
         self.ads1x15_sensor = ads1x15_sensor
         self._name = "{}_{}".format(name, channel)
-        self._channel = channel
         self._unit_of_measurement = POWER_VOLT
         self._state = None
+        if channel == SENSOR_CH0:
+            self._channel = 0
+        if channel == SENSOR_CH1:
+            self._channel = 1
+
 
     @property
     def name(self) -> str:
