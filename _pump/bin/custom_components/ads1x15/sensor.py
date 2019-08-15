@@ -44,14 +44,19 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     """Reset and initialize the ADS1x15 Analog to Digital Converter."""
 
     import smbus  # pylint: disable=import-error
+    import board  # pylint: disable=import-error
+    import busio  # pylint: disable=import-error
     import adafruit_ads1x15.ads1015 as ADS  # pylint: disable=import-error
     from adafruit_ads1x15.analog_in import AnalogIn  # pylint: disable=import-error
 
     name = config.get(CONF_NAME)
-    bus_number = config.get(CONF_I2C_BUS)
-    i2c_address = config.get(CONF_I2C_ADDRESS)
+    # bus_number = config.get(CONF_I2C_BUS)
+    # i2c_address = config.get(CONF_I2C_ADDRESS)
 
-    sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c_address))
+    # Create the I2C bus
+    i2c = busio.I2C(board.SCL, board.SDA)
+
+    sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c))
     
     # sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c_address, bus_number))
     # await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
