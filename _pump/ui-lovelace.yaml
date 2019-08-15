@@ -32,8 +32,8 @@ views:
               # - sensor.pump_htu21d_humidity
               # - sensor.pump_bh1750
               # - sensor.pump_ads1x15
-              - sensor.pump_bmp180
-              - sensor.pump_bmp180_2
+              - sensor.pump_bmp180_temperature
+              - sensor.pump_bmp180_pressure
 
       - type: vertical-stack
         cards:
