@@ -95,5 +95,5 @@ class BMP180Sensor(Entity):
             if self.unit_of_measurement == TEMP_FAHRENHEIT:
                 value = self.bmp180_sensor.temperature().F
         else:
-            value = self.bmp180_sensor.pressure()
+            value = self.bmp180_sensor.pressure().hPa
         self._state = value
