@@ -50,7 +50,9 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     bus_number = config.get(CONF_I2C_BUS)
     i2c_address = config.get(CONF_I2C_ADDRESS)
 
-    sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c_address, bus_number))
+    sensor = await hass.async_add_executor_job(partial(ADS.ADS1015))
+    
+    # sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c_address, bus_number))
     # await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
     # await asyncio.sleep(0.01)
 
