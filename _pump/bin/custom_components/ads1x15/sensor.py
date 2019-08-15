@@ -96,5 +96,5 @@ class ADS1X15Sensor(Entity):
 
     def update(self):
         """Get the latest measurement and update state."""
-        value = self.ads1x15_sensor.read_adc(self._channel, DEFAULT_GAIN)
+        value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
         self._state = value
