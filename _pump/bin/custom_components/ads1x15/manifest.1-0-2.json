@@ -1,9 +1,9 @@
 {
     "domain": "ads1x15",
     "name": "ADS1x15",
-    "documentation": "https://pypi.org/project/adafruit-circuitpython-ads1x15/#files",
+    "documentation": "https://pypi.org/project/Adafruit-ADS1x15/#files",
     "requirements": [
-      "adafruit-circuitpython-ads1x15==2.1.0"
+      "Adafruit-ADS1x15==1.0.2"
     ],
     "dependencies": [
       "rpi_gpio"

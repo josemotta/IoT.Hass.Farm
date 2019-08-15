@@ -44,14 +44,13 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     """Reset and initialize the ADS1x15 Analog to Digital Converter."""
 
     import smbus  # pylint: disable=import-error
-    import adafruit_ads1x15.ads1015 as ADS  # pylint: disable=import-error
-    from adafruit_ads1x15.analog_in import AnalogIn  # pylint: disable=import-error
+    import Adafruit_ADS1x15 as ADS  # pylint: disable=import-error
 
     name = config.get(CONF_NAME)
     bus_number = config.get(CONF_I2C_BUS)
     i2c_address = config.get(CONF_I2C_ADDRESS)
 
-    sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c_address))
+    sensor = await hass.async_add_executor_job(partial(ADS.ADS1015))
     
     # sensor = await hass.async_add_executor_job(partial(ADS.ADS1015, i2c_address, bus_number))
     # await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
@@ -74,13 +73,11 @@ class ADS1X15Sensor(Entity):
         self._name = "{}_{}".format(name, channel)
         self._unit_of_measurement = POWER_VOLT
         self._state = None
-        self._chan = None
-        self._channel = channel
-        # if channel == SENSOR_CH0:
-        #     self._channel = None
-        # if channel == SENSOR_CH1:
-        #     self._channel = 1
-        self.init = True
+        if channel == SENSOR_CH0:
+            self._channel = 0
+        if channel == SENSOR_CH1:
+            self._channel = 1
+
 
     @property
     def name(self) -> str:
@@ -99,12 +96,5 @@ class ADS1X15Sensor(Entity):
 
     def update(self):
         """Get the latest measurement and update state."""
-        if self.init:
-            self.init = False
-            if self._channel == SENSOR_CH0:
-                self._chan = self.ads1x15_sensor.AnalogIn(self._ads1x15_sensor, self.ads1x15_sensor.ADS.P0, self.ads1x15_sensor.ADS.P1)
-            if self._channel == SENSOR_CH1:
-                self._chan = self.ads1x15_sensor.AnalogIn(self._ads1x15_sensor, self.ads1x15_sensor.ADS.P2, self.ads1x15_sensor.ADS.P3)
-
-        #value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
-        self._state = self._chan.voltage
+        value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
+        self._state = value
