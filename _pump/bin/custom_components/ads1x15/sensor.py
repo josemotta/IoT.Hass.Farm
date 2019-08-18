@@ -50,8 +50,6 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     from adafruit_ads1x15.analog_in import AnalogIn  # pylint: disable=import-error
 
     name = config.get(CONF_NAME)
-    # bus_number = config.get(CONF_I2C_BUS)
-    # i2c_address = config.get(CONF_I2C_ADDRESS)
 
     # Create the I2C bus
     i2c = busio.I2C(board.SCL, board.SDA)
@@ -84,10 +82,6 @@ class ADS1X15Sensor(Entity):
         self._analogin = analogin
         self._pplus = pplus
         self._pminus = pminus
-        # if channel == SENSOR_CH0:
-        #     self._channel = None
-        # if channel == SENSOR_CH1:
-        #     self._channel = 1
         self.init = True
 
     @property
@@ -110,10 +104,4 @@ class ADS1X15Sensor(Entity):
         if self.init:
             self._chan = self._analogin(self._sensor, self._pplus, self._pminus)
             self.init = False
-            # if self._channel == SENSOR_CH0:
-            #     self._chan = self._analogin(self._sensor, self._pplus, self._pminus)
-            # if self._channel == SENSOR_CH1:
-            #     self._chan = self._analogin(self._sensor, self._sensor.ADS.P2, self._sensor.ADS.P3)
-
-        #value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
         self._state = self._chan.voltage
