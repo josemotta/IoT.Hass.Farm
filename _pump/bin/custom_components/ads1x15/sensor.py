@@ -63,8 +63,8 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     # await asyncio.sleep(0.01)
 
     dev = [
-        ADS1X15Sensor(sensor, name, SENSOR_CH0),
-        ADS1X15Sensor(sensor, name, SENSOR_CH1),
+        ADS1X15Sensor(sensor, name, SENSOR_CH0, AnalogIn),
+        ADS1X15Sensor(sensor, name, SENSOR_CH1, AnalogIn),
     ]
 
     async_add_entities(dev, True)
@@ -73,7 +73,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 class ADS1X15Sensor(Entity):
     """Implementation of ADS1X15 sensor."""
 
-    def __init__(self, ads1x15_sensor, name, channel):
+    def __init__(self, ads1x15_sensor, name, channel, analogin):
         """Initialize the sensor."""
         self.ads1x15_sensor = ads1x15_sensor
         self._name = "{}_{}".format(name, channel)
@@ -81,6 +81,7 @@ class ADS1X15Sensor(Entity):
         self._state = None
         self._chan = None
         self._channel = channel
+        self._analogin = analogin
         # if channel == SENSOR_CH0:
         #     self._channel = None
         # if channel == SENSOR_CH1:
@@ -107,9 +108,9 @@ class ADS1X15Sensor(Entity):
         if self.init:
             self.init = False
             if self._channel == SENSOR_CH0:
-                self._chan = self.ads1x15_sensor.AnalogIn(self._ads1x15_sensor, self.ads1x15_sensor.ADS.P0, self.ads1x15_sensor.ADS.P1)
+                self._chan = self._analogin(self._ads1x15_sensor, self.ads1x15_sensor.P0, self.ads1x15_sensor.P1)
             if self._channel == SENSOR_CH1:
-                self._chan = self.ads1x15_sensor.AnalogIn(self._ads1x15_sensor, self.ads1x15_sensor.ADS.P2, self.ads1x15_sensor.ADS.P3)
+                self._chan = self._analogin(self._ads1x15_sensor, self.ads1x15_sensor.P2, self.ads1x15_sensor.P3)
 
         #value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
         self._state = self._chan.voltage
