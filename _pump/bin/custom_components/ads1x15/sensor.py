@@ -75,7 +75,7 @@ class ADS1X15Sensor(Entity):
 
     def __init__(self, ads1x15_sensor, name, channel, analogin):
         """Initialize the sensor."""
-        self._ads1x15_sensor = ads1x15_sensor
+        self._sensor = ads1x15_sensor
         self._name = "{}_{}".format(name, channel)
         self._unit_of_measurement = POWER_VOLT
         self._state = None
@@ -108,9 +108,9 @@ class ADS1X15Sensor(Entity):
         if self.init:
             self.init = False
             if self._channel == SENSOR_CH0:
-                self._chan = self._analogin(self._ads1x15_sensor, self.ads1x15_sensor.P0, self.ads1x15_sensor.P1)
+                self._chan = self._analogin(self._sensor, self.ads1x15_sensor.P0, self.ads1x15_sensor.P1)
             if self._channel == SENSOR_CH1:
-                self._chan = self._analogin(self._ads1x15_sensor, self.ads1x15_sensor.P2, self.ads1x15_sensor.P3)
+                self._chan = self._analogin(self._sensor, self.ads1x15_sensor.P2, self.ads1x15_sensor.P3)
 
         #value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
         self._state = self._chan.voltage
