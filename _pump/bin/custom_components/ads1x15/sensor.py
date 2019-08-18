@@ -108,9 +108,9 @@ class ADS1X15Sensor(Entity):
         if self.init:
             self.init = False
             if self._channel == SENSOR_CH0:
-                self._chan = self._analogin(self._sensor, self._sensor.P0, self._sensor.P1)
+                self._chan = self._analogin(self._sensor, self._sensor.ADS.P0, self._sensor.ADS.P1)
             if self._channel == SENSOR_CH1:
-                self._chan = self._analogin(self._sensor, self._sensor.P2, self._sensor.P3)
+                self._chan = self._analogin(self._sensor, self._sensor.ADS.P2, self._sensor.ADS.P3)
 
         #value = self.ads1x15_sensor.read_adc_difference(self._channel, DEFAULT_GAIN)
         self._state = self._chan.voltage
