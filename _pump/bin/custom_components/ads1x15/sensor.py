@@ -75,7 +75,7 @@ class ADS1X15Sensor(Entity):
 
     def __init__(self, ads1x15_sensor, name, channel, analogin):
         """Initialize the sensor."""
-        self.ads1x15_sensor = ads1x15_sensor
+        self._ads1x15_sensor = ads1x15_sensor
         self._name = "{}_{}".format(name, channel)
         self._unit_of_measurement = POWER_VOLT
         self._state = None
