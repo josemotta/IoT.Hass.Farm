@@ -144,7 +144,7 @@ sensor:
     unit_of_measurement: "°C"
     value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
-MQTT Broker (aka Mosquitto)
+#MQTT Broker (aka Mosquitto)
 mqtt:
   broker: !secret mqtt_broker
   client_id: pump_slave
