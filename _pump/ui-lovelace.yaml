@@ -2,25 +2,30 @@ title: Pump Panel
 views:
   - title: Home
     cards:
-      # - type: sensor
-      #   entity: sensor.pump_current_1
-      #   name: pump 1
-      #   #line_color: "#3498db"
-      #   accuracy: 50
-      #   height: 150
-      #   detail: 2
-      #   graph: line
-      #   unit: "%"
+      - type: vertical-stack
+        cards:
+          - type: history-graph
+            title: 'Temperature'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_bmp180_temperature
+                name: Pump
 
-      # - type: sensor
-      #   entity: sensor.pump_current_2
-      #   name: pump 2
-      #   #line_color: "#3498db"
-      #   accuracy: 50
-      #   height: 150
-      #   detail: 2
-      #   graph: line
-      #   unit: "%"
+          - type: history-graph
+            title: 'Pressure'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_bmp180_pressure
+                name: Pump
+
+          - type: history-graph
+            title: 'Analog In'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_ads1x15_0
+                name: A0
+              - entity: sensor.pump_ads1x15_1
+                name: A1
 
       - type: vertical-stack
         cards:
