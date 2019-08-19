@@ -41,8 +41,8 @@ views:
               - sensor.pump_bmp180_temperature
               - sensor.pump_bmp180_pressure
 
-      - type: vertical-stack
-        cards:
+      # - type: vertical-stack
+      #   cards:
           - type: gauge
             title: CPU
             name: CPU
