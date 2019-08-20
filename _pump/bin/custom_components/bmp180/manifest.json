@@ -4,7 +4,7 @@
     "documentation": "https://github.com/nickoala/sensor",
     "requirements": [
       "sensor==5",
-      "smbus2==0.2.3"
+      "smbus2==0.2.1"
     ],
     "dependencies": [
       "rpi_gpio"
