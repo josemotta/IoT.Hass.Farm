@@ -7,7 +7,8 @@
       "smbus==1.1.post2"
     ],
     "dependencies": [
-      "rpi_gpio"
+      "rpi_gpio",
+      "smbus"
     ],
     "codeowners": []
   }
