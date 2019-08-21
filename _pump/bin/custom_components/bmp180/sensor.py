@@ -42,12 +42,12 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """Reset and initialize the BMP180 Sensor."""
     #import smbus  # pylint: disable=import-error
-    from sensor.BMP180 import BMP180  # pylint: disable=import-error
-
     try:
         from smbus2 import SMBus
     except ImportError:
         from smbus import SMBus
+
+    from sensor.BMP180 import BMP180  # pylint: disable=import-error
 
     bus = SMBus(config.get(CONF_I2C_BUS))
     
