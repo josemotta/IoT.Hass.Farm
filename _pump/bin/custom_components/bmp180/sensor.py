@@ -41,16 +41,23 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """Reset and initialize the BMP180 Sensor."""
-    import smbus  # pylint: disable=import-error
+    #import smbus  # pylint: disable=import-error
     from sensor.BMP180 import BMP180  # pylint: disable=import-error
 
+    try:
+        from smbus2 import SMBus
+    except ImportError:
+        from smbus import SMBus
+
+    bus = SMBus(config.get(CONF_I2C_BUS))
+    
     name = config.get(CONF_NAME)
     i2c_address = config.get(CONF_I2C_ADDRESS)
     temp_unit = hass.config.units.temperature_unit
 
     # bus_number = config.get(CONF_I2C_BUS)
     # sensor = await hass.async_add_executor_job(partial(BMP180, bus_number, i2c_address))
-    bus = smbus.SMBus(config.get(CONF_I2C_BUS))
+    # bus = smbus.SMBus(config.get(CONF_I2C_BUS))
     sensor = await hass.async_add_executor_job(partial(BMP180, bus, i2c_address, logger=_LOGGER))
 
     # await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
