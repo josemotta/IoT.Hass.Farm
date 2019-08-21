@@ -1,0 +1,63 @@
+title: Pump Panel
+views:
+  - title: Home
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: history-graph
+            title: 'Temperature'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_bmp180_temperature
+                name: Pump
+
+          - type: history-graph
+            title: 'Pressure'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_bmp180_pressure
+                name: Pump
+
+          - type: history-graph
+            title: 'Analog In'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_ads1x15_0
+                name: A0
+              - entity: sensor.pump_ads1x15_1
+                name: A1
+
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Sensors
+            show_header_toggle: false
+            entities:
+              # - sensor.pump_htu21d_temperature
+              # - sensor.pump_htu21d_humidity
+              # - sensor.pump_bh1750
+              - sensor.pump_ads1x15_0
+              - sensor.pump_ads1x15_1
+              - sensor.pump_bmp180_temperature
+              - sensor.pump_bmp180_pressure
+
+      # - type: vertical-stack
+      #   cards:
+          - type: gauge
+            title: CPU
+            name: CPU
+            show_header_toggle: true
+            entity: sensor.processor_use
+            severity:
+              green: 0
+              yellow: 50
+              red: 90
+
+          - type: entities
+            title: Computer
+            show_header_toggle: false
+            entities:
+              - sensor.memory_free
+              - sensor.pump_network
+              - sensor.disk_use_percent
+              - sensor.pump_gpu_temperature
