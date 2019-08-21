@@ -123,8 +123,8 @@ sensor:
   - platform: ads1x15
     name: pump_ads1x15
   
-  - platform: bmp180
-    name: pump_bmp180
+  # - platform: bmp180
+  #   name: pump_bmp180
 
     # - platform: template
   #   sensors:
