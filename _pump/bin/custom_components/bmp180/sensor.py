@@ -44,6 +44,11 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     #from smbus2 import SMBus as smbus  # pylint: disable=import-error
     from sensor.BMP180 import BMP180  # pylint: disable=import-error
 
+    try:
+        from smbus2 import SMBus as smbus  # pylint: disable=import-error
+    except ImportError:
+        from smbus import SMBus as smbus  # pylint: disable=import-error
+
     name = config.get(CONF_NAME)
     bus_number = config.get(CONF_I2C_BUS)
     i2c_address = config.get(CONF_I2C_ADDRESS)
