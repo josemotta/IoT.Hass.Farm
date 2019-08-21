@@ -40,14 +40,9 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 #     sensor(bus_number, i2c_address)
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
-    """Reset and initialize the VL53L1X ToF Sensor from STMicroelectronics."""
-    #from smbus2 import SMBus as smbus  # pylint: disable=import-error
+    """Reset and initialize the BMP180 Sensor."""
+    import smbus  # pylint: disable=import-error
     from sensor.BMP180 import BMP180  # pylint: disable=import-error
-
-    # try:
-    #     from smbus2 import SMBus as smbus  # pylint: disable=import-error
-    # except ImportError:
-    #     from smbus import SMBus as smbus  # pylint: disable=import-error
 
     name = config.get(CONF_NAME)
     bus_number = config.get(CONF_I2C_BUS)
@@ -55,6 +50,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     temp_unit = hass.config.units.temperature_unit
 
     sensor = await hass.async_add_executor_job(partial(BMP180, bus_number, i2c_address))
+
     # await hass.async_add_executor_job(init_bmp, bus_number, i2c_address, sensor)
     # await asyncio.sleep(0.01)
 

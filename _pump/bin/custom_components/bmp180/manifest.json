@@ -3,11 +3,11 @@
     "name": "bmp180",
     "documentation": "https://github.com/nickoala/sensor",
     "requirements": [
-      "sensor==5"
+      "sensor==5",
+      "smbus-cffi==0.5.1"
     ],
     "dependencies": [
-      "rpi_gpio",
-      "smbus"
+      "rpi_gpio"
     ],
     "codeowners": []
   }
