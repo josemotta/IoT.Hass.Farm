@@ -44,16 +44,6 @@ views:
               - entity: sensor.super_htu21d_temperature
                 name: Super
           - type: history-graph
-            title: 'Humidity'
-            refresh_interval: 60
-            entities:
-              - entity: sensor.pump_htu21d_humidity
-                name: Pump
-              - entity: sensor.tank_htu21d_humidity
-                name: Tank
-              - entity: sensor.super_htu21d_humidity
-                name: Super
-          - type: history-graph
             title: 'Delta-Temperature'
             refresh_interval: 60
             entities:
@@ -93,6 +83,16 @@ views:
               #- sensor.pump_gpu_temperature
       - type: vertical-stack
         cards:
+          - type: history-graph
+            title: 'Humidity'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_htu21d_humidity
+                name: Pump
+              - entity: sensor.tank_htu21d_humidity
+                name: Tank
+              - entity: sensor.super_htu21d_humidity
+                name: Super
           - type: history-graph
             title: 'Delta-Humidity'
             refresh_interval: 60
