@@ -22,6 +22,18 @@ views:
               - entity: sensor.pump_ads1x15_1
                 name: A1
           - type: history-graph
+            title: 'Luminance'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_bh1750
+                name: Pump
+              - entity: sensor.tank_bh1750
+                name: Tank
+              - entity: sensor.super_bh1750
+                name: Super
+      - type: vertical-stack
+        cards:
+          - type: history-graph
             title: 'Temperature'
             refresh_interval: 60
             entities:
@@ -41,18 +53,6 @@ views:
                 name: Tank
               - entity: sensor.super_htu21d_humidity
                 name: Super
-          - type: history-graph
-            title: 'Luminance'
-            refresh_interval: 60
-            entities:
-              - entity: sensor.pump_bh1750
-                name: Pump
-              - entity: sensor.tank_bh1750
-                name: Tank
-              - entity: sensor.super_bh1750
-                name: Super
-      - type: vertical-stack
-        cards:
           - type: history-graph
             title: 'Delta-Temperature'
             refresh_interval: 60
