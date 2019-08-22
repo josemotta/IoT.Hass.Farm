@@ -159,8 +159,8 @@ mqtt_statestream:
   publish_timestamps: true
   include:
     entities:
+      - sensor.pump_ads1x15_0
       - sensor.pump_ads1x15_1
-      - sensor.pump_ads1x15_2
       - sensor.pump_bmp180_pressure
       - sensor.pump_bmp180_temperature
       # - sensor.pump_bh1750
