@@ -140,7 +140,7 @@ views:
               yellow: 40
               red: 45
           - type: entities
-            title: Computador
+            title: -------------
             show_header_toggle: false
             entities:
               - sensor.memory_free
