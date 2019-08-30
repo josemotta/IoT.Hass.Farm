@@ -49,7 +49,7 @@ views:
             show_header_toggle: false
             entities:
               - sensor.tank_water_level_mm
-              - sensor.tank_vl53l1x
+              # - sensor.tank_vl53l1x
               #- sensor.tank_delta_temperature
               - sensor.tank_htu21d_temperature
               #- sensor.tank_delta_humidity
