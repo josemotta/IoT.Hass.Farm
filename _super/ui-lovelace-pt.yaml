@@ -5,7 +5,7 @@ views:
       - type: vertical-stack
         cards:
           - type: entities
-            title: Climate
+            title: Clima
             show_header_toggle: false
             entities:
               - sun.sun
@@ -45,7 +45,7 @@ views:
           #     - entity: sensor.super_bh1750
           #       name: Super
           - type: entities
-            title: Tank
+            title: Castelo
             show_header_toggle: false
             entities:
               #- sensor.tank_delta_temperature
@@ -59,7 +59,7 @@ views:
       - type: vertical-stack
         cards:
           - type: history-graph
-            title: 'Temperature'
+            title: 'Temperatura'
             refresh_interval: 60
             entities:
               # - entity: sensor.pump_htu21d_temperature
@@ -69,7 +69,7 @@ views:
               - entity: sensor.super_htu21d_temperature
                 name: Super
           - type: history-graph
-            title: 'Delta-Temperature'
+            title: 'Delta-Temperatura'
             refresh_interval: 60
             entities:
               # - entity: sensor.pump_delta_temperature
@@ -98,7 +98,7 @@ views:
       - type: vertical-stack
         cards:
           - type: history-graph
-            title: 'Humidity'
+            title: 'Umidade'
             refresh_interval: 60
             entities:
               # - entity: sensor.pump_htu21d_humidity
@@ -108,7 +108,7 @@ views:
               - entity: sensor.super_htu21d_humidity
                 name: Super
           - type: history-graph
-            title: 'Delta-Humidity'
+            title: 'Delta-Umidade'
             refresh_interval: 60
             entities:
               # - entity: sensor.pump_delta_humidity
