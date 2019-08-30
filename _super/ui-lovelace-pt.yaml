@@ -44,6 +44,18 @@ views:
           #       name: Tank
           #     - entity: sensor.super_bh1750
           #       name: Super
+          - type: entities
+            title: Tank
+            show_header_toggle: false
+            entities:
+              #- sensor.tank_delta_temperature
+              - sensor.tank_htu21d_temperature
+              #- sensor.tank_delta_humidity
+              - sensor.tank_htu21d_humidity
+              - sensor.tank_bh1750
+              - sensor.tank_vl53l1x
+              - sensor.tank_water_level_mm
+              #- sensor.tank_gpu_temperature
       - type: vertical-stack
         cards:
           - type: history-graph
@@ -71,18 +83,6 @@ views:
               - sensor.super_htu21d_temperature
               - sensor.super_htu21d_humidity
               - sensor.super_bh1750
-          - type: entities
-            title: Tank
-            show_header_toggle: false
-            entities:
-              #- sensor.tank_delta_temperature
-              - sensor.tank_htu21d_temperature
-              #- sensor.tank_delta_humidity
-              - sensor.tank_htu21d_humidity
-              - sensor.tank_bh1750
-              - sensor.tank_vl53l1x
-              - sensor.tank_water_level_mm
-              #- sensor.tank_gpu_temperature
           # - type: entities
           #   title: Pump
           #   show_header_toggle: false
