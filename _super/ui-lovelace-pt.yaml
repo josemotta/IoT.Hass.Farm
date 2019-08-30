@@ -18,7 +18,7 @@ views:
             height: 150
             detail: 2
             graph: line
-            unit: "%"
+            unit: "mm"
 
           - type: history-graph
             title: Capacidade
