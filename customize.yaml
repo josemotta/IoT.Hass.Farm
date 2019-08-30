@@ -25,6 +25,7 @@ sensor.tank_water_level:
   icon: mdi:waves
 sensor.tank_water_level_mm:
   icon: mdi:arrow-collapse-up
+  friendly_name: "Tank Water Level"
 sensor.tank_vl53l1x:
   icon: mdi:arrow-collapse-down
 sensor.network_in_wlan0:
