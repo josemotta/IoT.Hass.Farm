@@ -130,17 +130,17 @@ views:
           #   entities:
           #     - sun.sun
           #     - sensor.yr_symbol
-          # - type: gauge
-          #   title: CPU
-          #   name: CPU
-          #   show_header_toggle: true
-          #   entity: sensor.processor_use
-          #   severity:
-          #     green: 0
-          #     yellow: 50
-          #     red: 90
+          - type: gauge
+            title: Temp-GPU
+            name: Temp-GPU
+            show_header_toggle: true
+            entity: sensor.super_gpu_temperature
+            severity:
+              green: 0
+              yellow: 40
+              red: 45
           - type: entities
-            title: Computer
+            title: Computador
             show_header_toggle: false
             entities:
               - sensor.memory_free
