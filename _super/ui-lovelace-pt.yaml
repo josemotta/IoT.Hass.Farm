@@ -69,7 +69,7 @@ views:
               - entity: sensor.super_htu21d_temperature
                 name: Super
           - type: history-graph
-            title: 'Diferença-Temperatura'
+            title: 'dT'
             refresh_interval: 60
             entities:
               # - entity: sensor.pump_delta_temperature
@@ -117,7 +117,7 @@ views:
               - entity: sensor.super_htu21d_humidity
                 name: Super
           - type: history-graph
-            title: 'Diferença-Umidade'
+            title: 'dU'
             refresh_interval: 60
             entities:
               # - entity: sensor.pump_delta_humidity
