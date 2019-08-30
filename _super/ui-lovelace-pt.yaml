@@ -148,7 +148,7 @@ views:
               # - sensor.network_out_eth0
               - sensor.super_network
               - sensor.disk_use_percent
-              - sensor.super_gpu_temperature
+              # - sensor.super_gpu_temperature
 
       #- type: entities
       #  title: Zones
