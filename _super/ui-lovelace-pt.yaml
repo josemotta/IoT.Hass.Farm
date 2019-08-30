@@ -76,6 +76,15 @@ views:
               #   name: Pump
               - entity: sensor.tank_delta_temperature
                 name: Tank
+          - type: gauge
+            title: CPU
+            name: CPU
+            show_header_toggle: true
+            entity: sensor.processor_use
+            severity:
+              green: 0
+              yellow: 50
+              red: 90
           - type: entities
             title: Supervisor
             show_header_toggle: false
@@ -121,15 +130,15 @@ views:
           #   entities:
           #     - sun.sun
           #     - sensor.yr_symbol
-          - type: gauge
-            title: CPU
-            name: CPU
-            show_header_toggle: true
-            entity: sensor.processor_use
-            severity:
-              green: 0
-              yellow: 50
-              red: 90
+          # - type: gauge
+          #   title: CPU
+          #   name: CPU
+          #   show_header_toggle: true
+          #   entity: sensor.processor_use
+          #   severity:
+          #     green: 0
+          #     yellow: 50
+          #     red: 90
           - type: entities
             title: Computer
             show_header_toggle: false
