@@ -145,7 +145,7 @@ sensor:
     unit_of_measurement: "°C"
     value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
-# # MQTT Broker (aka Mosquitto)
+# MQTT Broker (aka Mosquitto)
 # mqtt:
 #   broker: !secret mqtt_broker
 #   client_id: tank_slave
@@ -161,6 +161,7 @@ sensor:
 #   include:
 #     entities:
 #       - sensor.tank_water_level
+#       - sensor.tank_water_level_mm
 #       - sensor.tank_vl53l1x
 #       - sensor.tank_bh1750
 #       - sensor.tank_htu21d_humidity

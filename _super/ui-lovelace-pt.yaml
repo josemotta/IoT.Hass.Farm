@@ -4,6 +4,12 @@ views:
     cards:
       - type: vertical-stack
         cards:
+          - type: entities
+            title: Climate
+            show_header_toggle: false
+            entities:
+              - sun.sun
+              - sensor.yr_symbol
           - type: sensor
             entity: sensor.tank_water_level_mm
             name: 'Linha dÁgua'
@@ -75,6 +81,7 @@ views:
               - sensor.tank_htu21d_humidity
               - sensor.tank_bh1750
               - sensor.tank_vl53l1x
+              - sensor.tank_water_level_mm
               #- sensor.tank_gpu_temperature
           # - type: entities
           #   title: Pump
@@ -108,12 +115,12 @@ views:
               #   name: Pump
               - entity: sensor.tank_delta_humidity
                 name: Tank
-          - type: entities
-            title: Climate
-            show_header_toggle: false
-            entities:
-              - sun.sun
-              - sensor.yr_symbol
+          # - type: entities
+          #   title: Climate
+          #   show_header_toggle: false
+          #   entities:
+          #     - sun.sun
+          #     - sensor.yr_symbol
           - type: gauge
             title: CPU
             name: CPU
