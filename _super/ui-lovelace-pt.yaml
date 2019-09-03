@@ -67,7 +67,7 @@ views:
               - entity: sensor.tank_htu21d_temperature
                 name: Tank
               - entity: sensor.super_htu21d_temperature
-                name: Super
+                name: Ambiente
           - type: history-graph
             title: 'dT'
             refresh_interval: 60
@@ -115,7 +115,7 @@ views:
               - entity: sensor.tank_htu21d_humidity
                 name: Tank
               - entity: sensor.super_htu21d_humidity
-                name: Super
+                name: Ambiente
           - type: history-graph
             title: 'dU'
             refresh_interval: 60
@@ -140,7 +140,7 @@ views:
               yellow: 40
               red: 45
           - type: entities
-            title: -------------------------------
+            title: 'v1.0'
             show_header_toggle: false
             entities:
               - sensor.memory_free

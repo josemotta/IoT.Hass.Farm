@@ -148,11 +148,11 @@ sensor:
     value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
 
 # ANAVI Light pHat (waiting for new json_light setup from Anavi)
-light:
-  - platform: mqtt
-    schema: json
-    name: "ANAVI-Light-pHAT"
-    command_topic: "bec3b4e72ddb6f015791d8acc2618053/action/rgbled"
+# light:
+#   - platform: mqtt
+#     schema: json
+#     name: "ANAVI-Light-pHAT"
+#     command_topic: "bec3b4e72ddb6f015791d8acc2618053/action/rgbled"
 
 # MQTT Broker (aka Mosquitto)
 mqtt:
