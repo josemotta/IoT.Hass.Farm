@@ -168,6 +168,12 @@ mqtt_statestream:
       # - sensor.pump_htu21d_temperature
       # - sensor.pump_network
 
+panel_iframe:
+  jupyterlab:
+    title: JupyterLab
+    icon: mdi:flask
+    url: http://localhost:7777
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
