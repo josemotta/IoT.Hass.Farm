@@ -65,9 +65,9 @@ history:
     domains:
       - sensor
     entities:
-      # - sensor.pump_htu21d_temperature
-      # - sensor.pump_htu21d_humidity
-      # - sensor.pump_bh1750
+      - sensor.pump_htu21d_temperature
+      - sensor.pump_htu21d_humidity
+      - sensor.pump_bh1750
       - sensor.pump_ads1x15_1
       - sensor.pump_ads1x15_2
       - sensor.pump_bmp180_temperature
@@ -98,10 +98,10 @@ sun:
 
 # Sensors
 sensor:
-  # - platform: htu21d
-  #   name: pump_htu21d
-  # - platform: bh1750
-  #   name: pump_bh1750
+  - platform: htu21d
+    name: pump_htu21d
+  - platform: bh1750
+    name: pump_bh1750
   - platform: systemmonitor
     resources:
       - type: processor_use
@@ -163,10 +163,10 @@ mqtt_statestream:
       - sensor.pump_ads1x15_1
       - sensor.pump_bmp180_pressure
       - sensor.pump_bmp180_temperature
-      # - sensor.pump_bh1750
-      # - sensor.pump_htu21d_humidity
-      # - sensor.pump_htu21d_temperature
-      # - sensor.pump_network
+      - sensor.pump_bh1750
+      - sensor.pump_htu21d_humidity
+      - sensor.pump_htu21d_temperature
+      - sensor.pump_network
 
 panel_iframe:
   jupyterlab:

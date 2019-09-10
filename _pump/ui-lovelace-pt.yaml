@@ -33,13 +33,13 @@ views:
             title: Sensors
             show_header_toggle: false
             entities:
-              # - sensor.pump_htu21d_temperature
-              # - sensor.pump_htu21d_humidity
-              # - sensor.pump_bh1750
+              - sensor.pump_htu21d_temperature
+              - sensor.pump_htu21d_humidity
+              - sensor.pump_bh1750
               - sensor.pump_ads1x15_0
               - sensor.pump_ads1x15_1
-              - sensor.pump_bmp180_temperature
-              - sensor.pump_bmp180_pressure
+              # - sensor.pump_bmp180_temperature
+              # - sensor.pump_bmp180_pressure
 
       # - type: vertical-stack
       #   cards:
