@@ -5,10 +5,26 @@ views:
       - type: vertical-stack
         cards:
           - type: history-graph
-            title: 'Temperature'
+            title: 'Analog In'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_ads1x15_0
+                name: A0
+              - entity: sensor.pump_ads1x15_1
+                name: A1
+
+          - type: history-graph
+            title: 'Temperatura'
             refresh_interval: 60
             entities:
               - entity: sensor.pump_htu21d_temperature
+                name: Pump
+
+          - type: history-graph
+            title: 'Umidade'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.pump_htu21d_humidity
                 name: Pump
 
           # - type: history-graph
@@ -17,15 +33,6 @@ views:
           #   entities:
           #     - entity: sensor.pump_bmp180_pressure
           #       name: Pump
-
-          - type: history-graph
-            title: 'Analog In'
-            refresh_interval: 60
-            entities:
-              - entity: sensor.pump_ads1x15_0
-                name: A0
-              - entity: sensor.pump_ads1x15_1
-                name: A1
 
       - type: vertical-stack
         cards:
