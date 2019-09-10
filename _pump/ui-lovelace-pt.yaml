@@ -37,7 +37,7 @@ views:
       - type: vertical-stack
         cards:
           - type: entities
-            title: Sensors
+            title: Sensores
             show_header_toggle: false
             entities:
               - sensor.pump_ads1x15_0
@@ -61,7 +61,7 @@ views:
               red: 90
 
           - type: entities
-            title: Computer
+            title: Computador
             show_header_toggle: false
             entities:
               - sensor.memory_free
