@@ -172,7 +172,7 @@ panel_iframe:
   jupyterlab:
     title: JupyterLab
     icon: mdi:flask
-    url: http://localhost:7777
+    url: http://192.168.0.232:7777
 
 group: !include groups.yaml
 automation: !include automations.yaml
