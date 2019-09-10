@@ -8,15 +8,15 @@ views:
             title: 'Temperature'
             refresh_interval: 60
             entities:
-              - entity: sensor.pump_bmp180_temperature
+              - entity: sensor.pump_htu21d_temperature
                 name: Pump
 
-          - type: history-graph
-            title: 'Pressure'
-            refresh_interval: 60
-            entities:
-              - entity: sensor.pump_bmp180_pressure
-                name: Pump
+          # - type: history-graph
+          #   title: 'Pressure'
+          #   refresh_interval: 60
+          #   entities:
+          #     - entity: sensor.pump_bmp180_pressure
+          #       name: Pump
 
           - type: history-graph
             title: 'Analog In'
