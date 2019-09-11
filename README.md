@@ -108,7 +108,8 @@ Further details about this project are published separately for each node. Pleas
 
 - [Tank node](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_tank)
 - [Supervisor node](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_super)
-
+- [Pump node](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_pump)
+- 
 #### Known issues
 
 ##### BH1750 and HTU21D sensors fail at RPI0 linux-armv6l-3.7
