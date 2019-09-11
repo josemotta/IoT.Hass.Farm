@@ -8,7 +8,11 @@ script:
   # - hass -c . --script check_config
   - ./set-config.sh super
   - hass -c . --script check_config
+  - ./set-config.sh super pt
+  - hass -c . --script check_config
   - ./set-config.sh pump
+  - hass -c . --script check_config
+- ./set-config.sh pump pt
   - hass -c . --script check_config
 before_install:
   - mv secrets-dummy.yaml secrets.yaml
