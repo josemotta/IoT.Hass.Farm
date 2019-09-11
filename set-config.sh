@@ -43,6 +43,6 @@ esac
 ## Set UI language
 if [ $# -eq 2 ]
 then
-  mv ui-lovelace-{$2}.yaml ui-lovelace.yaml
+  mv ui-lovelace-$2.yaml ui-lovelace.yaml
 fi
 
