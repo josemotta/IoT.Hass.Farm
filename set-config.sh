@@ -12,7 +12,7 @@ NM="/etc/NetworkManager/system-connections"
 
 if [ -z "$1" ]
 then
-  echo "Usage: `basename $0` [tank | super | pump]"
+  echo "Usage: `basename $0` [tank | super | pump] [ui]"
   exit $E_NOARGS
 fi
 
@@ -40,7 +40,7 @@ case $1 in
     # fi
     ;;
 esac
-## Set UI language
+## Set UI language to ui-lovelace-$2 if parameter exists
 if [ $# -eq 2 ]
 then
   mv ui-lovelace-$2.yaml ui-lovelace.yaml
