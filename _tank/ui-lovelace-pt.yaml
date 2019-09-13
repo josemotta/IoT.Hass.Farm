@@ -4,37 +4,36 @@ views:
     cards:
       - type: vertical-stack
         cards:
+          - type: sensor
+            entity: sensor.tank_water_level_mm
+            name: Linha dÁgua
+            #line_color: "#3498db"
+            accuracy: 50
+            height: 150
+            detail: 2
+            graph: line
+            unit: "mm"
           # - type: history-graph
           #   title: 'Capacidade'
           #   refresh_interval: 60
           #   entities:
           #     - entity: sensor.tank_water_level
           #       name: Castelo
-          - type: sensor
-            entity: sensor.tank_water_level
-            name: Capacidade
-            #line_color: "#3498db"
-            accuracy: 50
-            height: 150
-            detail: 2
-            graph: line
-            unit: "%"
-
+          # - type: sensor
+          #   entity: sensor.tank_water_level
+          #   name: Capacidade
+          #   #line_color: "#3498db"
+          #   accuracy: 50
+          #   height: 150
+          #   detail: 2
+          #   graph: line
+          #   unit: "%"
           - type: history-graph
             title: 'Linha dÁgua'
             refresh_interval: 60
             entities:
               - entity: sensor.tank_water_level_mm
                 name: Castelo
-          # - type: sensor
-          #   entity: sensor.tank_water_level_mm
-          #   name: Linha d'Água
-          #   #line_color: "#3498db"
-          #   accuracy: 50
-          #   height: 150
-          #   detail: 2
-          #   graph: line
-          #   unit: "mm"
 
       - type: vertical-stack
         cards:
