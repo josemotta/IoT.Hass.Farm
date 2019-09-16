@@ -30,13 +30,13 @@ A couple questions arise when we start designing the system:
 - How each node connects to power and communication?
 - How many wires are necessary to bring node to life?
 
-The table below classifies the three types of nodes created for this application.
+The table below classifies in order of appearance the three types of nodes created for this application.
 
 ![](https://i.imgur.com/8XzDA8M.png)
 
 - `tank`: This node uses a wire to power a Raspberry Pi Zero-W device equipped with Wifi communication.
-- `pump`: This node changes CPU to Raspberry Pi 3B+ with a PoE (Power over Ethernet) Hat that allows both power and communication over a twisted-pair cable.
 - `super`: This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN. 
+- `pump`: This node changes CPU to Raspberry Pi 3B+ with a PoE (Power over Ethernet) Hat that allows both power and communication over a twisted-pair cable.
 
 ## Water Process
 
