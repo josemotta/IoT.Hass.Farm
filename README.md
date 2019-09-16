@@ -24,6 +24,12 @@ This project develops a distributed IoT architecture based on Raspberry Pi hardw
 
 There are different types of IoT devices cooperating in a single system. Each device is considered a node with its own HA configuration, automation and user interface scripts. The nodes share common Home Assistant files, like customizations, groups and secrets. 
 
+## Water Process
+
+The picture describes a typical process that pumps water from well and fills the big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that should also be monitored.
+
+![](https://i.imgur.com/4fRKJ5g.jpg)
+
 A couple questions arise when we start designing the system:
 
 - How big should be the CPU for each node?
@@ -37,12 +43,6 @@ The table below classifies the three types of nodes created for this application
 - `tank`: This node uses a wire to power a Raspberry Pi Zero-W device equipped with Wifi communication.
 - `super`: This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN. 
 - `pump`: This node uses the Raspberry Pi 3B+ with a PoE (Power over Ethernet) Hat that allows both power and communication over a twisted-pair cable with RJ-45 connector.
-
-## Water Process
-
-The picture describes a typical process that pumps water from well and fills the big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that should also be monitored.
-
-![](https://i.imgur.com/4fRKJ5g.jpg)
 
 ### Tank node
 
