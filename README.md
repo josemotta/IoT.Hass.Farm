@@ -70,7 +70,7 @@ The Raspberry Pi 3B was used at the supervisor node since further processing is 
 
 ### Pump node
 
-This node gets info from pumps to inform how water is being moved to the tanks. We know that a lot of electromagnetic interference exists near pumps, and definitely this is not healthful to computer CPUs. It is a wise choice to keep the node connections far from this wild environment and the best option is this case is to bring power and communication using Power over Ethernet technology. A RPI PoE HAT provides 5V DC/2.5A  from the RJ-45 network port (PoE IEEE 802.3af) to power the Raspberry 3B+ CPU.
+This node gets info from pumps to inform how much water is being moved to the tanks. We know that a lot of electromagnetic interference exists near pumps, and definitely this is not healthful to computer CPUs. It is a wise choice to keep the node connections far from this wild environment and the best option is this case is to bring power and communication using Power over Ethernet technology. A RPI PoE HAT provides 5V DC/2.5A  from the RJ-45 network port (PoE IEEE 802.3af) to power the Raspberry 3B+ CPU.
 
 A hall-effect sensor generates an analog voltage proportional to each pump power current. A analog to digital converter will allow the supervisor software to evaluate the pumps performance. 
 
