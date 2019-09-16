@@ -36,7 +36,7 @@ The table below classifies the three types of nodes created for this application
 
 - `tank`: This node uses a wire to power a Raspberry Pi Zero-W device equipped with Wifi communication.
 - `super`: This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN. 
-- `pump`: This node uses the Raspberry Pi 3B+ with a PoE (Power over Ethernet) Hat that allows both power and communication over a twisted-pair cable.
+- `pump`: This node uses the Raspberry Pi 3B+ with a PoE (Power over Ethernet) Hat that allows both power and communication over a twisted-pair cable with RJ-45 connector.
 
 ## Water Process
 
