@@ -30,7 +30,7 @@ A couple questions arise when we start designing the system:
 - How each node connects to power and communication?
 - How many wires are necessary to bring node to life?
 
-Table below shows the three node options that were created for this application.
+Table below classifies the three nodes created for this application.
 
 ![](https://i.imgur.com/8XzDA8M.png)
 
