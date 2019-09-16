@@ -18,7 +18,7 @@ As shown in the diagram, the lowest level interfaces with the process, maybe a h
 
 Today, IoT solutions face similar challenges concerning the development of home automation systems. Usually, a single computer solution may grow with more CPU power, eventually restricted by some proprietary technologies that connect the devices. Another option is going for an open source distributed architecture, based on microservices running on small CPUs, tied through APIs. 
 
-## Summary
+### Summary
 
 This project develops a distributed IoT architecture based on Raspberry Pi hardware and Home Assistant (HA) software. The system is installed on a Linux environment with Docker containers launching several microservices on each node.
 
