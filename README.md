@@ -74,7 +74,7 @@ This node gets info from pumps to inform how much water is being moved to the ta
 
 A hall-effect sensor generates an analog voltage proportional to each pump power current. A analog to digital converter will keep track of analog values in order to evaluate the pumps performance. 
 
-### Microservices
+## Microservices
 
 The running containers at tank and supervisor nodes are shown below, using the `docker ps` with an option for pretty-printing the command output.
 
