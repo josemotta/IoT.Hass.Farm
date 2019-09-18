@@ -30,13 +30,12 @@ The picture describes a typical process that pumps water from well and fills the
 
 ![](https://i.imgur.com/4fRKJ5g.jpg)
 
-A couple questions arise when we start designing the system:
+A couple questions arise when we start designing the system, impacting how many wires are necessary to bring node to life:
 
 - How big should be the CPU for each node?
 - How each node connects to power and communication?
-- How many wires are necessary to bring node to life?
 
-The table below lists the nodes created for this supervisory system until now.
+The table below lists three nodes created for this system until now: tank, super and pump.
 
 
 | **Node**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
