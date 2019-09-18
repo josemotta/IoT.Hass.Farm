@@ -16,7 +16,7 @@ The [SCADA architecture](https://en.wikipedia.org/wiki/SCADA) has functional lev
 
 As shown in the diagram, the lowest level interfaces with the process, maybe a home/office/factory for example.  The higher levels communicate to gather information from lower levels, analyze the data and evaluate the decisions to be made, eventually sending down commands to adjust the process behavior.
 
-Today, IoT solutions face similar challenges concerning the development of home automation systems. Usually, a single computer solution may grow with more CPU power, eventually restricted by some proprietary technologies that connect the devices. Another option is going for an open source distributed architecture, based on microservices running on small CPUs, tied through APIs. 
+Today, IoT solutions face similar challenges concerning the development of home automation systems. Usually, a computer solution may grow adding more CPU power to one single computer. This option is commonly restricted by **proprietary** technology eventually associated to limited vendors. Another option is to grow the system as a **distributed architecture**, based on microservices running on several CPUs, tied through APIs. 
 
 The proposed architecture intends to inspire starters for distributed IoT architectures based on **Raspberry Pi** hardware and **Home Assistant** (HA) software. The system is installed on a Linux environment with Docker containers launching several microservices on each node. Then, different types of IoT devices are designed to cooperate as a single system. Although each node has its own configuration, they also share common Home Assistant files. 
 
