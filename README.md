@@ -26,7 +26,7 @@ The picture describes a typical process that pumps water from well and fills a b
 
 ![](https://i.imgur.com/4fRKJ5g.jpg)
 
-In order to accomplish the job, different types of IoT devices, or nodes, should cooperate together as a team. The process infrastructure is expected to provide AC power source and LAN to connect these nodes. Each node is expected to have its own Home Assistant configuration, automation and user interface scripts. Nodes also share common Home Assistant files, like customization, groups and secrets. A couple questions arise when we start designing the system, concerning how many wires are necessary to bring each node to life:
+In order to accomplish the job, different types of IoT devices, or nodes, should cooperate together as a team. The process infrastructure is expected to provide AC power source and LAN to connect the nodes. Each node is expected to have its own Home Assistant configuration, automation and user interface scripts. Nodes also share common Home Assistant files, like customization, groups and secrets. A couple questions arise when we start designing the system, concerning how many wires are necessary to bring each node to life:
 
 - How big should be the CPU for each node?
 - How each node connects to power and communication?
@@ -38,7 +38,7 @@ The table below lists the nodes designed to supervise the water process: tank, s
 | :---             |     :---:   |    :---:       |  :---:         |  :---:        |  
 | **_tank**        |  RPi Zero-W with Wifi communication.      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
 | **_super**       |  RPi 2B with Ethernet RJ-45       | AC/TP          | Samba, MQTT    | ![crrc-radar-IoT-Home-L1 60](https://user-images.githubusercontent.com/86032/65162428-9757f780-da0f-11e9-8d10-f78d785b53a6.png)      | 
-| **_pump**        |  RPi 3B+ with PoE Hat provides power and Ethernet     | PoE            | Samba, ads1x15 | ![IMG_1229](https://user-images.githubusercontent.com/86032/65164126-aa1ffb80-da12-11e9-80ea-cad86868f42f.JPG)       |
+| **_pump**        |  RPi 3B+ with PoE Hat that provides power and Ethernet     | PoE            | Samba, ads1x15 | ![IMG_1229](https://user-images.githubusercontent.com/86032/65164126-aa1ffb80-da12-11e9-80ea-cad86868f42f.JPG)       |
 
 
 ### Tank node
