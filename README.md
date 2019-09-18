@@ -36,25 +36,14 @@ A couple questions arise when we start designing the system:
 - How each node connects to power and communication?
 - How many wires are necessary to bring node to life?
 
-The table below classifies the three types of nodes created for this application.
+The table below lists the nodes created for this supervisory system until now.
 
-![](https://i.imgur.com/8XzDA8M.png)
-
-- `tank`: This node uses a wire to power a Raspberry Pi Zero-W device equipped with Wifi communication.
-- `super`: This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN. 
-- `pump`: This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN. 
-
-| **Nodes**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
-| :---             |     :---:   |    :---:       |  :---:         |  :---:        |  
-| **_tank**        |  RPi0W      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
-| **_super**       |  RPi2B      | AC/TP          | Samba, MQTT    | sito 1      | 
-| **_pump**        |  RPi3B+     | PoE            | Samba, ads1x15 | Pré 1       |
 
 | **Nodes**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
 | :---             |     :---:   |    :---:       |  :---:         |  :---:        |  
 | **_tank**        |  RPi Zero-W with Wifi communication.      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
 | **_super**       |  RPi 2B with Ethernet RJ-45       | AC/TP          | Samba, MQTT    | sito 1      | 
-| **_pump**        |  RPi 3B+ with PoE Hat with power and Etherneti     | PoE            | Samba, ads1x15 | Pré 1       |
+| **_pump**        |  RPi 3B+ with PoE Hat provides power and Ethernet     | PoE            | Samba, ads1x15 | Pré 1       |
 
 
 ### Tank node
