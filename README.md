@@ -18,7 +18,7 @@ As shown in the diagram, the lowest level interfaces with the process, maybe a h
 
 Today, IoT solutions face similar challenges concerning the development of home automation systems. Usually, a single computer solution may grow with more CPU power, eventually restricted by some proprietary technologies that connect the devices. Another option is going for an open source distributed architecture, based on microservices running on small CPUs, tied through APIs. 
 
-This project is design to be a template starter for distributed IoT architectures based on **Raspberry Pi** hardware and **Home Assistant** (HA) software. The system is installed on a Linux environment with Docker containers launching several microservices on each node. Different types of IoT devices are designed to cooperate in a single system. Although they  have their own configuration files, they also share some common Home Assistant files. 
+The proposed architecture inspires a starter for distributed IoT architectures based on **Raspberry Pi** hardware and **Home Assistant** (HA) software. The system is installed on a Linux environment with Docker containers launching several microservices on each node. Then, different types of IoT devices are designed to cooperate as a single system. Although each node has its own configuration, they also share common Home Assistant files. 
 
 ## Water Process
 
