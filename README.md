@@ -37,7 +37,7 @@ The table below lists the nodes designed to supervise the water process: tank, s
 | **Node**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
 | :---             |     :---:   |    :---:       |  :---:         |  :---:        |  
 | **_tank**        |  RPi Zero-W with Wifi communication.      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
-| **_super**       |  RPi 2B with Ethernet RJ-45       | AC/TP          | Samba, MQTT    | ![crrc-radar-IoT-Home-L1 60](https://user-images.githubusercontent.com/86032/65162428-9757f780-da0f-11e9-8d10-f78d785b53a6.png)      | 
+| **_super**       |  RPi 3B with Ethernet RJ-45       | AC/TP          | Samba, MQTT    | ![crrc-radar-IoT-Home-L1 60](https://user-images.githubusercontent.com/86032/65162428-9757f780-da0f-11e9-8d10-f78d785b53a6.png)      | 
 | **_pump**        |  RPi 3B+ with PoE Hat that provides power and Ethernet     | PoE            | Samba, ads1x15 | ![IMG_1229](https://user-images.githubusercontent.com/86032/65164126-aa1ffb80-da12-11e9-80ea-cad86868f42f.JPG)       |
 
 
