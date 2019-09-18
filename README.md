@@ -18,24 +18,20 @@ As shown in the diagram, the lowest level interfaces with the process, maybe a h
 
 Today, IoT solutions face similar challenges concerning the development of home automation systems. Usually, a single computer solution may grow with more CPU power, eventually restricted by some proprietary technologies that connect the devices. Another option is going for an open source distributed architecture, based on microservices running on small CPUs, tied through APIs. 
 
-### Summary
-
-This project develops a distributed IoT architecture based on Raspberry Pi hardware and Home Assistant (HA) software. The system is installed on a Linux environment with Docker containers launching several microservices on each node.
-
-There are different types of IoT devices cooperating in a single system. Each device is considered a node with its own HA configuration, automation and user interface scripts. The nodes share common Home Assistant files, like customizations, groups and secrets. 
+This project is design to be a template starter for distributed IoT architectures based on **Raspberry Pi** hardware and **Home Assistant** (HA) software. The system is installed on a Linux environment with Docker containers launching several microservices on each node. Different types of IoT devices are designed to cooperate in a single system. Although they  have their own configuration files, they also share some common Home Assistant files. 
 
 ## Water Process
 
-The picture describes a typical process that pumps water from well and fills the big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that should also be monitored.
+The picture describes a typical process that pumps water from well and fills a big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that are filled by gravity and should also be monitored.
 
 ![](https://i.imgur.com/4fRKJ5g.jpg)
 
-A couple questions arise when we start designing the system, impacting how many wires are necessary to bring node to life:
+In order to accomplish the job, different types of IoT devices, or nodes, should cooperate together as a team. The process infrastructure is expected to provide AC power source and LAN to connect these nodes. Each node is expected to have its own Home Assistant configuration, automation and user interface scripts. Nodes also share common Home Assistant files, like customization, groups and secrets. A couple questions arise when we start designing the system, concerning how many wires are necessary to bring each node to life:
 
 - How big should be the CPU for each node?
 - How each node connects to power and communication?
 
-The table below lists three nodes created for this system until now: tank, super and pump.
+The table below lists the nodes designed to supervise the water process: tank, super and pump.
 
 
 | **Node**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
