@@ -52,9 +52,9 @@ The table below classifies the three types of nodes created for this application
 
 | **Nodes**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
 | :---             |     :---:   |    :---:       |  :---:         |  :---:        |  
-| **_tank**        |  This node uses a wire to power a Raspberry Pi Zero-W device equipped with Wifi communication.      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
-| **_super**       |  This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN.       | AC/TP          | Samba, MQTT    | sito 1      | 
-| **_pump**        |  This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN.      | PoE            | Samba, ads1x15 | Pré 1       |
+| **_tank**        |  RPi Zero-W with Wifi communication.      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
+| **_super**       |  RPi 2B with Ethernet RJ-45       | AC/TP          | Samba, MQTT    | sito 1      | 
+| **_pump**        |  RPi 3B+ with PoE Hat with power and Etherneti     | PoE            | Samba, ads1x15 | Pré 1       |
 
 
 ### Tank node
