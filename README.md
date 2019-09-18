@@ -44,7 +44,7 @@ The table below classifies the three types of nodes created for this application
 - `super`: This node uses a couple wires: a cable for power and another Ethernet twisted-pair with RJ-45 connector to connect the Raspberry Pi 3B+ to LAN. 
 - `pump`: This node uses the Raspberry Pi 3B+ with a PoE (Power over Ethernet) Hat that allows both power and communication over a twisted-pair cable with RJ-45 connector.
 
-| **Use Case**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
+| **Nodes**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
 | :---             |     :---:   |    :---:       |  :---:         |  :---:        |  
 | **_tank**        |  RPi0W      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
 | **_super**       |  RPi2B      | AC/TP          | Samba, MQTT    | sito 1      | 
