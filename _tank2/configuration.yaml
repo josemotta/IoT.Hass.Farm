@@ -1,0 +1,182 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation_home
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret timezone_home
+  # Customization file
+  customize: !include customize.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
+      api_password: !secret http_password
+  #  - type: trusted_networks
+  #    trusted_networks:
+  #      - 192.168.20.0/24
+
+# Enables diagnostic tools
+system_health:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+lovelace:
+  mode: yaml
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+
+#iPhone
+#ios:
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+#updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+#  reporting: False
+
+# Discover some devices automatically
+#discovery:
+
+# Enable diagnostic tools
+#system_health:
+
+# Add hassio menu on the left
+hassio:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+  use_include_order: true
+  include:
+    domains:
+      - sensor
+    entities:
+      - sensor.tank_water_level
+      - sensor.tank_vl53l1x
+      - sensor.tank_htu21d_temperature
+      - sensor.tank_htu21d_humidity
+      - sensor.tank_bh1750
+      - sensor.processor_use
+      - sensor.memory_free
+      - sensor.network_in_wlan0
+      - sensor.network_out_wlan0
+      - sensor.disk_use_percent_home
+      - sensor.tank_gpu_temperature
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - persistent_notification
+    entities:
+      - sun.sun
+      - sensor.yr_symbol
+      - sensor.tank_network
+#      - persistent_notification.notification
+#      - persistent_notification.http_login
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+#map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+#  - platform: yr
+  - platform: htu21d
+    name: tank_htu21d
+  - platform: bh1750
+    name: tank_bh1750
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_free
+      - type: network_in
+        arg: wlan0
+      - type: network_out
+        arg: wlan0
+      - type: disk_use_percent
+        arg: /
+  - platform: tof
+    name: tank_vl53l1x
+  - platform: template
+    sensors:
+    # Customize tank calculations accordingly, if not:
+    #   - tank is 2910 mm high
+    #   - sensor is installed 150 mm above tank top
+    #   - water_line = 2910 + 150 - distance = 3060 - distance
+    #   - capacity (%) = (water_line / 2910) * 100 = water_line / 29.10
+      tank_water_level_mm:
+        friendly_name: "Water Line"
+        unit_of_measurement: "mm"
+        value_template: "{{ (3060 - states('sensor.tank_vl53l1x')|float) | round(0)}}"
+      tank_water_level:
+        friendly_name: "Capacity"
+        unit_of_measurement: "%"
+        value_template: "{{ ((3060 - states('sensor.tank_vl53l1x')|float) / 29.10) | round(1)}}"
+    # Sum of network_in_wlan0 and network_out_wlan0
+      tank_network:
+        friendly_name: "Network wlan0"
+        unit_of_measurement: "MiB"
+        value_template: "{{ ((states('sensor.network_in_wlan0') | float ) + (states('sensor.network_out_wlan0') | float )) | round(2) }}"
+  - platform: command_line
+    name: tank_gpu_temperature
+    command: "/opt/vc/bin/vcgencmd measure_temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: "elefante"
+  max_retries: 3
+  default_measurement: state
+
+# MQTT Broker (aka Mosquitto)
+# mqtt:
+#   broker: !secret mqtt_broker
+#   client_id: tank_slave
+#   port: !secret mqtt_port
+#   keepalive: 60
+#   username: !secret mqtt_username
+#   password: !secret mqtt_password
+
+# mqtt_statestream:
+#   base_topic: homeassistant
+#   publish_attributes: true
+#   publish_timestamps: true
+#   include:
+#     entities:
+#       - sensor.tank_water_level
+#       - sensor.tank_water_level_mm
+#       - sensor.tank_vl53l1x
+#       - sensor.tank_bh1750
+#       - sensor.tank_htu21d_humidity
+#       - sensor.tank_htu21d_temperature
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml

@@ -1,0 +1,55 @@
+title: Tank Panel
+views:
+  - title: Home
+    cards:
+      - type: sensor
+        entity: sensor.tank_water_level
+        name: Capacity
+        #line_color: "#3498db"
+        accuracy: 50
+        height: 150
+        detail: 2
+        graph: line
+        unit: "%"
+
+      - type: sensor
+        entity: sensor.tank_water_level_mm
+        name: Water Line
+        #line_color: "#3498db"
+        accuracy: 50
+        height: 150
+        detail: 2
+        graph: line
+        unit: "mm"
+
+      - type: entities
+        title: Sensors
+        show_header_toggle: false
+        entities:
+          #- sensor.water_level
+          #- sensor.tank_water_level_mm
+          - sensor.tank_htu21d_temperature
+          - sensor.tank_htu21d_humidity
+          - sensor.tank_bh1750
+          - sensor.tank_vl53l1x
+
+      - type: gauge
+        title: CPU
+        name: CPU
+        show_header_toggle: true
+        entity: sensor.processor_use
+        severity:
+          green: 0
+          yellow: 50
+          red: 90
+
+      - type: entities
+        title: Computer
+        show_header_toggle: false
+        entities:
+          - sensor.memory_free
+          # - sensor.network_in_eth0
+          # - sensor.network_out_eth0
+          - sensor.tank_network
+          - sensor.disk_use_percent
+          - sensor.tank_gpu_temperature
