@@ -12,13 +12,20 @@ NM="/etc/NetworkManager/system-connections"
 
 if [ -z "$1" ]
 then
-  echo "Usage: `basename $0` [tank | super | pump] [ui]"
+  echo "Usage: `basename $0` [tank | tank2 | super | pump] [ui]"
   exit $E_NOARGS
 fi
 
 case $1 in
   tank)
     cp -t . _tank/*.yaml
+    # if [ -d "$NM" ]; then
+    #   # Copy network manager configuration
+    #   cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
+    # fi
+    ;;
+  tank2)
+    cp -t . _tank2/*.yaml
     # if [ -d "$NM" ]; then
     #   # Copy network manager configuration
     #   cp -t /etc/NetworkManager/system-connections _tank/bin/canoasystem
