@@ -75,8 +75,8 @@ history:
       - sensor.tank_bh1750
       - sensor.processor_use
       - sensor.memory_free
-      - sensor.network_in_wlan0
-      - sensor.network_out_wlan0
+      - sensor.network_in_eth0
+      - sensor.network_out_eth0
       - sensor.disk_use_percent_home
       - sensor.tank_gpu_temperature
   exclude:
@@ -112,9 +112,9 @@ sensor:
       - type: processor_use
       - type: memory_free
       - type: network_in
-        arg: wlan0
+        arg: eth0
       - type: network_out
-        arg: wlan0
+        arg: eth0
       - type: disk_use_percent
         arg: /
   - platform: tof
@@ -134,11 +134,11 @@ sensor:
         friendly_name: "Capacity"
         unit_of_measurement: "%"
         value_template: "{{ ((3060 - states('sensor.tank_vl53l1x')|float) / 29.10) | round(1)}}"
-    # Sum of network_in_wlan0 and network_out_wlan0
+    # Sum of network_in_eth0 and network_out_eth0
       tank_network:
-        friendly_name: "Network wlan0"
+        friendly_name: "Network eth0"
         unit_of_measurement: "MiB"
-        value_template: "{{ ((states('sensor.network_in_wlan0') | float ) + (states('sensor.network_out_wlan0') | float )) | round(2) }}"
+        value_template: "{{ ((states('sensor.network_in_eth0') | float ) + (states('sensor.network_out_eth0') | float )) | round(2) }}"
   - platform: command_line
     name: tank_gpu_temperature
     command: "/opt/vc/bin/vcgencmd measure_temp"
