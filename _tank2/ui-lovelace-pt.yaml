@@ -35,6 +35,15 @@ views:
               - entity: sensor.tank_water_level_mm
                 name: Castelo
 
+          - type: history-graph
+            title: 'Temperatura'
+            refresh_interval: 60
+            entities:
+              - entity: sensor.tank_gpu_temperature
+                name: GPU
+              - entity: sensor.tank_htu21d_temperature
+                name: Interna
+
       - type: vertical-stack
         cards:
           - type: entities
