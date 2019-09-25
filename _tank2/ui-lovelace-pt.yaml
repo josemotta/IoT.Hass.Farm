@@ -41,6 +41,8 @@ views:
             entities:
               - entity: sensor.tank_gpu_temperature
                 name: GPU
+              - entity: sensor.yr_temperature
+                name: Ambiente
               - entity: sensor.tank_htu21d_temperature
                 name: Interna
 
