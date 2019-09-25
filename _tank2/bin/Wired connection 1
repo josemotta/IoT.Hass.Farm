@@ -1,0 +1,22 @@
+[connection]
+id=Wired connection 1
+uuid=1387b1c5-0c98-34dd-9a15-5c2822bbc3c5
+type=ethernet
+autoconnect-priority=-999
+permissions=
+timestamp=1569434188
+
+[ethernet]
+mac-address=B8:27:EB:2D:E6:9B
+mac-address-blacklist=
+
+[ipv4]
+address1=192.168.0.233/24,192.168.0.1
+dns=192.168.0.1;
+dns-search=
+method=manual
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto
