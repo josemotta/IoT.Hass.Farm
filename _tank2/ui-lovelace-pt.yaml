@@ -77,4 +77,5 @@ views:
               # - sensor.network_out_eth0
               - sensor.tank_network
               - sensor.disk_use_percent
+              - sensor.tank_gpu_temperature
               - sensor.tank_throttled
