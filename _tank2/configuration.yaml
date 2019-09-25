@@ -103,6 +103,10 @@ sun:
 # Sensors
 sensor:
 #  - platform: yr
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - humidity
   - platform: htu21d
     name: tank_htu21d
   - platform: bh1750
