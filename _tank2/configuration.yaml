@@ -144,6 +144,11 @@ sensor:
     command: "/opt/vc/bin/vcgencmd measure_temp"
     unit_of_measurement: "°C"
     value_template: '{{ value | replace("temp=", "") | replace("''C", "") }}'
+  - platform: command_line
+    name: tank_throttled
+    command: "/opt/vc/bin/vcgencmd get_throttled"
+    unit_of_measurement: ""
+    value_template: '{{ value | replace("throttled=", "") }}'
 
 influxdb:
   host: a0d7b954-influxdb
