@@ -6,7 +6,7 @@ views:
       - type: iframe
         id: graf1
         url: http://192.168.0.233:3000/d/TQ7LKlzRz/linha-dagua-castelo?orgId=1&from=1569508162415&to=1569529762415
-        aspect_ratio: 65%
+        aspect_ratio: 100%
   - title: Home
     cards:
       - type: vertical-stack
