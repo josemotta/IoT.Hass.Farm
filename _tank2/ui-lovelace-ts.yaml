@@ -86,5 +86,5 @@ views:
     cards:
       - type: iframe
         id: graf1
-        url: http://192.168.0.233:3000/d/TQ7LKlzRz/linha-dagua-castelo?orgId=1&from=1569486844675&to=1569530044677
+        url: http://192.168.0.233:3000/d/TQ7LKlzRz/castelo-canoas?orgId=1&from=1569512913700&to=1569534513700&refresh=1m&theme=light
         aspect_ratio: 100%
