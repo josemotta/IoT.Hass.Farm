@@ -163,6 +163,12 @@ influxdb:
   max_retries: 3
   default_measurement: state
 
+panel_iframe:
+  grafana:
+    title: Grafana
+    icon: mdi:chart-timeline
+    url: http://192.168.0.233:3000
+
 # MQTT Broker (aka Mosquitto)
 # mqtt:
 #   broker: !secret mqtt_broker
