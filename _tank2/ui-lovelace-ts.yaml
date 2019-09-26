@@ -1,12 +1,5 @@
 title: Caixa d'Água do Castelo
 views:
-  - title: Indoor Climate
-    id: indoor-climate
-    cards:
-      - type: iframe
-        id: graf1
-        url: http://192.168.0.233:3000/d/TQ7LKlzRz/linha-dagua-castelo?orgId=1&from=1569486844675&to=1569530044677
-        aspect_ratio: 100%
   - title: Home
     cards:
       - type: vertical-stack
@@ -88,3 +81,10 @@ views:
               - sensor.disk_use_percent
               - sensor.tank_gpu_temperature
               - sensor.tank_throttled
+  - title: Gráfico
+    id: castelo
+    cards:
+      - type: iframe
+        id: graf1
+        url: http://192.168.0.233:3000/d/TQ7LKlzRz/linha-dagua-castelo?orgId=1&from=1569486844675&to=1569530044677
+        aspect_ratio: 100%
