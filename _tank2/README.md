@@ -148,7 +148,7 @@ The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-conf
 
 Finally, the initial `secrets.yaml` file is created, please modify it at will.  
 
-After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.  In this case:
+After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.
 
 ```
 http://192.168.0.233:8123
