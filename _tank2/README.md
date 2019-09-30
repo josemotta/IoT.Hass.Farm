@@ -158,3 +158,9 @@ http://192.168.0.233:8123
 ```
 
 In the first use, an user id and password will be required to create the admin account.
+
+Using recycled parts to assemble an IP-66 enclosure for the prototype is shown below.
+
+
+![tank2-photo-2 IP66](https://user-images.githubusercontent.com/86032/65920081-6cc55180-e3b4-11e9-9de6-c3c2e519fcbc.png)
+
