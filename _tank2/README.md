@@ -44,6 +44,8 @@ Same original sensors were selected:
 
 Please check [_tank](https://github.com/josemotta/IoT.Hass.Farm/tree/master/_tank) for more details.
 
+![tank2-photo-2 open](https://user-images.githubusercontent.com/86032/65919589-30ddbc80-e3b3-11e9-943a-625b813c54fd.png)
+
 ## Install Hass.io
 
 The `RPi-3B+` is supposed to be installed with following software:
