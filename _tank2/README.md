@@ -9,7 +9,8 @@ The RPi-Zero-W limits the LAN connection to Wifi. This is a low cost option if y
 The new tank sensor version 2:
 
 - Does not depend on the Wifi, connecting to the LAN directly by a TP cable with RJ-45 connector;
-- Has enough CPU power to analyze and apply smart algorithms for time series db.
+- Has enough CPU power for a built-in time series db to analyze locally the generated data stream;
+- Support a small demand from final users checking customized time series dashboards.
 
 The main specifications and features for the `_tank2` node are listed below.
 
