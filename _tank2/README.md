@@ -168,3 +168,13 @@ Below, the photo shows `_tank2` in action inside the tank.
 
 ![tank2-photo-2 castelo](https://user-images.githubusercontent.com/86032/65920475-7602ee00-e3b5-11e9-94fd-074f40e340d2.png)
 
+## Install Hassio Add-ons
+
+### Influx-DB
+
+![tank2-live-1](https://user-images.githubusercontent.com/86032/65921516-d34c6e80-e3b8-11e9-9aca-f2b85e69e5dd.png)
+
+### Grafana
+
+![tank2-live-2 grafana](https://user-images.githubusercontent.com/86032/65921524-d9dae600-e3b8-11e9-9768-5fc9116845f8.png)
+
