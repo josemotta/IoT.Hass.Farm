@@ -170,6 +170,8 @@ Below, the photo shows `_tank2` in action inside the tank.
 
 ## Install Hassio Add-ons
 
+The Hassio Add-ons may now be easily installed to explore the time series data. Please check Dummylabs [part-1](https://dummylabs.com/post/2019-01-13-influxdb-part1/) and [part-2](https://dummylabs.com/post/2019-05-28-influxdb-part2/) for more details.
+
 ### Influx-DB
 
 ![tank2-live-1](https://user-images.githubusercontent.com/86032/65921516-d34c6e80-e3b8-11e9-9aca-f2b85e69e5dd.png)
