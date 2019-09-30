@@ -89,11 +89,7 @@ In order to change the `_tank2` node from automatic IP to a fixed IP, for exampl
 	Connection 'Wired connection 1' (09cd6302-8894-3c8d-a84b-535ad6f38a73) successfully updated.
 	nmcli> q
 
-The `Wired connection 1` is now configured at `192.168.0.233`. To test, use a browser to start the frontend, entering the IP address followed by port 8123. In this case:
-
-```
-http://192.168.0.233:8123
-```
+The `Wired connection 1` is now configured at `192.168.0.233`. To test, use a browser to start the frontend, entering the IP address followed by port 8123.
 
 ## Clone the repo
 
@@ -152,4 +148,10 @@ The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-conf
 
 Finally, the initial `secrets.yaml` file is created, please modify it at will.  
 
-After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface. In the first use an user id and password will be required to create the admin account.
+After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.  In this case:
+
+```
+http://192.168.0.233:8123
+```
+
+In the first use an user id and password will be required to create the admin account.
