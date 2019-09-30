@@ -154,4 +154,4 @@ After the boot, open the browser and enter the IP address of prototype followed 
 http://192.168.0.233:8123
 ```
 
-In the first use an user id and password will be required to create the admin account.
+In the first use, an user id and password will be required to create the admin account.
