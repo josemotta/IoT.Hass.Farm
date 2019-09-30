@@ -164,3 +164,7 @@ Using recycled parts to assemble an IP-66 enclosure for the prototype is shown b
 
 ![tank2-photo-2 IP66](https://user-images.githubusercontent.com/86032/65920081-6cc55180-e3b4-11e9-9de6-c3c2e519fcbc.png)
 
+Below, the photo shows `_tank2` in action inside the tank.
+
+![tank2-photo-2 castelo](https://user-images.githubusercontent.com/86032/65920475-7602ee00-e3b5-11e9-94fd-074f40e340d2.png)
+
