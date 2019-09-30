@@ -148,7 +148,7 @@ $ sudo reboot
 The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-config.sh` is called with a couple parameters:
 
 - **tank2**: to import `_tank2` files into homeassistant directory;  
-- **pt**: to replace `ui-lovelace-pt.yaml` with `_tank2/ui-lovelace-pt.yaml`.
+- **pt**: to replace `ui-lovelace.yaml` with `_tank2/ui-lovelace-pt.yaml`.
 
 Finally, the initial `secrets.yaml` file is created, please modify it at will.  
 
