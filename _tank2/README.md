@@ -145,4 +145,11 @@ $ sudo mv secrets-dummy.yaml secrets.yaml
 $ sudo reboot
 ```
 
+The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-config.sh` is called with a couple parameters:
+
+- **tank2**: to import `_tank2` files into homeassistant directory;  
+- **pt**: to replace `ui-lovelace-pt.yaml` with `_tank2/ui-lovelace-pt.yaml`.
+
+Finally, the initial `secrets.yaml` file is created, please modify it at will.  
+
 After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface. In the first use an user id and password will be required to create the admin account.
