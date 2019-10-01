@@ -180,6 +180,11 @@ At the graph above, you can notice that the prototype left the lab on 9/27 noont
 
 ![tank2-live-1](https://user-images.githubusercontent.com/86032/65921516-d34c6e80-e3b8-11e9-9aca-f2b85e69e5dd.png)
 
+The water line graph above results from the couple pumps moving water. A vertical pump inside the well transfer water to a small tank in the ground. When it fills up, a second pump transfers all content to the high tower tank and stops. The result is a saw shape that may inform:
+
+- The amount of water flowing into the tank, when the curve is raising;
+- The amount of water that is being consumed, when the curve is decreasing.
+
 ### Grafana
 
 ![tank2-live-2 grafana](https://user-images.githubusercontent.com/86032/65921524-d9dae600-e3b8-11e9-9768-5fc9116845f8.png)
