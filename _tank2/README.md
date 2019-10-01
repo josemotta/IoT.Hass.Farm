@@ -149,7 +149,7 @@ The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-conf
 - **tank2**: to import `_tank2` files into homeassistant directory;  
 - **pt**: to replace `ui-lovelace.yaml` with `_tank2/ui-lovelace-pt.yaml`.
 
-Finally, the initial `secrets.yaml` file is created, please modify it at will. After the boot, the microservices start to run, as shown below:
+Finally, the initial `secrets.yaml` file is created, please modify it at will. After the boot, the microservices start to run, each one has its own docker container, as shown below:
 
 ```
 pi@laser:~ $ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"
