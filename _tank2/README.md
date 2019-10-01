@@ -149,13 +149,7 @@ The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-conf
 - **tank2**: to import `_tank2` files into homeassistant directory;  
 - **pt**: to replace `ui-lovelace.yaml` with `_tank2/ui-lovelace-pt.yaml`.
 
-Finally, the initial `secrets.yaml` file is created, please modify it at will. After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.
-
-```
-http://192.168.0.233:8123
-```
-
-The microservices start to run, as shown below:
+Finally, the initial `secrets.yaml` file is created, please modify it at will. After the boot, the microservices start to run, as shown below:
 
 ```
 pi@laser:~ $ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"
@@ -169,6 +163,11 @@ e1c90a25e01c        homeassistant/armv7-hassio-dns:1                  Up 4 days
 10fe59d695ad        homeassistant/raspberrypi3-homeassistant:0.99.2   Up 4 days
 ```
 
+Open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.
+
+```
+http://192.168.0.233:8123
+```
 In the first use, an user id and password will be required to create the admin account. The prototype is using recycled parts to assemble an "IP66-like" enclosure as shown below.
 
 
