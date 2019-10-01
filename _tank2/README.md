@@ -4,7 +4,7 @@ At this project, some improvements were considered after the first [_tank](https
 
 The first version used a Raspberry Pi Zero W, the lowest cost option that performed very well to get precise distance measurements and redirect them to the supervisor node. Thanks to the MQTT protocol, the distance, temperature, humidity and luminance measurements form a data stream constantly moving from tiny RPi-Zero-W. This  solution supposes that the data stream will be properly analyzed  at `_super` node, in order to make further decisions about the process behavior.
 
-The RPi-Zero-W limits the LAN connection to Wifi. This is a low cost option if you already have the Wifi signal on the air, otherwise it is necessary to purchase an reliable Access Point (AP). This is also a weak point because AP failure definitely affects data stream arrival to upper node levels, responsible for further process decisions.
+The RPi-Zero-W limits the LAN connection to Wifi. This is a low cost option if you already have the Wifi signal on the air, otherwise it is necessary to purchase a reliable Access Point (AP). This is also a weak point because AP failure definitely affects data stream arrival to upper node levels, responsible for further process decisions.
 
 The new tank sensor version 2:
 
@@ -149,9 +149,7 @@ The repo is cloned locally to `/usr/share/hassio/homeassistant`. Then, `set-conf
 - **tank2**: to import `_tank2` files into homeassistant directory;  
 - **pt**: to replace `ui-lovelace.yaml` with `_tank2/ui-lovelace-pt.yaml`.
 
-Finally, the initial `secrets.yaml` file is created, please modify it at will.  
-
-After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.
+Finally, the initial `secrets.yaml` file is created, please modify it at will. After the boot, open the browser and enter the IP address of prototype followed by port 8123 to start the user interface.
 
 ```
 http://192.168.0.233:8123
