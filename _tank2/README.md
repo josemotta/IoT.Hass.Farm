@@ -178,6 +178,9 @@ The Hassio Add-ons may now be installed to explore the time series data, please 
 
 ### Influx-DB
 
+![tank2-live-influxdb](https://user-images.githubusercontent.com/86032/65998655-28988680-e472-11e9-8e97-f3703dd489b6.png)
+
+
 ![tank2-live-1](https://user-images.githubusercontent.com/86032/65921516-d34c6e80-e3b8-11e9-9aca-f2b85e69e5dd.png)
 
 ### Grafana
