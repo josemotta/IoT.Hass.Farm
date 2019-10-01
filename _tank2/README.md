@@ -168,18 +168,17 @@ Open the browser and enter the IP address of prototype followed by port 8123 to 
 ```
 http://192.168.0.233:8123
 ```
-In the first use, an user id and password will be required to create the admin account. The prototype is using recycled parts to assemble an "IP66-like" enclosure as shown below.
+In the first use, an user id and password will be required to create the admin account. The `_tank2/ui-lovelace-pt.yaml` configures the panel shown below:
 
+![tank2-live-panel](https://user-images.githubusercontent.com/86032/65998356-85477180-e471-11e9-80f2-f4267db61150.png)
+
+The prototype is using recycled parts to assemble an "IP66-like" enclosure as shown below.
 
 ![tank2-photo-2 IP66](https://user-images.githubusercontent.com/86032/65920081-6cc55180-e3b4-11e9-9de6-c3c2e519fcbc.png)
 
 Below, the photo shows `_tank2` in action inside the tank.
 
 ![tank2-photo-2 castelo](https://user-images.githubusercontent.com/86032/65920475-7602ee00-e3b5-11e9-94fd-074f40e340d2.png)
-
-The `_tank2/ui-lovelace-pt.yaml` configures the panel shown below:
-
-![tank2-live-panel](https://user-images.githubusercontent.com/86032/65998356-85477180-e471-11e9-80f2-f4267db61150.png)
 
 ## Install Hassio Add-ons
 
