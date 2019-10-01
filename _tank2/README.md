@@ -174,7 +174,7 @@ The `_tank2/ui-lovelace-pt.yaml` configures the panel shown below:
 
 ## Install Hassio Add-ons
 
-The Hassio Add-ons may now be installed to explore the time series data, please check Dummylabs [part-1](https://dummylabs.com/post/2019-01-13-influxdb-part1/) and [part-2](https://dummylabs.com/post/2019-05-28-influxdb-part2/).
+The Hassio Add-ons for InfluxDB and Grafana allows to apply specialized algorithms to the time series data. To install and configure them, please check Dummylabs [part-1](https://dummylabs.com/post/2019-01-13-influxdb-part1/) and [part-2](https://dummylabs.com/post/2019-05-28-influxdb-part2/).
 
 ### Influx-DB
 
