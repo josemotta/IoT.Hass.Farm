@@ -176,7 +176,7 @@ The Hassio Add-ons for InfluxDB and Grafana supports specialized algorithms for 
 
 ![tank2-live-influxdb](https://user-images.githubusercontent.com/86032/65999795-84fca580-e474-11e9-9e6e-c87f0e9360c9.png)
 
-At the graph above, you can notice that the prototype left the lab on 9/27 noontime to start measuring actual values inside the tank. The internal humidity and temperature follows the environment changes. The ambient values are extracted from `yr` [component](https://www.home-assistant.io/components/yr/) from Homeassistant and come from Norwegian Meteorological Institute.
+At the graph above, you can notice that the prototype left the lab on 9/27 noontime to start measuring actual values inside the tank. The internal humidity and temperature follow, with a small lag, the environment changes. The ambient values are extracted from `yr` [component](https://www.home-assistant.io/components/yr/) from Homeassistant and come from Norwegian Meteorological Institute.
 
 ![tank2-live-1](https://user-images.githubusercontent.com/86032/65921516-d34c6e80-e3b8-11e9-9aca-f2b85e69e5dd.png)
 
