@@ -168,6 +168,10 @@ Below, the photo shows `_tank2` in action inside the tank.
 
 ![tank2-photo-2 castelo](https://user-images.githubusercontent.com/86032/65920475-7602ee00-e3b5-11e9-94fd-074f40e340d2.png)
 
+The `_tank2/ui-lovelace-pt.yaml` configures the panel shown below:
+
+![tank2-live-panel](https://user-images.githubusercontent.com/86032/65998356-85477180-e471-11e9-80f2-f4267db61150.png)
+
 ## Install Hassio Add-ons
 
 The Hassio Add-ons may now be installed to explore the time series data, please check Dummylabs [part-1](https://dummylabs.com/post/2019-01-13-influxdb-part1/) and [part-2](https://dummylabs.com/post/2019-05-28-influxdb-part2/).
