@@ -155,6 +155,20 @@ Finally, the initial `secrets.yaml` file is created, please modify it at will. A
 http://192.168.0.233:8123
 ```
 
+The microservices start to run, as shown below:
+
+```
+pi@laser:~ $ docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"
+CONTAINER ID        IMAGE                                             STATUS
+2968e11f457f        homeassistant/armv7-addon-duckdns:1.10            Up 8 hours
+6a4b5971e4b5        homeassistant/armv7-addon-configurator:3.5        Up 4 days
+903bffd19aab        hassioaddons/influxdb-armv7:3.3.0                 Up 4 days
+46da85a79844        homeassistant/armv7-addon-samba:8.1               Up 4 days
+e1c90a25e01c        homeassistant/armv7-hassio-dns:1                  Up 4 days
+05067546d1c3        homeassistant/armv7-hassio-supervisor             Up 4 days
+10fe59d695ad        homeassistant/raspberrypi3-homeassistant:0.99.2   Up 4 days
+```
+
 In the first use, an user id and password will be required to create the admin account. The prototype is using recycled parts to assemble an "IP66-like" enclosure as shown below.
 
 
