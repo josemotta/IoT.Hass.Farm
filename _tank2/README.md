@@ -185,6 +185,8 @@ The water line graph above results from the couple pumps moving water. A vertica
 - The amount of water flowing into the tank, when the curve is raising;
 - The amount of water that is being consumed, when the curve is decreasing.
 
+You can notice that second pump stopped at night and curve decreased until next morning.
+
 ### Grafana
 
 ![tank2-live-2 grafana](https://user-images.githubusercontent.com/86032/65921524-d9dae600-e3b8-11e9-9768-5fc9116845f8.png)
