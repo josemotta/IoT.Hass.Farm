@@ -39,7 +39,7 @@ The table below lists the nodes designed to supervise the water process: tank, s
 | **_tank**        |  RPi Zero-W with Wifi.      | AC/Wifi        | Samba          | ![tank-photo](https://user-images.githubusercontent.com/86032/65159631-cae45300-da0a-11e9-8e1c-04f1233dce2b.png)    |
 | **_tank2**        |  RPi 3B+ with TP Ethernet RJ-45.      | AC/TP        | Samba, InfluxDB, Grafana          | ![tank2-photo-2 open](https://user-images.githubusercontent.com/86032/65919589-30ddbc80-e3b3-11e9-943a-625b813c54fd.png)    |
 | **_super**       |  RPi 2B with TP Ethernet RJ-45       | AC/TP          | Samba, MQTT    | ![crrc-radar-IoT-Home-L1 60](https://user-images.githubusercontent.com/86032/65162428-9757f780-da0f-11e9-8d10-f78d785b53a6.png)      | 
-| **_pump**        |  RPi 3B+ with PoE TP Ethernet RJ-45 also provides power     | PoE            | Samba, ads1x15 | ![IMG_1229](https://user-images.githubusercontent.com/86032/65164126-aa1ffb80-da12-11e9-80ea-cad86868f42f.JPG)       |
+| **_pump**        |  RPi 3B+ with PoE TP Ethernet RJ-45 also provides power     | PoE            | Samba, A/D converter ads1x15 | ![IMG_1229](https://user-images.githubusercontent.com/86032/65164126-aa1ffb80-da12-11e9-80ea-cad86868f42f.JPG)       |
 
 
 ### Tank node
