@@ -31,7 +31,7 @@ In order to accomplish the job, different types of IoT devices, or nodes, should
 - How big should be the CPU for each node?
 - How each node connects to power and communication?
 
-The table below lists the nodes designed to supervise the water process: tank, super and pump.
+The table below lists the components used at the Water Process: tank, super and pump.
 
 
 | **Node**     | **CPU**     |  **Power/LAN** | **Extra**      | **Photo**     |
