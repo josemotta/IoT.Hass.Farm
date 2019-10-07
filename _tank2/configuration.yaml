@@ -154,20 +154,20 @@ sensor:
     unit_of_measurement: ""
     value_template: '{{ value | replace("throttled=", "") }}'
 
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: homeassistant
-  password: "elefante"
-  max_retries: 3
-  default_measurement: state
+# influxdb:
+#   host: a0d7b954-influxdb
+#   port: 8086
+#   database: homeassistant
+#   username: homeassistant
+#   password: "elefante"
+#   max_retries: 3
+#   default_measurement: state
 
-panel_iframe:
-  grafana:
-    title: Grafana
-    icon: mdi:chart-timeline
-    url: http://192.168.0.233:3000
+# panel_iframe:
+#   grafana:
+#     title: Grafana
+#     icon: mdi:chart-timeline
+#     url: http://192.168.0.233:3000
 
 # MQTT Broker (aka Mosquitto)
 # mqtt:
