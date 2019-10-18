@@ -24,7 +24,7 @@ The proposed architecture intends to inspire starters for distributed IoT archit
 
 The picture describes a typical process that pumps water from well and fills a big water storage placed on a high tower. The plumbing connects to water points located on the near buildings, equipped with secondary water tanks that are filled by gravity and should also be monitored.
 
-![](https://i.imgur.com/4fRKJ5g.jpg)
+![water-process-2](https://user-images.githubusercontent.com/86032/67101947-02285a00-f199-11e9-9252-04aa92de96bd.png)
 
 In order to accomplish the job, different types of IoT devices, or nodes, should cooperate together as a team. The process infrastructure is expected to provide AC power source and LAN to connect the nodes. Each node is expected to have its own Home Assistant configuration, automation and user interface scripts. Nodes also share common Home Assistant files, like customization, groups and secrets. A couple questions arise when we start designing the system, concerning how many wires are necessary to bring each node to life:
 
