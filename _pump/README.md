@@ -4,7 +4,7 @@ At this time, only the supervision system is being considered. The process extra
 
 ![water-process-2](https://user-images.githubusercontent.com/86032/67102821-84654e00-f19a-11e9-92ec-f38b84c0cd15.png)
 
-- The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank at surface level.
+- The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank, located at surface level.
 - A second fast-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
 - The fast-pump starts when the intermediary tank is full and stops when it is empty. The command logic for this synchronization is already set and is not being considered here now.
 
