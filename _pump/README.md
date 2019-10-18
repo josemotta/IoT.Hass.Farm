@@ -2,7 +2,7 @@
 
 At this time, only the supervision system is being considered. The process extracts water from a well, 25 meters below surface and move it to a water storage located 15 meters high, totaling 40 meters. In order to optimize energy, the existing equipment does the job in a couple steps. As show below, a couple pumps work together to fill the water storage on the top of high tower:
 
-![water-process-2](https://user-images.githubusercontent.com/86032/67101947-02285a00-f199-11e9-9252-04aa92de96bd.png)
+![water-process-2](https://user-images.githubusercontent.com/86032/67102821-84654e00-f19a-11e9-92ec-f38b84c0cd15.png)
 
 - The first stage is twenty five meters below surface in the well, powered by a thin-vertical-pump, located inside the plumbs. It pushes water to a small intermediary tank at surface level.
 - A second fast-pump is responsible for moving the water from the intermediary tank to the big water storage placed on the high tower.
